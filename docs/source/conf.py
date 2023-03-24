@@ -1,35 +1,78 @@
 # Configuration file for the Sphinx documentation builder.
+#
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Project information
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Learning summary document'
+copyright = '2023, Hejinxin'
+author = 'Hejinxin'
+release = 'v1'
 
-release = '0.1'
-version = '0.1.0'
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-# -- General configuration
 
 extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
+   # 'recommonmark',
+   # 'sphinx_markdown_tables',
+    'myst_parser',
 ]
 
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
-}
-intersphinx_disabled_domains = ['std']
+
+extensions.append('sphinx.ext.todo')
+extensions.append('sphinx.ext.autodoc')
+extensions.append('sphinx.ext.autosummary')
+extensions.append('sphinx.ext.intersphinx')
+extensions.append('sphinx.ext.mathjax')
+extensions.append('sphinx.ext.viewcode')
+extensions.append('sphinx.ext.graphviz')
+#mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 templates_path = ['_templates']
+exclude_patterns = []
 
-# -- Options for HTML output
+language = 'zh_CN'
 
-html_theme = 'sphinx_rtd_theme'
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
+
+#html_theme = 'sphinx_rtd_theme'
+#html_theme = 'sphinx-book-theme'
+html_theme = 'pydata_sphinx_theme'
+
+html_static_path = ['_static']
+html_theme_options = {
+
+
+   # "show_navbar_depth": 3,
+
+    # 导航栏
+   # "navbar_start": ["navbar-logo"],
+   # "navbar_center": ["navbar-nav"],
+   # "navbar_end": ["navbar-icon-links", "navbar-icon-links"],
+    "navbar_persistent": ["search-field"],
+    "icon_links": [
+    {
+        "name": "GitHub",
+        "url": "https://github.com/hejinxin0/sphix_build.git",
+        "icon": "fa-brands fa-square-github",
+        "type": "fontawesome",
+    },],
+    
+    # 主侧边栏
+    "navigation_depth": 2,
+    "show_nav_level": 1, 
+
+    # 辅助侧边栏
+    "show_toc_level": 2,
+    #"use_edit_page_button": False,
+   
+   # 代码块主题样式
+   "pygment_light_style": "default",
+   "pygment_dark_style": "default"
+}
+

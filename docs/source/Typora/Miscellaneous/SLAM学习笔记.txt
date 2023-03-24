@@ -1,0 +1,127 @@
+1.磁盘分区工具
+Gparted
+
+2.Qt不能输入中文解决办法
+cd /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts
+ls
+sudo cp libfcitxplatforminputcontextplugin.so /home/hejinxin/Qt5.12.9/Tools/QtCreator/lib/Qt/plugins/platforminputcontexts
+
+3.boost库安装
+下载最新的boost库:http://www.boost.org/,解压下载文件,cd至所在文件夹
+$ ./bootstrap.sh //准备工作
+$ ./b2 //编译，该过程时间比较长
+$ sudo ./b2 install //安装boost库
+//将生成的库安装到/usr/local/lib目录下面，
+//头文件放在/usr/local/include/目录下面
+
+4.pangolin安装
+https://www.cnblogs.com/newneul/p/8270137.html
+sudo apt-get install libglew-dev
+sudo apt-get install cmake
+sudo apt-get install libpython2.7-dev
+cd [path-to-pangolin（Pangolin路径）]//打开解压后的Pangolin文件夹
+mkdir build
+cd build
+cmake ..
+make
+sudo make install (.h默认安装到了/usr/local/include）
+
+5.sophus安装
+sudo apt install git
+git clone https://github.com/strasdat/Sophus.git
+cd Sophus
+#git checkout a621ff,更改错误，定位至源码so2.cpp
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+6.Ceres安装
+  sudo apt-get install liblapack-dev libsuitesparse-dev libcxsparse3 libgflags-dev libgoogle-glog-dev libgtest-dev
+  git clone https://github.com/ceres-solver/ceres-solver
+
+
+7.g2o安装
+sudo apt-get install qt5-qmake qt5-default libqglviewer-dev-qt5 libsuitesparse-dev libcxsparse3 libcholmod3
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+8.OpenCV安装
+sudo apt-get install build-essential libgtk2.0-dev libjpeg-dev libtiff5-dev  libopenexr-dev libtbb-dev pkg-config libvtk6-dev  libjasper-dev  
+最后一个可能提示无法定位软件包，解决方法（网上有）：
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+sudo apt update
+sudo apt install libjasper1 libjasper-dev
+
+
+9.MATLAB安装
+
+
+10.EVO安装
+
+只需要-i指定源即可，注意一定要指定源，提高速度
+pip install --editable . --upgrade --no-binary evo -ihttps://pypi.mirrors.ustc.edu.cn/
+pip install matplotlib -U
+pip install scipy -U
+pip install pandas -U均安装新版
+pip install numpy -U
+sudo apt install python-pip
+sudo apt install python3-pip
+
+
+先升级为Python3.7
+
+
+
+ sudo apt-get install python3-matplotlib
+ sudo apt-get install python3-natsort
+sudo apt-get install python3-pandas
+sudo apt-get install python3-pygments
+ sudo apt-get install python3-scipy
+
+
+
+
+11.TUM数据集
+运行associate.py报错：ImportError: No module named numpy
+原因：因为没有安装numpy，这是一个 Python 语言的一个扩展程序库，因为代码里面import了numpy，所以如果没有这个库的话就会报错。
+解决方法：sudo apt-get install python-numpy
+python associate.py associate.txt groundtruth.txt > associate_with_groundtruth.txt
+
+
+12.ORB-SLAM安装，安装前将build.sh中make -j改为make
+
+13. 常用代码
+显示点云： pcl_viewer PointCloudFile.pcd 
+TUM数据集对齐： python associate.py rgb.txt depth.txt > associate.txt
+ORBSLAM运行代码： ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM1.yaml /home/hejinxin/桌面/TUM/fr1room /home/hejinxin/桌面/TUM/fr1room/test.txt
+
+
+14. 更改"桌面"文件夹为英文
+1、cd 到自己的home文件夹 
+2、ls -la 出现隐藏的文件及文件夹 
+3、找到 .config文件夹中的user-dirs.dirs ，更改后重启
+
+15. 安装pycharm
+sudo snap install pycharm-community --classic
+
+16. 最新cmake安装
+sudo mv cmake-3.20.2 /opt/cmake-3.20.2
+sudo ln -sf /opt/cmake-3.20.2/bin/* /usr/bin/
+
+
+17.Clash翻墙
+ ./clash -d .
+
+18. EVO命令
+
+19. linux环境变量怎么设置？另外记得之前做过怎么设置中文还是什么忘了
+
+20. doxygen安装
+21. sudo apt-get install doxygen-[latex](https://so.csdn.net/so/search?q=latex&spm=1001.2101.3001.7020) doxygen-doc doxygen-gui graphviz
+
+打开图形界面：doxywizard

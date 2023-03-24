@@ -1,0 +1,19 @@
+# AR物体物体识别跟踪
+
+## AR平台调研
+
+ARKit ARCore Arfoundation
+
+https://blog.csdn.net/m0_56017939/article/details/119238460
+
+https://blog.csdn.net/weixin_40239288/article/details/125044726
+
+## AR行业和产品调研
+
+### 国内
+
+
+
+河图   senseAR
+
+### 国外
