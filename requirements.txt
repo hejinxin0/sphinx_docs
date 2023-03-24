@@ -1,7 +1,7 @@
 myst-parser==1.0.0
 pydata-sphinx-theme==0.13.1
 recommonmark==0.7.1
-Sphinx==6.2.0
+sphinx
 sphinx-autobuild==2021.3.14
 sphinx-book-theme==1.0.0
 sphinx-markdown-tables==0.0.17
