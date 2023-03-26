@@ -58,7 +58,7 @@ html_theme_options = {
     "icon_links": [
     {
         "name": "GitHub",
-        "url": "https://github.com/hejinxin0/sphix_build.git",
+        "url": "https://github.com/hejinxin0/sphinx_docs.git",
         "icon": "fa-brands fa-square-github",
         "type": "fontawesome",
     },],
