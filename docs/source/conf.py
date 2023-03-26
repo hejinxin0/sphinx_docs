@@ -39,12 +39,12 @@ language = 'zh_CN'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-
+'''
 html_static_path = ['_static']
 html_css_files = [
     'css/custom.css',
 ]
-
+'''
 #html_theme = 'sphinx_rtd_theme'
 #html_theme = 'sphinx-book-theme'
 html_theme = 'pydata_sphinx_theme'
