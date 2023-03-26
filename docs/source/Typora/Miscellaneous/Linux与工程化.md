@@ -1,10 +1,12 @@
-# Linux系统目录结构
+# Linux与工程化
+
+## Linux系统目录结构
 
 重新用Visio画一个结构的图，https://www.runoob.com/linux/linux-system-contents.html
 
 ![](assets/Linux系统目录结构-16779164353222.png)
 
-# Ubuntu环境变量文件
+## Ubuntu环境变量文件
 
 参数中一横和两横的区别 -help 和 --help
 
@@ -41,11 +43,11 @@ unset HTTPS_PROXY
 
 切换源，中科大清华的源
 
-# 用户与用户组
+## 用户与用户组
 
-# 文件系统与目录管理
+## 文件系统与目录管理
 
-## 文件属性与权限
+### 文件属性与权限
 
 https://www.runoob.com/linux/linux-file-attr-permission.html
 
@@ -55,7 +57,7 @@ chmod修改权限命令[Linux chmod 命令 | 菜鸟教程 (runoob.com)](https://
 
 ![img](assets/file-permissions-rwx.jpg)
 
-## 文件查看
+### 文件查看
 
 https://www.runoob.com/linux/linux-filesystem.html
 
@@ -75,9 +77,9 @@ tree
 
 NTFS文件系统
 
-# 文字编辑
+## 文字编辑
 
-# 程序
+## 程序
 
 进程与线程的区别、内存、CPU
 
@@ -85,11 +87,11 @@ NTFS文件系统
 
 pid 和 tid 和 lwp 和 tgid
 
-#  常用操作命令
+##  常用操作命令
 
 安装软件包
 
-## snap
+### snap
 
 ```bash
 snap list
@@ -97,7 +99,7 @@ sudo snap install cloudcompare
 sudo snap remove cloudcompare
 ```
 
-## pip和pip3
+### pip和pip3
 
 pip包或者apt包安装超时的问题，--default-timeout=100
 
@@ -134,13 +136,13 @@ pkg-config
 
 upgrade命令 
 
-# shell脚本
+## shell脚本
 
 常见的 Shell 有 sh、bash、csh、tcsh、ash 等，bash是shell的一种？？？？
 
-# 常用IDE
+## 常用IDE
 
-## Python IDE
+### Python IDE
 
 pycharm
 
@@ -150,7 +152,7 @@ jupyter
 
 
 
-# 包管理工具
+## 包管理工具
 
 apt-get
 
@@ -174,11 +176,11 @@ pip
 
 yum 
 
-# 软件程序及第三方库安装
+## 软件程序及第三方库安装
 
-## ros
+### ros
 
-## cuda
+### cuda
 
 ```bash
 nvcc -V | --version # 查看cuda版本
@@ -192,9 +194,9 @@ pcl
 
 open3d
 
-# docker容器
+## docker容器
 
-# 问题总结
+## 问题总结
 
 sudo apt-get install 无法获得dpkg前端锁及其解决办法
 
