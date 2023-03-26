@@ -40,20 +40,20 @@ language = 'zh_CN'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 
+html_static_path = ['_static']
+html_css_files = [
+    'css/custom.css',
+]
+
 #html_theme = 'sphinx_rtd_theme'
 #html_theme = 'sphinx-book-theme'
 html_theme = 'pydata_sphinx_theme'
 
-html_static_path = ['_static']
 html_theme_options = {
-
-
-   # "show_navbar_depth": 3,
-
     # 导航栏
-   # "navbar_start": ["navbar-logo"],
-   # "navbar_center": ["navbar-nav"],
-   # "navbar_end": ["navbar-icon-links", "navbar-icon-links"],
+    # "navbar_start": ["navbar-logo"],
+    # "navbar_center": ["navbar-nav"],
+    # "navbar_end": ["navbar-icon-links", "navbar-icon-links"],
     "navbar_persistent": ["search-field"],
     "icon_links": [
     {

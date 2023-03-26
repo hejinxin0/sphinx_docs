@@ -42,3 +42,8 @@ html {
   --pst-font-family-heading: var(--pst-font-family-base-system);
   --pst-font-family-monospace: var(--pst-font-family-monospace-system);
 }
+
+.bd-content {
+  flex-grow: 1;
+  max-width: 100%;
+}
