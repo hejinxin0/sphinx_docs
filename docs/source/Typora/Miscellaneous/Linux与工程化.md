@@ -1,5 +1,21 @@
 # Linux与工程化
 
+ps -aux和top命令查看CPU及内存，  /proc文件中查看cpu和内存信息？？
+
+ln软连接，软链接ln命令
+
+压缩和解压
+
+tail、cat
+
+grep
+
+pkg-config
+
+环境变量export和env命令、source命令
+
+upgrade命令 
+
 ## Linux系统目录结构
 
 重新用Visio画一个结构的图，https://www.runoob.com/linux/linux-system-contents.html
@@ -43,7 +59,9 @@ unset HTTPS_PROXY
 
 切换源，中科大清华的源
 
-## 用户与用户组
+## 用户与用户组管理
+
+
 
 ## 文件系统与目录管理
 
@@ -54,6 +72,10 @@ https://www.runoob.com/linux/linux-file-attr-permission.html
 ![img](assets/file-llls22.jpg)
 
 chmod修改权限命令[Linux chmod 命令 | 菜鸟教程 (runoob.com)](https://www.runoob.com/linux/linux-comm-chmod.html)
+
+```bash
+chmod [-cfvR] [--help] [--version] mode file...
+```
 
 ![img](assets/file-permissions-rwx.jpg)
 
@@ -120,21 +142,7 @@ pip show package_name
 pip uninstall
 ```
 
-ps -aux和top命令查看CPU及内存，  /proc文件中查看cpu和内存信息？？
-
-ln软连接，软链接ln命令
-
-压缩和解压
-
-tail、cat
-
-grep
-
-pkg-config
-
-环境变量export和env命令、source命令
-
-upgrade命令 
+requirements.txt文件。pip生成requirements.txt文件的命令？？
 
 ## shell脚本
 
@@ -160,7 +168,7 @@ apt-get
  sudo apt-get remove --purge 和 sudo apt-get purge
 ```
 
-apt
+apt和**aptitude**https://baike.baidu.com/item/aptitude/6849487
 
 dpkg：https://blog.csdn.net/Kenny_GuanHua/article/details/123842699
 
