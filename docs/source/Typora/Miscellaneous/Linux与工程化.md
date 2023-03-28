@@ -69,17 +69,61 @@ unset HTTPS_PROXY
 
 https://www.runoob.com/linux/linux-file-attr-permission.html
 
-![img](assets/file-llls22.jpg)
-
 chmod修改权限命令[Linux chmod 命令 | 菜鸟教程 (runoob.com)](https://www.runoob.com/linux/linux-comm-chmod.html)
+
+只有文件所有者和超级用户可以修改文件或目录的权限
 
 ```bash
 chmod [-cfvR] [--help] [--version] mode file...
+
+mode参数
+[ugoa...][[+-=][rwxX]...][,...]
 ```
 
 ![img](assets/file-permissions-rwx.jpg)
 
+| who  | 用户类型 |         说明          |
+| :--: | :------: | :-------------------: |
+| `u`  |   user   |      文件所有者       |
+| `g`  |  group   |   文件所有者所在组    |
+| `o`  |  others  |     所有其他用户      |
+| `a`  |   all    | 所有用户, 相当于`ugo` |
+
+
+
+| Operator |                          说明                          |
+| :------: | :----------------------------------------------------: |
+|   `+`    |                为指定的用户类型增加权限                |
+|   `-`    |                 去除指定用户类型的权限                 |
+|   `=`    | 设置指定用户权限的设置，即将用户类型的所有权限重新设置 |
+
+
+
+| 八进制数字模式 | 符号模式 |    权限说明    | 二进制 |
+| :------------: | :------: | :------------: | :----: |
+|       7        |  `rwx`   | 读 + 写 + 执行 |  111   |
+|       6        |  `rw-`   |    读 + 写     |  110   |
+|       5        |  `r-x`   |   读 + 执行    |  101   |
+|       4        |  `r--`   |      只读      |  100   |
+|       3        |  `-wx`   |   写 + 执行    |  011   |
+|       2        |  `-w-`   |      只写      |  010   |
+|       1        |  `--x`   |     只执行     |  001   |
+|       0        |  `---`   |       无       |  000   |
+
 ### 文件查看
+
+ls文件颜色[CSDN：ls下文件的颜色](https://blog.csdn.net/weixin_30633949/article/details/95197099)
+
+|   颜色   |       类型       |
+| :------: | :--------------: |
+|   白色   |     普通文件     |
+|   蓝色   |       目录       |
+|   绿色   |    可执行文件    |
+|   红色   |     压缩文件     |
+|  浅蓝色  |     链接文件     |
+| 红色闪烁 | 链接的文件有问题 |
+|   黄色   |     设备文件     |
+|   灰色   |     其他文件     |
 
 https://www.runoob.com/linux/linux-filesystem.html
 
