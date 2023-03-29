@@ -159,7 +159,25 @@ pid 和 tid 和 lwp 和 tgid
 
 ### dpkg和apt
 
-apt-get
+
+
+```
+  apt [options] [command] [package ...]
+```
+
+| apt                                                          | apt-get | 说明                                                     |
+| ------------------------------------------------------------ | ------- | -------------------------------------------------------- |
+| `apt update`                                                 |         | 更新可用软件包列表信息                                   |
+| `apt upgrade`                                                |         | 升级软件包                                               |
+| `apt install <package_name>`<br />`apt install <package_1> <package_2> <package_3>` |         | 安装新的软件包                                           |
+| `apt remove <package_name>`                                  |         | 移除软件包                                               |
+| `apt autoremove`                                             |         | 卸载所有自动安装且不再使用的软件包（删除不需要的依赖项） |
+| `apt purge <package_name>`                                   |         |                                                          |
+| `apt list --installed`<br />`apt list --all-versions`<br />`apt list | grep <package_name>` |         | 根据名称列出软件包                                       |
+| `apt show <package_name>`                                    |         | 显示软件包具体信息，例如：版本号，安装大小，依赖关系等   |
+| `apt search <keyword>`                                       |         | 搜索与关键词匹配的软件包                                 |
+
+
 
 ```bash
  sudo apt-get remove --purge 和 sudo apt-get purge
@@ -180,6 +198,8 @@ snap
 pip
 
 yum 
+
+
 
 ### snap
 
