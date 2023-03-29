@@ -153,9 +153,33 @@ NTFS文件系统
 
 pid 和 tid 和 lwp 和 tgid
 
-##  常用操作命令
+##  包管理工具
 
 安装软件包
+
+### dpkg和apt
+
+apt-get
+
+```bash
+ sudo apt-get remove --purge 和 sudo apt-get purge
+```
+
+apt和**aptitude**https://baike.baidu.com/item/aptitude/6849487
+
+dpkg：https://blog.csdn.net/Kenny_GuanHua/article/details/123842699
+
+
+
+pkg-config
+
+conda和anaconda
+
+snap
+
+pip
+
+yum 
 
 ### snap
 
@@ -202,31 +226,9 @@ spyder
 
 jupyter
 
+## 常用工具
 
-
-## 包管理工具
-
-apt-get
-
-```bash
- sudo apt-get remove --purge 和 sudo apt-get purge
-```
-
-apt和**aptitude**https://baike.baidu.com/item/aptitude/6849487
-
-dpkg：https://blog.csdn.net/Kenny_GuanHua/article/details/123842699
-
-
-
-pkg-config
-
-conda和anaconda
-
-snap
-
-pip
-
-yum 
+curl
 
 ## 软件程序及第三方库安装
 
@@ -246,8 +248,6 @@ pcl
 
 open3d
 
-## docker容器
-
 ## 问题总结
 
 sudo apt-get install 无法获得dpkg前端锁及其解决办法
@@ -255,3 +255,5 @@ sudo apt-get install 无法获得dpkg前端锁及其解决办法
 ubuntu如何安装使用高版本cmake
 
 如何卸载并安装使用高版本eigen
+
+找不到 ls 命令（因为环境变量的原因）
