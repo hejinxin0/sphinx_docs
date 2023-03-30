@@ -169,7 +169,7 @@ pid 和 tid 和 lwp 和 tgid
 | ------------------------------------------------------------ | ------- | -------------------------------------------------------- |
 | `apt update`                                                 |         | 更新可用软件包列表信息                                   |
 | `apt upgrade`                                                |         | 升级软件包                                               |
-| `apt install <package_name>`<br />`apt install <package_1> <package_2> <package_3>` |         | 安装新的软件包                                           |
+| `apt install <package_name>`<br />`apt install <package_1> <package_2> ...` |         | 安装新的软件包                                           |
 | `apt remove <package_name>`                                  |         | 移除软件包                                               |
 | `apt autoremove`                                             |         | 卸载所有自动安装且不再使用的软件包（删除不需要的依赖项） |
 | `apt purge <package_name>`                                   |         |                                                          |
