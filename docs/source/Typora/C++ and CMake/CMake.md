@@ -2,6 +2,18 @@
 
 # CMake
 
+## CMake项目结构
+
+CMakeLists.txt.user
+
+cmake_install.cmake
+
+CMakeCache.txt
+
+Makefile
+
+离线安装cmake（需要export或者source）
+
 ## 常用命令
 
 ### 脚本命令
@@ -121,7 +133,7 @@ cmake [<options>] -S <path-to-source> -B <path-to-build>
 | `cmake -S src`           |           `src`            |   cwd    |
 | `cmake -S src build`     |           `src`            | `build`  |
 | `cmake -S src -B build`  |           `src`            | `build`  |
-| `cmake -B build`         |            cwd             | `build`  |
+| `cmake -B build`         |           `cwd`            | `build`  |
 | `cmake -B build src`     |           `src`            | `build`  |
 | `cmake -B build -S src`  |           `src`            | `build`  |
 

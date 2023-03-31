@@ -289,24 +289,6 @@ jupyter
 
 curl
 
-## 软件程序及第三方库安装
-
-### ros
-
-### cuda
-
-```bash
-nvcc -V | --version # 查看cuda版本
-```
-
-cmake离线
-
-openmp
-
-pcl
-
-open3d
-
 ## 问题总结
 
 sudo apt-get install 无法获得dpkg前端锁及其解决办法
