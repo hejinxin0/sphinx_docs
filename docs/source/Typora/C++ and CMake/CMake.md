@@ -24,6 +24,8 @@ find_package(<PackageName> [version] [EXACT] [QUIET] [MODULE] [REQUIRED]
 find_package(OpenCV 4.0 REQUIRED)
 ```
 
+find_package的规则在哪提供，例如find_package(OpenCV)、find_package(Eigen)
+
 #### include
 
 #### list
