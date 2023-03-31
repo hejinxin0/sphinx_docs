@@ -16,6 +16,8 @@ pkg-config
 
 upgrade命令 
 
+~文件夹代表什么？/home/hejinxin?
+
 ## Linux系统目录结构
 
 重新用Visio画一个结构的图，https://www.runoob.com/linux/linux-system-contents.html
