@@ -1,8 +1,6 @@
-# Linux与工程化
+# Linux
 
 ps -aux和top命令查看CPU及内存，  /proc文件中查看cpu和内存信息？？
-
-ln软连接，软链接ln命令
 
 压缩和解压
 
@@ -129,20 +127,16 @@ mode参数
 |       1        |  `--x`   |     只执行     |  001   |
 |       0        |  `---`   |       无       |  000   |
 
-### 查找
+### 文件目录操作
 
-| 命令                       | 说明                                                         |
-| -------------------------- | ------------------------------------------------------------ |
-| `find [path] [expression]` | 在指定目录`path`下查找文件和目录                             |
-| `locate`                   | 查找符合条件的文档                                           |
-| `whereis`                  | 该指令只能用于查找二进制文件、源代码文件和man手册页，一般文件的定位需使用`locate`命令 |
-| `which`                    | 在环境变量`$PATH`设置的目录里查找符合条件的文件              |
-
-locate 与 find 不同: find 是去硬盘找，locate 只在 /var/lib/slocate 资料库中找。
-
-locate 的速度比 find 快，它并不是真的查找，而是查数据库
-
-### ls
+- `ls` (list files)：列出目录及文件名
+- `cd` (change directory)：切换目录
+- `pwd`(print work directory)：显示目前的目录
+- `mkdir` (make directory)：创建一个新的目录
+- `rmdir` (remove directory)：删除一个空的目录
+- `cp` (copy file)：复制文件或目录
+- `rm` (remove)：删除文件或目录
+- `mv` (move file)：移动文件与目录，或修改文件与目录的名称
 
 ls文件颜色[CSDN：ls下文件的颜色](https://blog.csdn.net/weixin_30633949/article/details/95197099)
 
@@ -175,6 +169,19 @@ tree
 
 NTFS文件系统
 
+### 查找
+
+| 命令                       | 说明                                                         |
+| -------------------------- | ------------------------------------------------------------ |
+| `find [path] [expression]` | 在指定目录`path`下查找文件和目录                             |
+| `locate`                   | 查找符合条件的文档                                           |
+| `whereis`                  | 该指令只能用于查找二进制文件、源代码文件和man手册页，一般文件的定位需使用`locate`命令 |
+| `which`                    | 在环境变量`$PATH`设置的目录里查找符合条件的文件              |
+
+locate 与 find 不同: find 是去硬盘找，locate 只在 /var/lib/slocate 资料库中找。
+
+locate 的速度比 find 快，它并不是真的查找，而是查数据库
+
 ### 软链接
 
 为某一个文件在另外一个位置建立一个同步的链接
@@ -186,9 +193,9 @@ NTFS文件系统
  ln -s [源文件或目录] [目标文件或目录]
 ```
 
+### 压缩与解压
+
 ## 文字编辑
-
-
 
 ## 系统管理
 
@@ -197,8 +204,6 @@ NTFS文件系统
 安装软件包
 
 ### dpkg和apt
-
-
 
 ```
   apt [options] [command] [package ...]
@@ -230,24 +235,6 @@ dpkg：https://blog.csdn.net/Kenny_GuanHua/article/details/123842699
 
 pkg-config
 
-conda和anaconda
-
-snap
-
-pip
-
-yum 
-
-
-
-### snap
-
-```bash
-snap list
-sudo snap install cloudcompare
-sudo snap remove cloudcompare
-```
-
 ### pip和pip3
 
 pip包或者apt包安装超时的问题，--default-timeout=100
@@ -270,6 +257,20 @@ pip uninstall
 ```
 
 requirements.txt文件。pip生成requirements.txt文件的命令？？
+
+### yum
+
+### conda和anaconda
+
+### snap
+
+```bash
+snap list
+sudo snap install cloudcompare
+sudo snap remove cloudcompare
+```
+
+
 
 ## shell脚本
 
