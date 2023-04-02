@@ -48,11 +48,15 @@ find_package的规则在哪提供，例如find_package(OpenCV)、find_package(Ei
 
 ### 链接库
 
+链接库一般需要include头文件，然后link
+
 #### add_library
 
 #### link_directories
 
 #### target_link_libraries
+
+#### include_directories和target_include_directories
 
 **add_library、link_libraries、`target_link_libraries`三者的区别？？？？？？以及include_directories、link_directories的功能**
 
@@ -94,6 +98,8 @@ set(OpenCV_DIR C:/opencv-4.5.2/build/install)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE "Release")
 find_package(OpenCV 4.0 REQUIRED)
+
+##太简单了，没有add_library和add_subdirectory的过程！！！！！！！！！！！！
 add_executable(${PROJECT_NAME} calibration.cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 ```
