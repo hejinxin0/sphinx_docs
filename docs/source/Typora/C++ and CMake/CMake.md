@@ -22,7 +22,7 @@ Makefile
 
 ```cmake
 # 项目所需的最低 cmake 版本
-cmake_minimum_required(VERSION <min> [...<policy_max>] [FATAL_ERROR])
+cmake_minimum_required(VERSION <min>[...<policy_max>] [FATAL_ERROR])
 cmake_minimum_required(VERSION 3.10)
 ```
 
