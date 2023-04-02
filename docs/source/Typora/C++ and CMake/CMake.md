@@ -16,15 +16,23 @@ Makefile
 
 ## 常用命令
 
-### 脚本命令
+### 版本、编译选项
 
 #### cmake_minimum_required
 
 ```cmake
 # 项目所需的最低 cmake 版本
-cmake_minimum_required(VERSION <min>[...<policy_max>] [FATAL_ERROR])
+cmake_minimum_required(VERSION <min> [...<policy_max>] [FATAL_ERROR])
 cmake_minimum_required(VERSION 3.10)
 ```
+
+### 设置和选项
+
+#### set
+
+#### option
+
+### 包文件
 
 #### find_package
 
@@ -38,15 +46,17 @@ find_package(OpenCV 4.0 REQUIRED)
 
 find_package的规则在哪提供，例如find_package(OpenCV)、find_package(Eigen)
 
-#### include
+### 链接库
 
-#### list
+#### add_library
 
-#### option
+#### link_directories
 
-#### set
+#### target_link_libraries
 
-### 项目命令
+**add_library、link_libraries、`target_link_libraries`三者的区别？？？？？？以及include_directories、link_directories的功能**
+
+### 可执行文件
 
 #### add_executable
 
@@ -55,7 +65,7 @@ find_package的规则在哪提供，例如find_package(OpenCV)、find_package(Ei
 add_executable(<name> [source1] [source2 ...])
 ```
 
-#### add_library
+### 子项目
 
 #### add_subdirectory
 
@@ -66,11 +76,11 @@ add_executable(<name> [source1] [source2 ...])
 add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
 ```
 
+#### include
+
+#### list
+
 #### install
-
-#### target_link_libraries
-
-**add_library、link_libraries、`target_link_libraries`三者的区别？？？？？？以及include_directories、link_directories的功能**
 
 ### 一个简单的CMakeLists.txt文件
 
@@ -100,6 +110,13 @@ https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html
 CMAKE_INSTALL_PREFIX
 INCLUDE_INSTALL_DIR
 CMAKE_MODULE_PATH
+CMAKE_ARCHIVE_OUTPUT_DIRECTORY
+CMAKE_LIBRARY_OUTPUT_DIRECTORY和LIBRARY_OUTPUT_PATH
+CMAKE_RUNTIME_OUTPUT_DIRECTORY
+EXECUTABLE_OUTPUT_PATH
+
+${PROJECT_NAME}
+${PROJECT_SOURCE_DIR}
 ```
 
 ## CMake语言
@@ -126,19 +143,21 @@ cmake [<options>] -S <path-to-source> -B <path-to-build>
 
 以上命令可以混用，`-S`或`-B`指定的路径总是分别为源文件目录或构建目录，如果只给出其中一种类型的路径，则另一类型的路径为当前工作目录 (cwd) 
 
-| 命令行                   |         源文件目录         | 构建目录 |
-| :----------------------- | :------------------------: | :------: |
-| `cmake build` (existing) | 从`CMakeCache.txt`文件加载 | `build`  |
-| `cmake src`              |           `src`            |   cwd    |
-| `cmake -S src`           |           `src`            |   cwd    |
-| `cmake -S src build`     |           `src`            | `build`  |
-| `cmake -S src -B build`  |           `src`            | `build`  |
-| `cmake -B build`         |           `cwd`            | `build`  |
-| `cmake -B build src`     |           `src`            | `build`  |
-| `cmake -B build -S src`  |           `src`            | `build`  |
+| 命令行                          |         源文件目录         | 构建目录 |
+| :------------------------------ | :------------------------: | :------: |
+| `cmake build` (existing)        | 从`CMakeCache.txt`文件加载 | `build`  |
+| `cmake src`<br />`cmake -S src` |           `src`            |  `cwd`   |
+|                                 |           `src`            |   cwd    |
+| `cmake -S src build`            |           `src`            | `build`  |
+| `cmake -S src -B build`         |           `src`            | `build`  |
+| `cmake -B build`                |           `cwd`            | `build`  |
+| `cmake -B build src`            |           `src`            | `build`  |
+| `cmake -B build -S src`         |           `src`            | `build`  |
 
 ## 常见问题
 
 未定义的引用
 
 CMake中没有添加相应的第三方库
+
+target_link相应的lib后需要include相应的头文件路径吗
