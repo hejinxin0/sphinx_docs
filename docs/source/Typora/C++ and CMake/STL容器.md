@@ -160,6 +160,14 @@ pair.swap
 
 ## string
 
+参数：
+
+```C++
+string::npos
+```
+
+
+
 ### 初始化
 
 ## 迭代器
