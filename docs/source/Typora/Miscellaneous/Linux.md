@@ -40,6 +40,10 @@ apt-get 与 apt的区别
 **/etc/profile**
 **~/.bashrc**
 
+**/etc/ld.so.conf**和**/sbin/ldconfig -v**是什么
+
+
+
 /proc文件中查看cpu和内存信息？？
 
 设置环境变量命令：
