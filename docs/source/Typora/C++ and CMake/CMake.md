@@ -26,6 +26,8 @@ cmake_minimum_required(VERSION <min>[...<policy_max>] [FATAL_ERROR])
 cmake_minimum_required(VERSION 3.10)
 ```
 
+设置release模式和debug模式
+
 ### 设置和选项
 
 #### set
