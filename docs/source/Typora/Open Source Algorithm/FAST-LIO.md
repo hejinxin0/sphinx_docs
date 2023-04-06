@@ -234,6 +234,9 @@ ikd-Tree是一棵二叉搜索树
 
 ## 参考资源
 
+ [FAST-LIO A Fast, Robust LiDAR-inertial Odometry Package by Tightly-Coupled Iterated Kalman Filter.pdf](papers\fast-lio\FAST-LIO A Fast, Robust LiDAR-inertial Odometry Package by Tightly-Coupled Iterated Kalman Filter.pdf) 
+
 https://github.com/hku-mars/FAST_LIO
 
 https://zhuanlan.zhihu.com/p/471876531
+
