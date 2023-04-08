@@ -42,6 +42,8 @@ apt-get 与 apt的区别
 
 **/etc/ld.so.conf**和**/sbin/ldconfig -v**是什么
 
+**/etc/passwd**
+
 
 
 /proc文件中查看cpu和内存信息？？
@@ -81,6 +83,16 @@ pid 和 tid 和 lwp 和 tgid
 ### 磁盘管理
 
 ## 用户与用户组管理
+
+
+
+```bash
+su
+su -
+adduser
+useradd
+userdel
+```
 
 
 
@@ -292,7 +304,7 @@ jupyter
 
 ## 常用工具
 
-curl
+### curl
 
 ## 问题总结
 
