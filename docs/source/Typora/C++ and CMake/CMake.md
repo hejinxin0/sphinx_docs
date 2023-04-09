@@ -14,6 +14,8 @@ Makefile
 
 离线安装cmake（需要export或者source）
 
+cmake默认安装目录
+
 ## 常用命令
 
 ### 版本、编译选项

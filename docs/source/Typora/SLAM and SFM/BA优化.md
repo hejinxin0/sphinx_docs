@@ -11,7 +11,7 @@
 ### Ceres
 
 ```C++
- ceres::Problem 
+ceres::Problem 
 ceres::Solver::Options
 ceres::Solver::Summary
 ceres::CostFunction

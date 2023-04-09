@@ -72,6 +72,8 @@ unset HTTPS_PROXY
 
 切换源，中科大清华的源
 
+#### source
+
 ### CPU、内存和程序
 
 进程与线程的区别、内存、CPU
@@ -105,6 +107,8 @@ https://www.runoob.com/linux/linux-file-attr-permission.html
 chmod修改权限命令[Linux chmod 命令 | 菜鸟教程 (runoob.com)](https://www.runoob.com/linux/linux-comm-chmod.html)
 
 只有文件所有者和超级用户可以修改文件或目录的权限
+
+chmod+x 和chmod a+x 区别
 
 ```bash
 chmod [-cfvR] [--help] [--version] mode file...

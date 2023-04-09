@@ -171,3 +171,5 @@ string::npos
 ### 初始化
 
 ## 迭代器
+
+下标、迭代器、auto迭代器、for range；哪个最快？？
