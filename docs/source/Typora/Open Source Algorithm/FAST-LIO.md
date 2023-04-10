@@ -111,9 +111,9 @@ mapping_avia.launch文件中关于位姿文件的设置，value设为1
 |                          ${\rho_i}$                          |           第 j 个特征点在激光雷达扫描中的采样时间            |
 |                  ${I_i}$、${I_j}$、${I_k}$                   |                                                              |
 |                       ${L_j}$、${L_k}$                       |                                                              |
-| $\boldsymbol{x}$、$\hat {\boldsymbol{x}}$、$$\bar {\boldsymbol{x}}$$ |                状态向量的真值、传播值、更新值                |
+| $\boldsymbol{x}$、$\hat {\boldsymbol{x}}$、$\bar {\boldsymbol{x}}$ |                状态向量的真值、传播值、更新值                |
 |                  $\tilde {\boldsymbol{x}}$                   | 状态向量的真值 $\boldsymbol{x}$ 与估计值 $$\bar {\boldsymbol{x}}$$ 之间的误差 |
-|             $${\hat {\boldsymbol{x}}^\kappa }$$              |                                                              |
+|              ${\hat {\boldsymbol{x}}^\kappa }$               |                                                              |
 | ${\boldsymbol{x}_i}$、${\boldsymbol{x}_j}$、${\boldsymbol{x}_k}$ |                                                              |
 |                                                              |                                                              |
 
