@@ -1,5 +1,5 @@
 myst-parser==1.0.0
-linkify==1.4
+#linkify==1.4
 pydata-sphinx-theme==0.13.1
 sphinx-book-theme==1.0.0
 recommonmark==0.7.1
