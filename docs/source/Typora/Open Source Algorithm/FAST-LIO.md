@@ -147,6 +147,7 @@ mapping_avia.launch文件中关于位姿文件的设置，value设为1
 
 **状态转移方程**
 
+
 $$
 {\boldsymbol{x}_{i + 1}} = \boldsymbol{x}_i \boxplus (tf({\boldsymbol{x}_i},{\text{ }}{\boldsymbol{u}_i},{\text{ }}{\boldsymbol{w}_i}))
 $$
