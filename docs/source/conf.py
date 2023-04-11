@@ -45,7 +45,7 @@ myst_enable_extensions = [
     "replacements",
     "smartquotes",
     "strikethrough",
-    "substitution",
+   #"substitution",
     "tasklist",
 ]
 
@@ -66,7 +66,7 @@ html_css_files = [
 #html_theme = 'sphinx_rtd_theme'
 html_theme = 'sphinx_book_theme'
 #html_theme = 'pydata_sphinx_theme'
-
+#https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest
 html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
@@ -84,13 +84,29 @@ html_theme_options = {
     # 主侧边栏
     "navigation_depth": 2,
     "show_nav_level": 1, 
-
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
+    "repository_branch": "master",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "deepnote_url": "https://deepnote.com/",
+        "notebook_interface": "jupyterlab",
+        "thebe": True,
+        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+    },
+    "use_edit_page_button": True,
+    "use_source_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+    "use_sidenotes": True,
     # 辅助侧边栏
     "show_toc_level": 2,
     #"use_edit_page_button": False,
    
    # 代码块主题样式
-   "pygment_light_style": "default",
-   "pygment_dark_style": "default"
+    "pygment_light_style": "default",
+    "pygment_dark_style": "default"
 }
 
