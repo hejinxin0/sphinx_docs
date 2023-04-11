@@ -1,10 +1,9 @@
 myst-parser==1.0.0
 linkify-it-py
-pydata-sphinx-theme==0.13.1
-sphinx-book-theme==1.0.0
 recommonmark==0.7.1
 sphinx
 sphinx-autobuild==2021.3.14
+pydata-sphinx-theme==0.13.1
 sphinx-book-theme==1.0.0
 sphinx-markdown-tables==0.0.17
 sphinx-rtd-theme==1.2.0
