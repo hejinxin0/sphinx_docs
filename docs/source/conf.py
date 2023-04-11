@@ -28,7 +28,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.graphviz',
     #'sphinx_copybutton',
-    'sphinx_design',
+    #'sphinx_design',
 ]
 #mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
