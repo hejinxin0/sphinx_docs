@@ -27,7 +27,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.graphviz',
-    'sphinx_copybutton',
+    #'sphinx_copybutton',
     'sphinx_design',
 ]
 #mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
@@ -45,7 +45,7 @@ myst_enable_extensions = [
     "replacements",
     "smartquotes",
     "strikethrough",
-   #"substitution",
+    "substitution",
     "tasklist",
 ]
 
