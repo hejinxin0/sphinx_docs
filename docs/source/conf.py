@@ -14,12 +14,23 @@ release = 'v1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-
+# https://github.com/executablebooks/markdown-it-py/blob/master/docs/conf.py
+# https://github.com/executablebooks/mdit-py-plugins/blob/master/docs/conf.py
 extensions = [
    # 'recommonmark',
    # 'sphinx_markdown_tables',
     'myst_parser',
+    'sphinx.ext.todo',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.graphviz',
+    'sphinx_copybutton',
+    'sphinx_design',
 ]
+#mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 myst_enable_extensions = [
     "amsmath",
@@ -37,15 +48,6 @@ myst_enable_extensions = [
     "substitution",
     "tasklist",
 ]
-
-extensions.append('sphinx.ext.todo')
-extensions.append('sphinx.ext.autodoc')
-extensions.append('sphinx.ext.autosummary')
-extensions.append('sphinx.ext.intersphinx')
-extensions.append('sphinx.ext.mathjax')
-extensions.append('sphinx.ext.viewcode')
-extensions.append('sphinx.ext.graphviz')
-#mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -70,7 +72,7 @@ html_theme_options = {
     # "navbar_start": ["navbar-logo"],
     # "navbar_center": ["navbar-nav"],
     # "navbar_end": ["navbar-icon-links", "navbar-icon-links"],
-    #"navbar_persistent": ["search-field"],
+    # "navbar_persistent": ["search-field"],
     "icon_links": [
     {
         "name": "GitHub",
