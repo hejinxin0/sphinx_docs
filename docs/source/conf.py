@@ -62,7 +62,7 @@ html_css_files = [
 ]
 '''
 #html_theme = 'sphinx_rtd_theme'
-html_theme = 'sphinx-book-theme'
+html_theme = 'sphinx_book_theme'
 #html_theme = 'pydata_sphinx_theme'
 
 html_theme_options = {
