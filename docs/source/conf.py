@@ -74,6 +74,7 @@ html_theme_options = {
     # "navbar_center": ["navbar-nav"],
     # "navbar_end": ["navbar-icon-links", "navbar-icon-links"],
     # "navbar_persistent": ["search-field"],
+    '''
     "icon_links": [
     {
         "name": "GitHub",
@@ -81,6 +82,7 @@ html_theme_options = {
         "icon": "fa-brands fa-square-github",
         "type": "fontawesome",
     },],
+    '''
     
     # 主侧边栏
     "navigation_depth": 2,
@@ -88,6 +90,14 @@ html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/hejinxin0/sphinx_docs.git",
     "repository_branch": "master",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "deepnote_url": "https://deepnote.com/",
+        "notebook_interface": "jupyterlab",
+        "thebe": True,
+        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+    },
     "use_edit_page_button": True,
     "use_source_button": True,
     "use_issues_button": True,
