@@ -113,3 +113,16 @@ html_theme_options = {
     "pygment_dark_style": "default"
 }
 
+html_sidebars = {
+    "reference/blog/*": [
+        "navbar-logo.html",
+        "search-field.html",
+        "postcard.html",
+        "recentposts.html",
+        "tagcloud.html",
+        "categories.html",
+        "archives.html",
+        "sbt-sidebar-nav.html",
+    ]
+}
+
