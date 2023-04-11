@@ -67,6 +67,7 @@ html_css_files = [
 html_theme = 'sphinx_book_theme'
 #html_theme = 'pydata_sphinx_theme'
 #https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest
+#https://github.com/executablebooks/sphinx-book-theme/blob/master/docs/conf.py
 html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
@@ -85,16 +86,8 @@ html_theme_options = {
     "navigation_depth": 2,
     "show_nav_level": 1, 
     "path_to_docs": "docs",
-    "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
+    "repository_url": "https://github.com/hejinxin0/sphinx_docs.git",
     "repository_branch": "master",
-    "launch_buttons": {
-        "binderhub_url": "https://mybinder.org",
-        "colab_url": "https://colab.research.google.com/",
-        "deepnote_url": "https://deepnote.com/",
-        "notebook_interface": "jupyterlab",
-        "thebe": True,
-        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
-    },
     "use_edit_page_button": True,
     "use_source_button": True,
     "use_issues_button": True,
