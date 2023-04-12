@@ -74,7 +74,6 @@ html_theme_options = {
     # "navbar_center": ["navbar-nav"],
     # "navbar_end": ["navbar-icon-links"],
     # "navbar_persistent": ["search-field"],
-
      "icon_links": [
     {
         "name": "GitHub",
@@ -82,14 +81,13 @@ html_theme_options = {
         "icon": "fa-brands fa-square-github",
         "type": "fontawesome",
     },], 
-
     
-"""    "use_edit_page_button": False,
+    "use_edit_page_button": False,
     "use_source_button": False,
     "use_issues_button": False,
     "use_repository_button": False,
     "use_download_button": False,
-    "use_sidenotes": False, """
+    "use_sidenotes": False, 
 
     # 主侧边栏
     "navigation_depth": 2,
