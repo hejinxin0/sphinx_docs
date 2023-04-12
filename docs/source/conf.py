@@ -106,13 +106,14 @@ html_theme_options = {
 
     # 辅助侧边栏
     "show_toc_level": 2,
+    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
    
    # 代码块主题样式
     "pygment_light_style": "default",
     "pygment_dark_style": "default"
 }
 
-""" html_sidebars = {
+html_sidebars = {
     "reference/blog/*": [
         "navbar-logo.html",
         "search-field.html",
@@ -123,5 +124,5 @@ html_theme_options = {
         "archives.html",
         "sbt-sidebar-nav.html",
     ]
-} """
+}
 
