@@ -98,11 +98,11 @@ html_theme_options = {
     "repository_url": "https://github.com/hejinxin0/sphinx_docs.git",
     "repository_branch": "master",
     "launch_buttons": {
-        "binderhub_url": "https://mybinder.org",
+       # "binderhub_url": "https://mybinder.org",
        # "colab_url": "https://colab.research.google.com/",
-        "deepnote_url": "https://deepnote.com/",
-        "notebook_interface": "jupyterlab",
-        "thebe": True,
+        #"deepnote_url": "https://deepnote.com/",
+       # "notebook_interface": "jupyterlab",
+       # "thebe": True,
         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
 
