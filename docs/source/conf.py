@@ -72,7 +72,7 @@ html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
     # "navbar_center": ["navbar-nav"],
-    # "navbar_end": ["navbar-icon-links"],
+     "navbar_end": ["navbar-icon-links"],
     # "navbar_persistent": ["search-field"],
 
     "icon_links": [
