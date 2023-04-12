@@ -106,7 +106,7 @@ html_theme_options = {
 
     # 辅助侧边栏
     "show_toc_level": 2,
-    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
+    "secondary_sidebar_items": ["edit-this-page", "sourcelink"],
    
    # 代码块主题样式
     "pygment_light_style": "default",
