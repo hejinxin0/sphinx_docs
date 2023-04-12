@@ -84,6 +84,13 @@ html_theme_options = {
     },],
     '''
     
+    "use_edit_page_button": True,
+    #"use_source_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+    "use_sidenotes": True,
+
     # 主侧边栏
     "navigation_depth": 2,
     "show_nav_level": 1, 
@@ -98,22 +105,16 @@ html_theme_options = {
         "thebe": True,
         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
-    "use_edit_page_button": True,
-    "use_source_button": True,
-    "use_issues_button": True,
-    "use_repository_button": True,
-    "use_download_button": True,
-    "use_sidenotes": True,
+
     # 辅助侧边栏
     "show_toc_level": 2,
-    #"use_edit_page_button": False,
    
    # 代码块主题样式
     "pygment_light_style": "default",
     "pygment_dark_style": "default"
 }
 
-html_sidebars = {
+""" html_sidebars = {
     "reference/blog/*": [
         "navbar-logo.html",
         "search-field.html",
@@ -124,5 +125,5 @@ html_sidebars = {
         "archives.html",
         "sbt-sidebar-nav.html",
     ]
-}
+} """
 
