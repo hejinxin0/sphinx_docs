@@ -88,7 +88,7 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True, 
-
+    "home_page_in_toc": True,
     # 主侧边栏
     "navigation_depth": 2,
     "show_nav_level": 1, 
@@ -113,7 +113,7 @@ html_theme_options = {
     "pygment_dark_style": "default"
 }
 
-html_sidebars = {
+""" html_sidebars = {
     "**": [
         "navbar-logo.html",
         "search-field.html",
@@ -123,6 +123,6 @@ html_sidebars = {
         "categories.html",
         "archives.html",
         "sbt-sidebar-nav.html",
-    ]
+    ] """
 }
 
