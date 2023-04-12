@@ -114,7 +114,7 @@ html_theme_options = {
 }
 
 html_sidebars = {
-    "reference/blog/*": [
+    "**": [
         "navbar-logo.html",
         "search-field.html",
         "postcard.html",
