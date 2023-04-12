@@ -123,6 +123,6 @@ html_theme_options = {
         "categories.html",
         "archives.html",
         "sbt-sidebar-nav.html",
-    ] """
-}
+    ]
+} """
 
