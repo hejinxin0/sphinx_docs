@@ -92,7 +92,7 @@ html_theme_options = {
     # 主侧边栏
     "navigation_depth": 2,
     "show_nav_level": 1, 
-    "path_to_docs": "docs",
+    "path_to_docs": "docs/source",
     "repository_url": "https://github.com/hejinxin0/sphinx_docs.git",
     "repository_branch": "master",
     "launch_buttons": {
