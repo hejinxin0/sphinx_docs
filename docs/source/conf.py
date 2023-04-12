@@ -84,12 +84,12 @@ html_theme_options = {
     },], 
 
     
-   # "use_edit_page_button": True,
-    #"use_source_button": True,
-    #"use_issues_button": True,
-    #"use_repository_button": True,
-    #"use_download_button": True,
-    #"use_sidenotes": True,
+   "use_edit_page_button": False,
+    "use_source_button": False,
+    "use_issues_button": False,
+    "use_repository_button": False,
+    "use_download_button": False,
+    "use_sidenotes": False,
 
     # 主侧边栏
     "navigation_depth": 2,
