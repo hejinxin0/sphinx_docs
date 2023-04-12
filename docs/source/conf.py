@@ -72,9 +72,9 @@ html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
     # "navbar_center": ["navbar-nav"],
-    # "navbar_end": ["navbar-icon-links", "navbar-icon-links"],
+    # "navbar_end": ["navbar-icon-links"],
     # "navbar_persistent": ["search-field"],
-    '''
+
     "icon_links": [
     {
         "name": "GitHub",
@@ -82,7 +82,7 @@ html_theme_options = {
         "icon": "fa-brands fa-square-github",
         "type": "fontawesome",
     },],
-    '''
+
     
     "use_edit_page_button": True,
     "use_source_button": True,
