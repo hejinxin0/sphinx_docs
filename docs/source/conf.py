@@ -70,9 +70,9 @@ html_theme = 'sphinx_book_theme'
 #https://github.com/executablebooks/sphinx-book-theme/blob/master/docs/conf.py
 html_theme_options = {
     # 导航栏
-    # "navbar_start": ["navbar-logo"],
-    # "navbar_center": ["navbar-nav"],
-    # "navbar_end": ["navbar-icon-links"],
+     "navbar_start": ["navbar-logo"],
+     "navbar_center": ["navbar-nav"],
+     "navbar_end": ["navbar-icon-links"],
     # "navbar_persistent": ["search-field"],
 
 """     "icon_links": [
@@ -100,10 +100,10 @@ html_theme_options = {
     "launch_buttons": {
        # "binderhub_url": "https://mybinder.org",
        # "colab_url": "https://colab.research.google.com/",
-        #"deepnote_url": "https://deepnote.com/",
+       # "deepnote_url": "https://deepnote.com/",
        # "notebook_interface": "jupyterlab",
        # "thebe": True,
-        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+       # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
 
     # 辅助侧边栏
