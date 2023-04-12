@@ -72,16 +72,16 @@ html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
     # "navbar_center": ["navbar-nav"],
-     "navbar_end": ["navbar-icon-links"],
+    # "navbar_end": ["navbar-icon-links"],
     # "navbar_persistent": ["search-field"],
 
-    "icon_links": [
+"""     "icon_links": [
     {
         "name": "GitHub",
         "url": "https://github.com/hejinxin0/sphinx_docs.git",
         "icon": "fa-brands fa-square-github",
         "type": "fontawesome",
-    },],
+    },], """
 
     
     "use_edit_page_button": True,
@@ -107,6 +107,7 @@ html_theme_options = {
     },
 
     # 辅助侧边栏
+    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
     "show_toc_level": 2,
    
    # 代码块主题样式
