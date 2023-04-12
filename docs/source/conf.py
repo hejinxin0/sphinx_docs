@@ -85,8 +85,8 @@ html_theme_options = {
     '''
     
     "use_edit_page_button": True,
-    #"use_source_button": True,
-    "use_issues_button": True,
+    "use_source_button": True,
+    #"use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True,
@@ -99,7 +99,7 @@ html_theme_options = {
     "repository_branch": "master",
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
-        "colab_url": "https://colab.research.google.com/",
+       # "colab_url": "https://colab.research.google.com/",
         "deepnote_url": "https://deepnote.com/",
         "notebook_interface": "jupyterlab",
         "thebe": True,
