@@ -112,6 +112,9 @@ html_theme_options = {
     # 辅助侧边栏
     "show_toc_level": 2,
     "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
+
+    # 页脚
+    "footer_start": ["copyright", "sphinx-version", "theme-version"],
    
    # 代码块主题样式
     "pygment_light_style": "default",
