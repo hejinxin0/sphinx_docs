@@ -10,7 +10,7 @@ project = 'Learning summary document'
 copyright = '2023, Hejinxin'
 author = 'Hejinxin'
 release = 'v1'
-
+numfig = True
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
