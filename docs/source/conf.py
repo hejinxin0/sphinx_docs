@@ -121,16 +121,12 @@ html_theme_options = {
     "pygment_dark_style": "default"
 }
 
-""" html_sidebars = {
+html_sidebars = {
     "**": [
-        "navbar-logo.html",
-        "search-field.html",
-        #"postcard.html",
-        "recentposts.html",
-        "tagcloud.html",
-        "categories.html",
-        "archives.html",
-        "sbt-sidebar-nav.html",
+        "navbar-logo",
+        "search-field",
+        "sidebar-nav-bs", 
+        "sidebar-ethical-ads",
     ]
-} """
+} 
 
