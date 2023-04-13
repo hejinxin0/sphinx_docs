@@ -27,6 +27,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.graphviz',
+    'sphinx_search.extension',
     #'sphinx_copybutton',
     #'sphinx_design',
 ]
