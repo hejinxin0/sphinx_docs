@@ -113,20 +113,20 @@ html_theme_options = {
     "show_toc_level": 2,
     "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
 
-    # 页脚
-    "footer_start": ["copyright", "sphinx-version", "theme-version"],
+    # 内容页脚
+    "extra_footer": ["sphinx-version", "theme-version"],
    
    # 代码块主题样式
     "pygment_light_style": "default",
     "pygment_dark_style": "default"
 }
 
-html_sidebars = {
+""" html_sidebars = {
     "**": [
         "navbar-logo",
         "search-field",
         "sidebar-nav-bs", 
         "sidebar-ethical-ads",
     ]
-} 
+}  """
 
