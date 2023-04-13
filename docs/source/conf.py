@@ -114,7 +114,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
 
     # 内容页脚
-    "extra_footer": ["sphinx-version", "theme-version"],
+    #"extra_footer": ["sphinx-version", "theme-version"],
    
    # 代码块主题样式
     "pygment_light_style": "default",
