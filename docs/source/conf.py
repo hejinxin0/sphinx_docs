@@ -66,15 +66,19 @@ html_css_files = [
 #html_theme = 'sphinx_rtd_theme'
 html_theme = 'sphinx_book_theme'
 #html_theme = 'pydata_sphinx_theme'
+
 #https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest
 #https://github.com/executablebooks/sphinx-book-theme/blob/master/docs/conf.py
+
+html_show_sphinx = True
+
 html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
     # "navbar_center": ["navbar-nav"],
     # "navbar_end": ["navbar-icon-links"],
     # "navbar_persistent": ["search-field"],
-     "icon_links": [
+    "icon_links": [
     {
         "name": "GitHub",
         "url": "https://github.com/hejinxin0/sphinx_docs.git",
@@ -89,6 +93,7 @@ html_theme_options = {
     "use_download_button": True,
     "use_sidenotes": True, 
     "home_page_in_toc": True,
+    
     # 主侧边栏
     "navigation_depth": 2,
     "show_nav_level": 1, 
