@@ -91,7 +91,7 @@ html_theme_options = {
     #"use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
-    #"use_sidenotes": True, 
+    "use_sidenotes": True, 
     "home_page_in_toc": True,
     
     # 主侧边栏
