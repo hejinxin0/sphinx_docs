@@ -267,6 +267,7 @@ pip3 install --default-timeout=100 --upgrade myst-parser
 
 ```bash
 pip list
+pip list -V, --version
 pip show package_name
 ```
 

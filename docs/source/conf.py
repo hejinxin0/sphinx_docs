@@ -72,7 +72,6 @@ html_theme = 'sphinx_book_theme'
 #https://github.com/executablebooks/sphinx-book-theme/blob/master/docs/conf.py
 
 html_show_sphinx = True
-
 html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
@@ -87,12 +86,12 @@ html_theme_options = {
         "type": "fontawesome",
     },], 
     
-    "use_edit_page_button": True,
-    "use_source_button": True,
-    "use_issues_button": True,
+    #"use_edit_page_button": True,
+    #"use_source_button": True,
+    #"use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
-    "use_sidenotes": True, 
+    #"use_sidenotes": True, 
     "home_page_in_toc": True,
     
     # 主侧边栏
@@ -109,25 +108,37 @@ html_theme_options = {
        # "thebe": True,
        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
-
+    
     # 辅助侧边栏
     "show_toc_level": 2,
     "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
 
-    # 内容页脚
-    #"extra_footer": ["sphinx-version", "theme-version"],
-   
-   # 代码块主题样式
+    # 页脚
+    "footer_content_items": ["author", "copyright", "sphinx-version", "theme-version"],
+    #"extra_footer": ["last-updated","sphinx-version"],
+    #"footer_content_items": [],
+    #"footer_start": ["author", "copyright"],
+    #"footer_end": ["sphinx-version", "theme-version"],
+
+    #"sidebars": ["navbar-logo", "navbar-icon-links", "search-field",  "sidebar-ethical-ads.html"],
+    # 代码块主题样式
     "pygment_light_style": "default",
-    "pygment_dark_style": "default"
+    "pygment_dark_style": "default",
 }
 
-""" html_sidebars = {
+html_sidebars = {
     "**": [
-        "navbar-logo",
+        "navbar-logo",   
+        "navbar-icon-links",
         "search-field",
-        "sidebar-nav-bs", 
-        "sidebar-ethical-ads",
+       # "postcard.html",
+       # "recentposts.html",
+       # "tagcloud.html",
+       # "categories.html",
+       # "archives.html",
+       "sbt-sidebar-nav",
+       "sidebar-ethical-ads.html",
     ]
-}  """
+}
+
 
