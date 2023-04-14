@@ -71,7 +71,6 @@ html_theme = 'sphinx_book_theme'
 #https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest
 #https://github.com/executablebooks/sphinx-book-theme/blob/master/docs/conf.py
 
-html_show_sphinx = True
 html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
