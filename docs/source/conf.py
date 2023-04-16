@@ -86,7 +86,7 @@ html_theme_options = {
     },], 
     
     #"use_edit_page_button": True,
-    #"use_source_button": True,
+    "use_source_button": True,
     #"use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
@@ -110,7 +110,7 @@ html_theme_options = {
     
     # 辅助侧边栏
     "show_toc_level": 2,
-    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
+   # "secondary_sidebar_items": ["page-toc", "edit-this-page"],
 
     # 页脚
     "footer_content_items": ["author", "copyright", "sphinx-version", "theme-version"],
@@ -136,8 +136,14 @@ html_sidebars = {
        # "categories.html",
        # "archives.html",
        "sbt-sidebar-nav",
+       "sourcelink",
        "sidebar-ethical-ads.html",
     ]
 }
+""" secondary_sidebar_items = {
+    "**": ["page-toc", "edit-this-page", "sidebar-ethical-ads.html",
+    ]
+} """
+
 
 
