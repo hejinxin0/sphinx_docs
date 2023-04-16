@@ -11,6 +11,7 @@ copyright = '2023, Hejinxin'
 author = 'Hejinxin'
 release = 'v1'
 numfig = True
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -65,12 +66,12 @@ html_css_files = [
 ]
 '''
 #html_theme = 'sphinx_rtd_theme'
-html_theme = 'sphinx_book_theme'
 #html_theme = 'pydata_sphinx_theme'
+html_theme = 'sphinx_book_theme'
 
 #https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest
 #https://github.com/executablebooks/sphinx-book-theme/blob/master/docs/conf.py
-
+html_copy_source = True
 html_theme_options = {
     # 导航栏
     # "navbar_start": ["navbar-logo"],
@@ -85,20 +86,22 @@ html_theme_options = {
         "type": "fontawesome",
     },], 
     
-    #"use_edit_page_button": True,
+    "use_edit_page_button": True,
     "use_source_button": True,
-    #"use_issues_button": True,
+    "use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True, 
     "home_page_in_toc": True,
-    
+    #"article_header_start": [],
+    #"article_header_end": ["theme-switcher.html","toggle-secondary-sidebar.html"],
+
     # 主侧边栏
     "navigation_depth": 2,
     "show_nav_level": 1, 
-    "path_to_docs": "docs/source",
-    "repository_url": "https://github.com/hejinxin0/sphinx_docs.git",
+    "repository_url": "https://github.com/hejinxin0/sphinx_docs",
     "repository_branch": "master",
+    "path_to_docs": "docs/source",
     "launch_buttons": {
        # "binderhub_url": "https://mybinder.org",
        # "colab_url": "https://colab.research.google.com/",
@@ -107,23 +110,23 @@ html_theme_options = {
        # "thebe": True,
        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
-    
+    #"primary_sidebar_end": ["indices.html", "sidebar-ethical-ads.html"],
+
     # 辅助侧边栏
     "show_toc_level": 2,
-   # "secondary_sidebar_items": ["page-toc", "edit-this-page"],
-
+    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
+    
     # 页脚
     "footer_content_items": ["author", "copyright", "sphinx-version", "theme-version"],
     #"extra_footer": ["last-updated","sphinx-version"],
-    #"footer_content_items": [],
+    #"footer_content_end": ["theme-version"],
     #"footer_start": ["author", "copyright"],
     #"footer_end": ["sphinx-version", "theme-version"],
 
-    #"sidebars": ["navbar-logo", "navbar-icon-links", "search-field",  "sidebar-ethical-ads.html"],
     # 代码块主题样式
     "pygment_light_style": "default",
-    "pygment_dark_style": "default",
-}
+    "pygment_dark_style": "default",  
+} 
 
 html_sidebars = {
     "**": [
@@ -137,13 +140,12 @@ html_sidebars = {
        # "archives.html",
        "sbt-sidebar-nav",
        "sourcelink",
+       "edit-this-page",
        "sidebar-ethical-ads.html",
     ]
 }
-""" secondary_sidebar_items = {
-    "**": ["page-toc", "edit-this-page", "sidebar-ethical-ads.html",
-    ]
-} """
+
+
 
 
 
