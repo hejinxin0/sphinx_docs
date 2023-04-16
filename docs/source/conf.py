@@ -114,7 +114,7 @@ html_theme_options = {
 
     # 辅助侧边栏
     "show_toc_level": 2,
-    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
+    #"secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
     
     # 页脚
     "footer_content_items": ["author", "copyright", "sphinx-version", "theme-version"],
