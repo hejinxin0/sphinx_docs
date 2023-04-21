@@ -20,7 +20,7 @@ upgrade命令
 
 重新用Visio画一个结构的图，https://www.runoob.com/linux/linux-system-contents.html
 
-![](assets/Linux系统目录结构-16779164353222.png)
+![](assets/Linux系统目录结构.png)
 
 ## 系统设置与管理
 
@@ -216,6 +216,8 @@ locate 的速度比 find 快，它并不是真的查找，而是查数据库
 ### 压缩与解压
 
 ## 文字编辑
+
+vim的用法，查找等用法
 
 ## 系统管理
 

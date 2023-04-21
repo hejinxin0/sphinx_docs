@@ -57,7 +57,11 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
 
 ### 访问元素
 
-### 矩阵分块
+### 矩阵块操作
+
+### 矩阵运算
+
+加减乘除、数乘、向量和标量的加减
 
 #### 
 
