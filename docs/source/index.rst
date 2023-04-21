@@ -14,6 +14,7 @@ Learning summary document
    Typora/SLAM and SFM/contents
    Typora/Open Source Algorithm/contents
    Typora/Miscellaneous/contents
+   Typora/ThirdParty/contents
 
 
 Indices and tables

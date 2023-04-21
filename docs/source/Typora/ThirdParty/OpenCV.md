@@ -1,6 +1,6 @@
-# 第三方库
+# OpenCV
 
-## OpenCV
+
 
 Opencv命令行参数cv::CommandLineParser：
 
@@ -16,7 +16,7 @@ https://docs.opencv.org/4.5.2/d0/d2e/classcv_1_1CommandLineParser.html
 
 图片转换cvtColor、图片的通道数、BGR和RGB、RGBA，灰度图可以三通道吗
 
-### 安装配置与卸载
+## 安装配置与卸载
 
 默认安装目录
 
@@ -51,17 +51,19 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
 
 [CSDN：wsl+opencv——清除旧版并安装新版，实测有效](https://blog.csdn.net/m0_51984869/article/details/127538531)
 
-### cv::Mat
+## cv::Mat
 
-#### 初始化
+### 初始化
 
-#### 访问元素
+### 访问元素
+
+### 矩阵分块
 
 #### 
 
-### 浅拷贝与深拷贝
+## 浅拷贝与深拷贝
 
-### 图片读取、显示、调整大小resize、与转换
+## 图片读取、显示、调整大小resize、与转换
 
 cv::imread
 
@@ -77,21 +79,4 @@ cv::cvtColor
 
 通道处理BRG2RGB，BGRA等等
 
-### 图片滤波
-
-## Eigen
-
-默认安装目录
-
-如何查看Eigen版本
-
-## openmp
-
-## g2o和ceres
-
-## pcl
-
-## open3d
-
-## octomap
-
+## 图片滤波
