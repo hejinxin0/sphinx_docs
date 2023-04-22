@@ -29,6 +29,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.graphviz',
     'sphinx_search.extension',
+    "sphinx_thebe",
     #'sphinx_copybutton',
     #'sphinx_design',
 ]
@@ -107,7 +108,7 @@ html_theme_options = {
        # "colab_url": "https://colab.research.google.com/",
        # "deepnote_url": "https://deepnote.com/",
        # "notebook_interface": "jupyterlab",
-       # "thebe": True,
+        "thebe": True,
        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
     #"primary_sidebar_end": ["indices.html", "sidebar-ethical-ads.html"],
