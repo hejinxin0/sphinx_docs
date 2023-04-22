@@ -107,9 +107,9 @@ html_theme_options = {
        # "binderhub_url": "https://mybinder.org",
        # "colab_url": "https://colab.research.google.com/",
        # "deepnote_url": "https://deepnote.com/",
-       # "notebook_interface": "jupyterlab",
+        "notebook_interface": "jupyterlab",
         "thebe": True,
-       # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+        "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
     #"primary_sidebar_end": ["indices.html", "sidebar-ethical-ads.html"],
 
