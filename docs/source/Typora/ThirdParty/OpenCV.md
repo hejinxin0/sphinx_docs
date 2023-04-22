@@ -10,7 +10,11 @@ https://docs.opencv.org/4.5.2/d0/d2e/classcv_1_1CommandLineParser.html
 
 
 
-注意cv::Mat::Size(cols,rows)的格式，列数在前，行数在后https://blog.csdn.net/weixin_47156401/article/details/120023261
+```{note}
+`cv::Mat::Size(cols,rows)`的格式，列数在前，行数在后
+```
+
+https://blog.csdn.net/weixin_47156401/article/details/120023261
 
 
 
@@ -18,9 +22,9 @@ https://docs.opencv.org/4.5.2/d0/d2e/classcv_1_1CommandLineParser.html
 
 ## 安装配置与卸载
 
-默认安装目录
+### 安装和查看版本
 
-- **安装和查看版本**
+默认安装目录：
 
 [CSDN：Ubuntu18.04安装Opencv4.5.2](https://blog.csdn.net/qq_17769915/article/details/124087687)
 
@@ -29,13 +33,9 @@ pkg-config  --libs opencv  # 查看libs库
 pkg-config  --modversion  opencv   # 查看版本号
 ```
 
-- **安装过程中的问题**
+### 安装过程中的问题
 
-（1）
-
-![](assets/OpenCV安装报错.png)
-
-（2）构建`libopencv_imgcodecs.so`报错：没有规则可制作目标“`/usr/lib/libjpeg.so`”
+构建`libopencv_imgcodecs.so`报错：没有规则可制作目标“`/usr/lib/libjpeg.so`”
 
 原因：缺少或者未在指定的路径找到 `libjpeg.so`
 
@@ -45,9 +45,9 @@ pkg-config  --modversion  opencv   # 查看版本号
 sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
 ```
 
-![image-20230331214247373](assets/image-20230331214247373.png)
+![](assets/OpenCV安装报错.png)
 
-- **卸载**
+### 卸载
 
 [CSDN：wsl+opencv——清除旧版并安装新版，实测有效](https://blog.csdn.net/m0_51984869/article/details/127538531)
 
