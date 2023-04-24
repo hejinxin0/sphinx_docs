@@ -102,6 +102,8 @@ userdel
 
 ### 文件属性与权限
 
+**chown**？？？？？？？？？？？
+
 https://www.runoob.com/linux/linux-file-attr-permission.html
 
 chmod修改权限命令[Linux chmod 命令 | 菜鸟教程 (runoob.com)](https://www.runoob.com/linux/linux-comm-chmod.html)
