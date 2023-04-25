@@ -84,3 +84,6 @@ cv::cvtColor
 通道处理BRG2RGB，BGRA等等
 
 ## 图片滤波
+
+高斯滤波和双边滤波的原理
+
