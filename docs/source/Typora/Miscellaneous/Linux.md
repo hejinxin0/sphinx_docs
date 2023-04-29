@@ -86,7 +86,7 @@ pid 和 tid 和 lwp 和 tgid
 
 ## 用户与用户组管理
 
-
+### 创建、切换和删除用户
 
 ```bash
 su
@@ -119,7 +119,7 @@ mode参数
 [ugoa...][[+-=][rwxX]...][,...]
 ```
 
-![img](assets/file-permissions-rwx.jpg)
+<img src="assets/file-permissions-rwx.jpg" alt="img" style="zoom:33%;" />
 
 | who  | 用户类型 |         说明          |
 | :--: | :------: | :-------------------: |
