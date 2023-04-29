@@ -59,6 +59,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
 
 ### 矩阵块操作
 
+colRange
+
+block
+
 ### 矩阵运算
 
 加减乘除、数乘、向量和标量的加减
@@ -82,8 +86,3 @@ cv::cvtColor
 
 
 通道处理BRG2RGB，BGRA等等
-
-## 图片滤波
-
-高斯滤波和双边滤波的原理
-
