@@ -13,6 +13,7 @@ Learning summary document
    Typora/C++ and CMake/contents
    Typora/SLAM and SFM/contents
    Typora/Open Source Algorithm/contents
+   Typora/3D Reconstruction/contents
    Typora/Miscellaneous/contents
    Typora/ThirdParty/contents
 

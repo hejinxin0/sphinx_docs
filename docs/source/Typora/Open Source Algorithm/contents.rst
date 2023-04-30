@@ -6,5 +6,13 @@ Open Source Algorithm
    :maxdepth: 1
    :glob:
 
-   *
+   COLMAP/contents
+   FAST-LIO/contents
+   LOAM-Livox/contents
+   ORB-SLAM2/contents
+   VINS/contents
+
+
+
+   
 
