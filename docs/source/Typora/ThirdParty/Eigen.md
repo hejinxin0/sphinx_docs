@@ -23,3 +23,16 @@ colwise()
 ### 向量与标量之间的四则运算
 
 ## Geometry几何变换模块
+
+### 头文件
+
+```
+#include <Eigen/Geometry>
+```
+
+### 四元数
+
+```
+Eigen::Quaterniond
+```
+
