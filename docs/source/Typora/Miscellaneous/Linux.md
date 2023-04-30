@@ -96,8 +96,6 @@ useradd
 userdel
 ```
 
-
-
 ## 文件系统与目录管理
 
 ### 文件属性与权限
@@ -119,7 +117,12 @@ mode参数
 [ugoa...][[+-=][rwxX]...][,...]
 ```
 
-<img src="assets/file-permissions-rwx.jpg" alt="img" style="zoom:33%;" />
+```{figure} assets/file-permissions-rwx.jpg
+---
+width: 60%
+alt: My figure text
+---
+```
 
 | who  | 用户类型 |         说明          |
 | :--: | :------: | :-------------------: |
