@@ -33,7 +33,9 @@ ssh -T git@github.com
 
 ## 工作区、暂存区和版本库
 
-![img](assets/git-command.jpg)
+
+
+![git-command](assets/git-command.jpg)
 
 [**菜鸟教程：Git 工作区、暂存区和版本库**](https://www.runoob.com/git/git-workspace-index-repo.html)
 

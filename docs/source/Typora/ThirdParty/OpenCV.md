@@ -23,7 +23,7 @@ pkg-config  --modversion  opencv   # 查看版本号
 
 ### 安装过程中的问题
 
-~~~{error}
+~~~{error} 
 构建`libopencv_imgcodecs.so`报错：没有规则可制作目标“`/usr/lib/libjpeg.so`”
 ```{figure} assets/OpenCV安装报错.png
 ```
