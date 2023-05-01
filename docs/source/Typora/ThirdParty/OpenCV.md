@@ -31,7 +31,7 @@ pkg-config  --modversion  opencv   # 查看版本号
 
 - **错误原因：** 缺少或者未在指定的路径找到 `libjpeg.so`
 
-- **解决方法：** `locate`查找`libjpeg.so`位置，如果存在但没有位于指定的路径`/usr/lib/libjpeg.so`，则建立软链接
+- **解决方法：** `locate`查找`libjpeg.so`位置，如果存在但没有位于指定的路径`/usr/lib/libjpeg.so`，例如位于`/usr/lib/x86_64-linux-gnu/libjpeg.so` ，则建立软链接
 
 ```bash
 sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
