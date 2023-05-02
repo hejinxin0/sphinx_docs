@@ -2,6 +2,26 @@
 
 # CMake
 
+## Ubuntu安装CMake
+
+- **apt-get安装CMake**
+
+```bash
+sudo apt-get install cmake
+```
+
+默认安装目录：`/usr/bin/cmake`
+
+- **snap安装新版CMake**
+
+```bash
+sudo snap install cmake --classic
+```
+
+默认安装目录：`/snap/bin/cmake`
+
+- **离线安装cmake（需要export或者source）**
+
 ## CMake项目结构
 
 CMakeLists.txt.user
@@ -11,10 +31,6 @@ cmake_install.cmake
 CMakeCache.txt
 
 Makefile
-
-离线安装cmake（需要export或者source）
-
-cmake默认安装目录
 
 ## 常用命令
 

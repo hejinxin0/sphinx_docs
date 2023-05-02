@@ -341,3 +341,5 @@ ubuntu如何安装使用高版本cmake
 ### 设置中文拼音输入法
 
 [(10条消息) Ubuntu 18.04 配置ibus中文拼音输入法（超简单）_ibus拼音_难搞哦~的博客-CSDN博客](https://blog.csdn.net/wu10188/article/details/86540464)
+
+### 无法定位软件包
