@@ -46,6 +46,8 @@ cmake_minimum_required(VERSION 3.10)
 
 设置release模式和debug模式
 
+设置CXX版本
+
 ### 设置和选项
 
 #### set
@@ -131,6 +133,8 @@ https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html
 ## CMake变量、set设定常用参数
 
 https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html
+
+预定义的变量
 
 ```cmake
 CMAKE_INSTALL_PREFIX
