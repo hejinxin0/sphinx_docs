@@ -37,3 +37,20 @@ CMake Error at CMakeLists.txt:255 (message):
 **错误原因：**NVIDIA GPU架构的问题，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
 
 **解决方法：**在colmap的`CMakeLists.txt:255`处前面添加对`CMAKE_CUDA_ARCHITECTURES`的定义：`set(CMAKE_CUDA_ARCHITECTURES all-major)`
+
+
+
+````{error}
+```bash
+[ 34%] Built target vlfeat
+[ 34%] Building CUDA object src/CMakeFiles/colmap_cuda.dir/mvs/gpu_mat_prng.cu.o
+nvcc fatal   : Unknown option 'fPIC'
+src/CMakeFiles/colmap_cuda.dir/build.make:75: recipe for target 'src/CMakeFiles/colmap_cuda.dir/mvs/gpu_mat_prng.cu.o' failed
+make[2]: *** [src/CMakeFiles/colmap_cuda.dir/mvs/gpu_mat_prng.cu.o] Error 1
+CMakeFiles/Makefile2:633: recipe for target 'src/CMakeFiles/colmap_cuda.dir/all' failed
+make[1]: *** [src/CMakeFiles/colmap_cuda.dir/all] Error 2
+Makefile:135: recipe for target 'all' failed
+make: *** [all] Error 2
+```
+````
+
