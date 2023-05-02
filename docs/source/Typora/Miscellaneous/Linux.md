@@ -40,6 +40,8 @@ apt-get 与 apt的区别
 **/etc/profile**
 **~/.bashrc**
 
+**/etc/apt/sources.list**
+
 **/etc/ld.so.conf**和**/sbin/ldconfig -v**是什么
 
 **/etc/passwd**
@@ -318,12 +320,24 @@ jupyter
 
 ### curl
 
-## 问题总结
 
-sudo apt-get install 无法获得dpkg前端锁及其解决办法
+
+### [gcc (GNU Compiler Collection)](../C++ and CMake/编译器与内存.md#gcc (GNU Compiler Collection))（超链接的路径中含有空格怎么处理？？）
+
+## Ubuntu问题总结
+
+### sudo apt-get install 无法获得dpkg前端锁及其解决办法
 
 ubuntu如何安装使用高版本cmake
 
 如何卸载并安装使用高版本eigen
 
-找不到 ls 命令（因为环境变量的原因）
+### 找不到 ls 命令（因为环境变量的原因）
+
+### 解决VMware中Ubuntu虚拟机无法连接本机wifi的问题
+
+[(10条消息) 解决VMware中Ubuntu虚拟机无法连接本机wifi的问题_安装vm后本机wifi无法使用_老龙QAQ的博客-CSDN博客](https://blog.csdn.net/weixin_52167116/article/details/123098768?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-123098768-blog-94737546.235^v32^pc_relevant_increate_t0_download_v2&spm=1001.2101.3001.4242.1&utm_relevant_index=3)
+
+### 设置中文拼音输入法
+
+[(10条消息) Ubuntu 18.04 配置ibus中文拼音输入法（超简单）_ibus拼音_难搞哦~的博客-CSDN博客](https://blog.csdn.net/wu10188/article/details/86540464)

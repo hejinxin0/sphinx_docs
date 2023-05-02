@@ -37,6 +37,8 @@ Incremental Structure-from-Motion pipeline
 
 5、 一种用于挖掘密集图像集间的冗余视图的高效BA参数化方法
 
+引自[colmap论文阅读笔记 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/610288048)
+
 ### 场景图增强
 
 ### 下一最佳视图的选择
