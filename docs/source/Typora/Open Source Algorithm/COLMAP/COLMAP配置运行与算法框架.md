@@ -54,3 +54,5 @@ make: *** [all] Error 2
 ```
 ````
 
+[https://github.com/colmap/colmap/issues/1753](https://github.com/colmap/colmap/issues/1753)
+
