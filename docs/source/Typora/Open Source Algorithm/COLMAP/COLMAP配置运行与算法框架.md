@@ -32,11 +32,9 @@ CMake Error at CMakeLists.txt:255 (message):
 ```
 ````
 
+**错误原因：** NVIDIA CUDA架构的问题，未设置`CMAKE_CUDA_ARCHITECTURES`参数，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
 
-
-**错误原因：** NVIDIA GPU架构的问题，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
-
-**解决方法：** 在colmap的`CMakeLists.txt:255`处前面添加对`CMAKE_CUDA_ARCHITECTURES`的定义：`set(CMAKE_CUDA_ARCHITECTURES all-major)`，设置为`all-major`还是`native`??
+**解决方法：** 在colmap的`CMakeLists.txt:255`处前面添加对变量`CMAKE_CUDA_ARCHITECTURES`的定义：`set(CMAKE_CUDA_ARCHITECTURES all-major)`，设置为`all-major`还是`native`??
 
 
 
