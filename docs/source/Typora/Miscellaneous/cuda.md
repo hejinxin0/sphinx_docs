@@ -27,3 +27,5 @@ sudo apt-get install cuda
 第二步`apt-key`时需要在`/var`目录下找到相应的`cuda-repo`目录，将`/var/cuda-repo-<version>/7fa2af80.pub`替换为该目录下的`.pub`文件绝对路径
 ```
 
+
+
