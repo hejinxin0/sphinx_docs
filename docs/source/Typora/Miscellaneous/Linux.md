@@ -256,6 +256,10 @@ vim的用法，查找等用法
  sudo apt-get remove --purge 和 sudo apt-get purge
 ```
 
+```{administration} 关于`remove`和`purge`
+关于
+```
+
 apt和**aptitude**https://baike.baidu.com/item/aptitude/6849487
 
 dpkg：https://blog.csdn.net/Kenny_GuanHua/article/details/123842699
