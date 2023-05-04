@@ -12,7 +12,9 @@ Could not find `LZ4`
 ```
 ````
 
-**解决方法：** 安装相应的包 `sudo apt-get install liblz4-dev`
+```{admonition} 解决方法
+安装相应的包 `sudo apt-get install liblz4-dev`
+```
 
 ````{error}
 ```bash
@@ -21,7 +23,9 @@ Cannot specify include directories for imported target "CUDA::curand"
 ```
 ````
 
-**解决方法：** 安装新版CMake `sudo snap install cmake --classic`
+```{admonition} 解决方法
+安装新版CMake `sudo snap install cmake --classic`
+```
 
 ````{error}
 ```bash
@@ -32,11 +36,13 @@ CMake Error at CMakeLists.txt:255 (message):
 ```
 ````
 
-**错误原因：** NVIDIA CUDA架构的问题，未设置`CMAKE_CUDA_ARCHITECTURES`参数，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
+```{admonition} 错误原因
+NVIDIA CUDA架构的问题，未设置`CMAKE_CUDA_ARCHITECTURES`参数，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
+```
 
-**解决方法：** 在colmap的`CMakeLists.txt:255`处前面添加对变量`CMAKE_CUDA_ARCHITECTURES`的定义：`set(CMAKE_CUDA_ARCHITECTURES all-major)`，设置为`all-major`还是`native`??
-
-
+```{admonition} 解决方法
+在colmap的`CMakeLists.txt:255`处前面添加对变量`CMAKE_CUDA_ARCHITECTURES`的定义：`set(CMAKE_CUDA_ARCHITECTURES all-major)`，设置为`all-major`还是`native`??
+```
 
 ````{error}
 ```bash
@@ -52,5 +58,7 @@ make: *** [all] Error 2
 ```
 ````
 
+```{admonition} 解决方法
+换新版cuda？？
 [https://github.com/colmap/colmap/issues/1753](https://github.com/colmap/colmap/issues/1753)
-
+```
