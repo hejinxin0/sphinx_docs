@@ -34,10 +34,12 @@ CMake Error at CMakeLists.txt:255 (message):
   etc.  More information at
   https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html
 ```
+**错误原因**
+NVIDIA CUDA架构的问题，未设置`CMAKE_CUDA_ARCHITECTURES`参数，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
 ````
 
 ```{admonition} 错误原因
-NVIDIA CUDA架构的问题，未设置`CMAKE_CUDA_ARCHITECTURES`参数，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
+
 ```
 
 ```{admonition} 解决方法
