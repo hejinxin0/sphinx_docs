@@ -151,11 +151,11 @@ ${PROJECT_SOURCE_DIR}
 
 ## CMake语言
 
-Directories (CMakeLists.txt),
+Directories: `CMakeLists.txt`
 
-“Scripts (<script>.cmake), and”
+Scripts: `<script>.cmake`
 
-”Modules (<module>.cmake).“
+”Modules: `<module>.cmake`
 
 https://cmake.org/cmake/help/latest/manual/cmake-language.7.html
 
