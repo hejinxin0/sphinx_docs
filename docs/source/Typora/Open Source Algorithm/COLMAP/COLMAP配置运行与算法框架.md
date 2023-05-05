@@ -14,10 +14,6 @@ Could not find `LZ4`
 安装相应的包 `sudo apt-get install liblz4-dev`
 ````
 
-```{admonition} 解决方法
-
-```
-
 ````{error}
 ```bash
 Cannot specify include directories for imported target "CUDA::cudart"

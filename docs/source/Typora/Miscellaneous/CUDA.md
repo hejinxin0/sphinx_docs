@@ -32,7 +32,6 @@ sudo apt-get install cuda
 
 
 ~~~{error}
-
 ```bash
 下列软件包有未满足的依赖关系：
  cuda-libraries-dev-10-1 : 依赖: libcublas-dev (>= 10.1.0.105) 但是它将不会被安装
@@ -40,24 +39,31 @@ sudo apt-get install cuda
  cuda-visual-tools-10-1 : 依赖: libcublas-dev (>= 10.1.0.105) 但是它将不会被安装
 E: 有未能满足的依赖关系。请尝试不指明软件包的名字来运行“apt --fix-broken install”(也可以指定一个解决办法)。
 ```
-~~~
 
-
-
-```{error}
-sudo dpkg -i --force-overwrite /var/cuda-repo-10-1-local-10.1.105-418.39/./libcublas-dev_10.1.0.105-1_amd64.deb
-sudo apt --fix-broken install
-```
-
-
-
-```{error}
+按照上面提示执行`sudo apt --fix-broken install`后遇到以下问题
+```bash
 dpkg: 处理归档 /var/cuda-repo-10-1-local-10.1.105-418.39/./libcublas-dev_10.1.0.105-1_amd64.deb (--unpack)时出错：
  正试图覆盖 /usr/include/cublas_v2.h，它同时被包含于软件包 nvidia-cuda-dev 9.1.85-3ubuntu1
 dpkg-deb: 错误: 粘贴 subprocess was killed by signal (断开的管道)
 在处理时有错误发生：
  /var/cuda-repo-10-1-local-10.1.105-418.39/./libcublas-dev_10.1.0.105-1_amd64.deb
 E: Sub-process /usr/bin/dpkg returned an error code (1)
-
 ```
+**解决方法**：先强制覆盖再执行相应命令
+```bash
+sudo dpkg -i --force-overwrite /var/cuda-repo-10-1-local-10.1.105-418.39/./libcublas-dev_10.1.0.105-1_amd64.deb
+sudo apt --fix-broken install
+```
+~~~
+
+
+
+````{admonition} 安装 cuda 后找不到 nvcc
+```bash
+locate nvcc #查看nvcc是否存在，找到nvcc位置
+vim ~/.bashrc
+export PATH=$PATH:/usr/local/cuda-10.1/bin
+source ~/.bashrc
+```
+````
 
