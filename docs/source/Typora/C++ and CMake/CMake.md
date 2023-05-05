@@ -153,9 +153,9 @@ ${PROJECT_SOURCE_DIR}
 
 Directories (CMakeLists.txt),
 
-Scripts (<script>.cmake), and
+“Scripts (<script>.cmake), and”
 
-Modules (<module>.cmake).
+”Modules (<module>.cmake).“
 
 https://cmake.org/cmake/help/latest/manual/cmake-language.7.html
 
