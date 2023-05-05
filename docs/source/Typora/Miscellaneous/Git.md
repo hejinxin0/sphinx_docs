@@ -143,4 +143,6 @@ git branch --edit-description [<branchname>]
 
 branch和tags
 
+-f强制切换分支？？
+
 ## git log

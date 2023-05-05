@@ -36,6 +36,8 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
 ```
 ````
 
+### CMake配置
+
 ### 卸载
 
 [CSDN：wsl+opencv——清除旧版并安装新版，实测有效](https://blog.csdn.net/m0_51984869/article/details/127538531)

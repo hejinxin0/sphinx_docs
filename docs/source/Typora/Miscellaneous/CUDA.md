@@ -7,7 +7,7 @@
 下载地址：[CUDA Toolkit Archive | NVIDIA Developer](https://developer.nvidia.com/cuda-toolkit-archive)
 
 ```bash
-nvcc -V | --version # 查看cuda版本
+nvcc -V | --version #查看cuda版本
 ```
 
 CMake项目中设置GPU架构：NVIDIA CUDA架构的问题，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
@@ -15,6 +15,8 @@ CMake项目中设置GPU架构：NVIDIA CUDA架构的问题，[CUDA_ARCHITECTURES
 cuDNN是什么？？
 
 ### Ubuntu安装cuda10.1
+
+[CUDA Toolkit 10.1 Original Archive | NVIDIA Developer](https://developer.nvidia.com/cuda-10.1-download-archive-base?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 
 ```bash
 sudo dpkg -i cuda-repo-ubuntu1804-10-1-local-10.1.105-418.39_1.0-1_amd64.deb
@@ -26,8 +28,6 @@ sudo apt-get install cuda
 ```{note}
 第二步`apt-key`时需要在`/var`目录下找到相应的`cuda-repo`目录，将`/var/cuda-repo-<version>/7fa2af80.pub`替换为该目录下的`.pub`文件绝对路径
 ```
-
-
 
 
 
@@ -49,6 +49,7 @@ dpkg-deb: 错误: 粘贴 subprocess was killed by signal (断开的管道)
  /var/cuda-repo-10-1-local-10.1.105-418.39/./libcublas-dev_10.1.0.105-1_amd64.deb
 E: Sub-process /usr/bin/dpkg returned an error code (1)
 ```
+
 **解决方法**：先强制覆盖再执行相应命令
 ```bash
 sudo dpkg -i --force-overwrite /var/cuda-repo-10-1-local-10.1.105-418.39/./libcublas-dev_10.1.0.105-1_amd64.deb
@@ -67,3 +68,20 @@ source ~/.bashrc
 ```
 ````
 
+### Ubuntu安装cuda11.3
+
+[CUDA Toolkit 11.3 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=18.04&target_type=deb_local)
+
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda-repo-ubuntu1804-11-3-local_11.3.0-465.19.01-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-3-local_11.3.0-465.19.01-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-3-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+```
+
+
+
+### 卸载cuda

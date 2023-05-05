@@ -36,13 +36,7 @@ NVIDIA CUDA架构的问题，未设置`CMAKE_CUDA_ARCHITECTURES`参数，[CUDA_A
 在colmap的`CMakeLists.txt:255`处前面添加对变量`CMAKE_CUDA_ARCHITECTURES`的定义：`set(CMAKE_CUDA_ARCHITECTURES all-major)`，设置为`all-major`还是`native`??
 ````
 
-```{admonition} 错误原因
 
-```
-
-```{admonition} 解决方法
-
-```
 
 ````{error}
 ```bash
@@ -60,4 +54,35 @@ make: *** [all] Error 2
 换新版cuda？？
 [https://github.com/colmap/colmap/issues/1753](https://github.com/colmap/colmap/issues/1753)
 ````
+
+
+
+~~~{error}
+```bash
+[ 58%] Building CXX object src/CMakeFiles/colmap.dir/estimators/homography_matrix.cc.o
+[ 58%] Building CXX object src/CMakeFiles/colmap.dir/estimators/pose.cc.o
+/home/hejinxin/Desktop/work/colmap/src/estimators/pose.cc: In function ‘bool colmap::RefineAbsolutePose(const colmap::AbsolutePoseRefinementOptions&, const std::vector<char>&, const std::vector<Eigen::Matrix<double, 2, 1>, std::allocator<Eigen::Matrix<double, 2, 1> > >&, const std::vector<Eigen::Matrix<double, 3, 1> >&, Eigen::Vector4d*, Eigen::Vector3d*, colmap::Camera*, Eigen::Matrix6d*)’:
+/home/hejinxin/Desktop/work/colmap/src/estimators/pose.cc:239:37: error: ‘qvec_data’ was not declared in this scope
+     SetQuaternionManifold(&problem, qvec_data);
+                                     ^~~~~~~~~
+/home/hejinxin/Desktop/work/colmap/src/estimators/pose.cc:304:52: error: ‘qvec_data’ was not declared in this scope
+     std::vector<const double*> parameter_blocks = {qvec_data, tvec_data};
+                                                    ^~~~~~~~~
+/home/hejinxin/Desktop/work/colmap/src/estimators/pose.cc:304:63: error: ‘tvec_data’ was not declared in this scope
+     std::vector<const double*> parameter_blocks = {qvec_data, tvec_data};
+                                                               ^~~~~~~~~
+/home/hejinxin/Desktop/work/colmap/src/estimators/pose.cc:304:72: error: could not convert ‘{<expression error>, <expression error>}’ from ‘<brace-enclosed initializer list>’ to ‘std::vector<const double*>’
+     std::vector<const double*> parameter_blocks = {qvec_data, tvec_data};
+                                                                        ^
+src/CMakeFiles/colmap.dir/build.make:695: recipe for target 'src/CMakeFiles/colmap.dir/estimators/pose.cc.o' failed
+make[2]: *** [src/CMakeFiles/colmap.dir/estimators/pose.cc.o] Error 1
+CMakeFiles/Makefile2:603: recipe for target 'src/CMakeFiles/colmap.dir/all' failed
+make[1]: *** [src/CMakeFiles/colmap.dir/all] Error 2
+Makefile:135: recipe for target 'all' failed
+make: *** [all] Error 2
+```
+[https://github.com/colmap/colmap/issues/1860](https://github.com/colmap/colmap/issues/1860) <br>
+**解决方法：**
+切换`dev`分支进行编译
+~~~
 
