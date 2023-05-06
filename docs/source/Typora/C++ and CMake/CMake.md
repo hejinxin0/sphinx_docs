@@ -4,6 +4,20 @@
 
 ## Ubuntu安装CMake
 
+
+
+````{eval-rst}
+.. tabs::
+   .. tab:: **apt-get安装CMake**
+      sudo apt-get install cmake
+      默认安装目录：`/usr/bin/cmake`
+   .. tab:: **snap安装新版CMake** 
+   .. tab:: **离线安装cmake（需要export或者source）**
+      Oranges are orange.
+````
+
+
+
 - **apt-get安装CMake**
 
 ```bash

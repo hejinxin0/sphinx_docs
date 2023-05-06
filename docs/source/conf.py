@@ -20,6 +20,7 @@ numfig = True
 extensions = [
    # 'recommonmark',
    # 'sphinx_markdown_tables',
+    'ablog',
     'myst_parser',
     'sphinx.ext.todo',
     'sphinx.ext.autodoc',
@@ -29,9 +30,14 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.graphviz',
     'sphinx_search.extension',
-    "sphinx_thebe",
-    #'sphinx_copybutton',
-    #'sphinx_design',
+    'sphinx_tabs.tabs',
+    'sphinx_thebe',
+    'sphinx_togglebutton',
+    #'sphinxcontrib.bibtex',
+    #'sphinxext.opengraph',
+    'sphinx.ext.todo',
+    'sphinx_copybutton',
+    'sphinx_design',
 ]
 #mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
