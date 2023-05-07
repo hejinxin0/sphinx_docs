@@ -71,6 +71,7 @@ git add .                    # 将当前目录的所有文件添加到暂存区
 ```bash
 git commit -m [message]                      # 将暂存区内容添加到本地仓库中
 git commit [file1] [file2] ... -m [message]  # 提交暂存区的指定文件到仓库区
+git commit -a ?????????????????
 ```
 
 ## 共享和更新远程项目
