@@ -27,16 +27,7 @@
 
 ### 场景图增强
 
-### 选择下一最佳视图
 
-```{figure} assets/Scores.png
----
-alt: Scores
----
-Scores for different number of points (left and right) with different distributions (top and bottom) in the image for L = 3
-```
-
-一种流行的策略是选择看到最多三角点的图
 
 ### 鲁棒高效的三角化
 
