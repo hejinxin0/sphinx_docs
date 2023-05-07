@@ -80,7 +80,14 @@ find_package(<PackageName> [version] [EXACT] [QUIET] [MODULE] [REQUIRED]
 find_package(OpenCV 4.0 REQUIRED)
 ```
 
-find_package的规则在哪提供，例如find_package(OpenCV)、find_package(Eigen)
+find_package的规则在`CMAKE_MODULE_PATH`提供??，例如find_package(OpenCV)、find_package(Eigen)
+
+```cmake
+#colmap的CMakeLists.txt文件
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+```
+
+
 
 ### 链接库
 

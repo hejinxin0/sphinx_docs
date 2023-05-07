@@ -2,13 +2,6 @@
 
 ## Review of Structure-from-Motion
 
-```{figure} assets/pipline.png
----
-alt: pipline
----
-Incremental Structure-from-Motion pipeline
-```
-
 ### Correspondence Search（检索匹配）
 
 #### Feature Extraction
@@ -16,14 +9,6 @@ Incremental Structure-from-Motion pipeline
 #### Matching
 
 #### Geometric Verification
-
-### Incremental Reconstruction
-
-#### Image Registration
-
-#### Triangulation
-
-#### Bundle Adjustment
 
 ## 主要贡献
 
@@ -37,11 +22,12 @@ Incremental Structure-from-Motion pipeline
 
 5、 一种用于挖掘密集图像集间的冗余视图的高效BA参数化方法
 
-引自[colmap论文阅读笔记 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/610288048)
+> 引自[colmap论文阅读笔记 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/610288048)
+>
 
 ### 场景图增强
 
-### 下一最佳视图的选择
+### 选择下一最佳视图
 
 ```{figure} assets/Scores.png
 ---
@@ -56,12 +42,19 @@ Scores for different number of points (left and right) with different distributi
 
 ## 参考资料
 
-官方文档
 
-[COLMAP - Structure-From-Motion and Multi-View Stereo (demuc.de)](https://demuc.de/colmap/#tutorial)
 
-[COLMAP — COLMAP 3.8-dev documentation](https://colmap.github.io/index.html)
+> **官方资料**
+>
+> [COLMAP - Structure-From-Motion and Multi-View Stereo (demuc.de)](https://demuc.de/colmap/#tutorial)
+>
+> [COLMAP — COLMAP 3.8-dev documentation](https://colmap.github.io/index.html)
+>
+> [https://github.com/colmap/colmap](https://github.com/colmap/colmap)
+>
+> [Structure-from-Motion Revisited](./papers/Structure-from-Motion.pdf)
+>
+> **其他资料**
+>
+> [三维重建系列之COLMAP: STRUCTURE-FROM-MOTION REVISITED - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/268184721)
 
-[https://github.com/colmap/colmap](https://github.com/colmap/colmap)
-
-[Structure-from-Motion Revisited](./papers/Structure-from-Motion.pdf)
