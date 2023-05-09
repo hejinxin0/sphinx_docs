@@ -10,7 +10,7 @@ https://docs.opencv.org/4.5.2/d0/d2e/classcv_1_1CommandLineParser.html
 
 ## 安装配置与卸载
 
-### 安装和查看版本
+### 构建安装和查看版本
 
 默认安装目录：
 
