@@ -120,7 +120,7 @@ html_theme_options = {
     #"primary_sidebar_end": ["indices.html", "sidebar-ethical-ads.html"],
 
     # 辅助侧边栏
-    "show_toc_level": 2,
+    "show_toc_level": 3,
     #"secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
     
     # 页脚
