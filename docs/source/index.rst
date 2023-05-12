@@ -17,7 +17,16 @@ Learning summary document
    Typora/3D Reconstruction/contents
    Typora/Miscellaneous/contents
    Typora/ThirdParty/contents
+
+test
+----------------------------------------------------------------- 
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :caption: Contents:
    
+   Typora/test  
+
 Indices and tables
 ==================
 
