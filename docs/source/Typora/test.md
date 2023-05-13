@@ -3,15 +3,14 @@
 :class-container: text-center
 :gutter: 0
 
-
 :::{card}
 :margin: 3
 :class-body: text-center
 :class-header: bg-light text-center
-:link: https://www.inferentialthinking.com/
 
 **Linux**
 ^^^
+
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
 ```

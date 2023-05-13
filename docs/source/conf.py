@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Learning summary document'
+project = 'Learning Summary Document'
 copyright = '2023, Hejinxin'
 author = 'Hejinxin'
 release = 'v1'
@@ -72,6 +72,7 @@ html_css_files = [
     'css/custom.css',
 ]
 '''
+#master_doc = "toctree"
 #html_theme = 'sphinx_rtd_theme'
 #html_theme = 'pydata_sphinx_theme'
 html_theme = 'sphinx_book_theme'
