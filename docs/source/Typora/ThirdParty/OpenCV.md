@@ -10,7 +10,7 @@ https://docs.opencv.org/4.5.2/d0/d2e/classcv_1_1CommandLineParser.html
 
 ## 安装配置与卸载
 
-### 构建安装和查看版本
+### 编译安装和查看版本
 
 默认安装目录：
 
@@ -20,6 +20,8 @@ https://docs.opencv.org/4.5.2/d0/d2e/classcv_1_1CommandLineParser.html
 pkg-config  --libs opencv  # 查看libs库
 pkg-config  --modversion  opencv   # 查看版本号
 ```
+
+windows下如何安装？？
 
 ### 安装过程中的问题
 
