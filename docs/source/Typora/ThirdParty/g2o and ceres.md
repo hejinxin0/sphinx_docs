@@ -2,6 +2,8 @@
 
 ## g2o
 
+参考：[g2o：非线性优化与图论的结合 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/600012824)
+
 ### 代价函数
 
 

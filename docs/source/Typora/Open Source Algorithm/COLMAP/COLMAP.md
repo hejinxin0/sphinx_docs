@@ -2,13 +2,7 @@
 
 ## Review of Structure-from-Motion
 
-### Correspondence Search（检索匹配）
-
-#### Feature Extraction
-
-#### Matching
-
-#### Geometric Verification
+#### 
 
 ## 主要贡献
 
