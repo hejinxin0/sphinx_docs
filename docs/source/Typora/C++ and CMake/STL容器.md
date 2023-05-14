@@ -75,7 +75,13 @@ vector.insert与push_back
 
 #### 长度和容量
 
+- **size() 和 capacity()**
+
 `vector` 的长度（size）指有效元素数量，而容量（capacity）指其实际分配的内存长度
+
+- **resize() 和 reserve()**
+
+resize(n)后push_back是接在第n个元素后面，reserve(n)后push_back是从首个元素开始
 
 ##### 长度
 
@@ -94,8 +100,6 @@ vector.insert与push_back
 | `reserve()`       | 使得 `vector` 预留一定的内存空间，避免不必要的内存拷贝     |
 | `capacity()`      | 返回容器的容量，即不发生拷贝的情况下容器的长度上限         |
 | `shrink_to_fit()` | 放弃额外容量，使得 `vector` 的容量与长度一致，多退但不会少 |
-
-
 
 
 
