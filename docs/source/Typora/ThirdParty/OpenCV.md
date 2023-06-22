@@ -102,6 +102,8 @@ DMatch类及其内部结构
 
 Mat Descriptor类及其内部结构（行数表示描述子的数目，列数表示描述子的维数）
 
+compute函数使用了多线程
+
 **不同于brief描述子的uchar类型，sift和surf均采用float型。所以ORB(brief)描述子8维，32bytes（256bits）,CV_8UC1。SIFT描述子128维，512bytes，CV_32UC4（512*8/32 = 32*4，第一个32表示描述子Mat是32列，第二个32表示float类型）。SURF描述子64维，256bytes，CV_32UC2。（OpenCV里compute的描述子的列数都是32）**
 ————————————————
 版权声明：本文为CSDN博主「cc_sunny」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
