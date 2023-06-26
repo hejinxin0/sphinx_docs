@@ -40,9 +40,15 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
 
 ### CMake配置
 
-开启OpenMP多线程
+#### OpenCV使用的多线程框架
+
+openmp、pthreads、tbb
+
+#### 指令集
 
 开启指令集（OpenCV4.5.2为例）
+
+#### 关于加速的FAST_MATH选项
 
 ### 卸载
 
