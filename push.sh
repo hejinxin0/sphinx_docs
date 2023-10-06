@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "M"
+git commit -m "none"
 git push origin master
