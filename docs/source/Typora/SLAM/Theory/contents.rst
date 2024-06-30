@@ -1,11 +1,10 @@
-.. 3D Reconstruction 
+.. SLAM Theory
 
-3D Reconstruction
+SLAM Theory
 ================================================================================================================================
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   Sparse/contents
-   Dense/contents
+   *
 

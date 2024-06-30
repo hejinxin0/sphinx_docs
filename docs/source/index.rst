@@ -10,10 +10,10 @@ Learning Summary Document
 
    Typora/Linux/contents
    Typora/C++ and CMake/contents
-   Typora/SLAM and SFM/contents
+   Typora/SLAM/contents
    Typora/Open Source Algorithm/contents
    Typora/3D Reconstruction/contents
-   Typora/ThirdParty/contents
+   Typora/Libraries/contents
    Typora/Miscellaneous/contents
    Typora/test
 

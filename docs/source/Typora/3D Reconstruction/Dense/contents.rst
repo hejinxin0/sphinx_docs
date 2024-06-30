@@ -1,11 +1,11 @@
-.. 3D Reconstruction 
+.. Dense
 
-3D Reconstruction
+Dense
 ================================================================================================================================
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   Sparse/contents
-   Dense/contents
+   *
+   
 

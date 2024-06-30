@@ -1,12 +1,12 @@
-.. Open Source Algorithm
+.. SLAM
 
-Open Source Algorithm
+SLAM
 ================================================================================================================================
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   COLMAP/contents
+   Theory/contents
    FAST-LIO/contents
    LOAM-Livox/contents
    ORB-SLAM2/contents
