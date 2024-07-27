@@ -147,3 +147,7 @@ branch和tags
 -f强制切换分支？？
 
 ## git log
+
+## git代理
+
+[开启了代理，但是git仍然连接拒绝的解决方法_git设置代理不起作用-CSDN博客](https://wtl4it.blog.csdn.net/article/details/131743283?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~PaidSort-1-131743283-blog-135921678.235^v43^pc_blog_bottom_relevance_base5&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~PaidSort-1-131743283-blog-135921678.235^v43^pc_blog_bottom_relevance_base5&utm_relevant_index=1)
