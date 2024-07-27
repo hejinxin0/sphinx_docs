@@ -6,5 +6,6 @@
         "colon_fence",
         "deflist",
         "tasklist"
-    ]
+    ],
+    "iis.configDir": ""
 }
