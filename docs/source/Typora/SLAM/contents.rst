@@ -6,7 +6,7 @@ SLAM
    :maxdepth: 1
    :glob:
 
-   Theory/contents
+   Basic_Theory/contents
    FAST-LIO/contents
    LOAM-Livox/contents
    ORB-SLAM2/contents

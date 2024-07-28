@@ -10,10 +10,10 @@ Learning Summary Document
 
    Typora/AI/contents
    Typora/SLAM/contents
-   Typora/Object Tracking/contents
-   Typora/3D Reconstruction/contents
+   Typora/Object_Tracking/contents
+   Typora/3D_Reconstruction/contents
    Typora/Libraries/contents
-   Typora/C++ and CMake/contents
+   Typora/Cpp
    Typora/Linux/contents
    Typora/Miscellaneous/contents
    Typora/test
