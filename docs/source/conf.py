@@ -15,6 +15,7 @@ numfig = True
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+# https://sphinx-themes.org/#themes
 # https://github.com/executablebooks/markdown-it-py/blob/master/docs/conf.py
 # https://github.com/executablebooks/mdit-py-plugins/blob/master/docs/conf.py
 extensions = [
