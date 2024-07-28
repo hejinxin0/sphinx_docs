@@ -1,4 +1,4 @@
-# g2o and Ceres
+# Non-linear Optimization
 
 ## g2o
 
