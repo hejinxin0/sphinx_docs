@@ -8,12 +8,13 @@ Learning Summary Document
    :hidden:
    :caption: Contents:
 
-   Typora/Linux/contents
-   Typora/C++ and CMake/contents
+   Typora/AI/contents
    Typora/SLAM/contents
-   Typora/Open Source Algorithm/contents
+   Typora/Object Tracking/contents
    Typora/3D Reconstruction/contents
    Typora/Libraries/contents
+   Typora/C++ and CMake/contents
+   Typora/Linux/contents
    Typora/Miscellaneous/contents
    Typora/test
 
