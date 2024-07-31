@@ -13,7 +13,7 @@ Learning Summary Document
    Typora/Object_Tracking/contents
    Typora/3D_Reconstruction/contents
    Typora/Libraries/contents
-   Typora/Cpp
+   Typora/Cpp/contents
    Typora/Linux/contents
    Typora/Miscellaneous/contents
    Typora/test
