@@ -12,11 +12,11 @@
 >
 >**Papers:**
 >
->[1] [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)](https://arxiv.org/abs/2003.08934)
+>[1] [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)](https://arxiv.org/abs/2003.08934) ([pdf](./NeRF.pdf))
 >
->[2] [3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)](https://arxiv.org/abs/2308.04079)
+>[2] [3D Gaussian Splatting for Real-Time Radiance Field Rendering (2023)](https://arxiv.org/abs/2308.04079) ([pdf](./3DGS.pdf))
 >
->[3] [A Survey on 3D Gaussian Splatting (2024)](https://arxiv.org/abs/2401.03890)
+>[3] [A Survey on 3D Gaussian Splatting (2024)](https://arxiv.org/abs/2401.03890) ([pdf](./A_Survey_on_3D_Gaussian_Splatting.pdf))
 >
 >
 
