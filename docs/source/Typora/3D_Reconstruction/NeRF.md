@@ -47,7 +47,7 @@ https://zhuanlan.zhihu.com/p/679809915
 >
 >**Papers:**
 >
->[1]  [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)](https://arxiv.org/abs/2003.08934) ([pdf](./NeRF.pdf))
+>[1]  [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis (2020)](https://arxiv.org/abs/2003.08934) ([pdf](./papers/NeRF.pdf))
 >
 >[2] [NeRF: Neural Radiance Field in 3D Vision, A Comprehensive Review (2023)](https://arxiv.org/abs/2210.00379)
 >
