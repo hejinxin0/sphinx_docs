@@ -10,8 +10,8 @@ Learning Summary Document
 
    Typora/AI/contents
    Typora/SLAM/contents
-   Typora/Object_Tracking/contents
-   Typora/3D_Reconstruction/contents
+   Typora/ObjectTracking/contents
+   Typora/3DReconstruction/contents
    Typora/Libraries/contents
    Typora/Cpp/contents
    Typora/Linux/contents

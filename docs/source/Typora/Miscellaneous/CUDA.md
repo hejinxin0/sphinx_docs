@@ -1,8 +1,15 @@
 
 
-# CUDA
+# CUDA和NVIDIA驱动
 
-## 安装配置与卸载
+## NVIDIA驱动
+
+```bash
+nvidia-smi
+nvidia uninstall
+```
+
+## CUDA安装与卸载
 
 下载地址：[CUDA Toolkit Archive | NVIDIA Developer](https://developer.nvidia.com/cuda-toolkit-archive)
 
@@ -28,8 +35,6 @@ sudo apt-get install cuda
 ```{note}
 第二步`apt-key`时需要在`/var`目录下找到相应的`cuda-repo`目录，将`/var/cuda-repo-<version>/7fa2af80.pub`替换为该目录下的`.pub`文件绝对路径
 ```
-
-
 
 ~~~{error}
 ```bash
@@ -57,13 +62,12 @@ sudo apt --fix-broken install
 ```
 ~~~
 
-
-
-````{admonition} 安装 cuda 后找不到 nvcc
+````{admonition} 安装cuda后找不到nvcc
 ```bash
 locate nvcc #查看nvcc是否存在，找到nvcc位置
 vim ~/.bashrc
 export PATH=$PATH:/usr/local/cuda-10.1/bin
+#/usr/local路径下如果有cuda目录软链接到cuda-10.1，可以使用export PATH=$PATH:/usr/local/cuda/bin
 source ~/.bashrc
 ```
 ````
@@ -80,8 +84,8 @@ sudo dpkg -i cuda-repo-ubuntu1804-11-3-local_11.3.0-465.19.01-1_amd64.deb
 sudo apt-key add /var/cuda-repo-ubuntu1804-11-3-local/7fa2af80.pub
 sudo apt-get update
 sudo apt-get -y install cuda
+#以上操作完成后需要再将nvcc添加到环境变量
 ```
 
-
-
 ### 卸载cuda
+
