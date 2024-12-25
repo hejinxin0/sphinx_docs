@@ -21,7 +21,7 @@ $$
 0&0&{-1}&0\\
 0&0&0&1
 \end{array}} \right],{\ }
-{\boldsymbol{M}_{view}} = {\boldsymbol{M}_{reverseYZ}}{\boldsymbol{T}_{cw}}
+{\boldsymbol{M}_{view}} = {M_{reverseYZ}}{\boldsymbol{T}_{cw}}
 $$
 
 - **局部空间 (Local Space)**：物体空间(Object Space)
