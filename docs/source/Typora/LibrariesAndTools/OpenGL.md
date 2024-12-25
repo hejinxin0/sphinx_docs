@@ -21,10 +21,10 @@ $$
 0&0&{-1}&0\\
 0&0&0&1
 \end{array}} \right],{\ }
-{\boldsymbol{M}_{view}} = {M_{reverseYZ}}{\boldsymbol{T}_{cw}}
+{\boldsymbol{M}_{view}} = {\boldsymbol{M}_{reverseYZ}}{\boldsymbol{T}_{cw}}
 $$
 
-- **局部空间 (Local Space)**：物体空间(Object Space)
+**局部空间 (Local Space)**：物体空间(Object Space)
 
 **世界空间 (World Space)**：世界坐标系
 
@@ -83,5 +83,14 @@ GLAD
 
 GLES
 
+$$
+\boldsymbol{a}
+
+\mathbf{a}
+
+\bf{a}
+
+\boldsymbol{a}
+$$
 
 
