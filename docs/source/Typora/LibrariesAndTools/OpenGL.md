@@ -7,6 +7,7 @@
 ![coordinate_systems](https://learnopengl-cn.github.io/img/01/08/coordinate_systems.png)
 
 CG坐标系和CV坐标系
+
 $$
 {\boldsymbol{M}_{projection}} = \left[ {\begin{array}{*{20}{c}}
 {{m_0}}&0&{{m_1}}&0\\
@@ -30,6 +31,7 @@ $$
 **观察空间 (View Space)**：摄像机空间，即相机坐标系
 
 **裁剪空间 (Clip Space)**：裁剪后的观察空间
+
 $$
 {\left[ {\begin{array}{*{20}{c}}
 x\\
