@@ -86,7 +86,7 @@ rosrun rqt_image_view
 
 （1）`rosrun rqt_image_view rqt_image_view`报错
 
-![](assets/rqt_image_view报错.png)
+![](assets/rqt_image_view_error.png)
 
 解决方法：参考https://blog.csdn.net/qq_34213260/article/details/109193363
 

@@ -33,9 +33,7 @@ ssh -T git@github.com
 
 ## 工作区、暂存区和版本库
 
-
-
-![git-command](assets/git-command.jpg)
+![git-command](assets/git_command.jpg)
 
 [**菜鸟教程：Git 工作区、暂存区和版本库**](https://www.runoob.com/git/git-workspace-index-repo.html)
 
@@ -106,7 +104,7 @@ git push origin master #将本地的 master 分支推送到 origin 主机的 mas
 
 **关于`git push`报错的问题**
 
-![](assets/git push报错.png)
+![](assets/git_push_error.png)
 
 
 
