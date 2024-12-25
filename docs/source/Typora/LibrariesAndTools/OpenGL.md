@@ -1,5 +1,7 @@
 # OpenGL
 
+**参考资料：**[主页 - LearnOpenGL CN (learnopengl-cn.github.io)](https://learnopengl-cn.github.io/)
+
 ## 坐标系统
 
 计算机图形学
@@ -73,8 +75,6 @@ glDepthFunc(GL_LESS);
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 ```
 
-**参考资料：**[主页 - LearnOpenGL CN (learnopengl-cn.github.io)](https://learnopengl-cn.github.io/)
-
 GLEW
 
 GLFW
@@ -83,14 +83,5 @@ GLAD
 
 GLES
 
-$$
-\boldsymbol{a}
-
-\mathbf{a}
-
-\bf{a}
-
-\boldsymbol{a}
-$$
 
 
