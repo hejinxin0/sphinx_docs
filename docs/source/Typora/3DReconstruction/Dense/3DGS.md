@@ -8,17 +8,16 @@
 
 **Splatting泼溅：**三维空间中的3D高斯椭球投影到2D图像空间(椭圆)进行渲染
 
-
-
-
-
 <img src="assets/NeRF_and_3DGS.png" alt="image-20241226211629702" style="zoom:80%;" />
 
-<center><p>NeRF和3DGS对比</p></center>
+<center>NeRF和3DGS对比</center>
 
 **Tiles (Patches)**：为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
-
+<figure style="text-align: center;">
+  <img src="assets/forward_process_of_3DGS.png" alt="Forward Process of 3DGS" style="width:75.5%;">
+  <figcaption>图 1: Forward Process of 3DGS</figcaption>
+</figure>
 
 <img src="assets/forward_process_of_3DGS.png" alt="image-20241226212736737" style="zoom:80%;" />
 
