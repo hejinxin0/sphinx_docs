@@ -2,6 +2,10 @@
 
 ## 正向渲染
 
+**3DGS的属性：**${(\mu,\Sigma,c,\alpha)}$ , 位置中心$\mu$，不透明度$\alpha$，3D协方差矩阵$\Sigma$、颜色$c$ (可由球谐函数表示)
+
+**Splatting泼溅：**三维空间中的3D高斯椭球投影到2D图像空间(椭圆)进行渲染
+
 
 
 <img src="assets/NeRF_and_3DGS.png" alt="image-20241226211629702" style="zoom:80%;" />
@@ -11,6 +15,12 @@
 <img src="assets/forward_process_of_3DGS.png" alt="image-20241226212736737" style="zoom:80%;" />
 
 ## 反向优化
+
+
+
+<img src="assets/Algorithm1.png" alt="image-20241226213114411" style="zoom:80%;" />
+
+
 
 >**Web Pages：**
 >

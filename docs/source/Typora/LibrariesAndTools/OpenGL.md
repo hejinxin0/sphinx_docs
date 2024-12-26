@@ -6,9 +6,13 @@
 
 计算机图形学
 
+CG坐标系和CV坐标系
+
+三个重要的变换矩阵：模型(Model)、观察(View)、投影(Projection)三个矩阵
+
 ![coordinate_systems](https://learnopengl-cn.github.io/img/01/08/coordinate_systems.png)
 
-CG坐标系和CV坐标系
+
 
 $$
 {\boldsymbol{M}_{projection}} = \left[ {\begin{array}{*{20}{c}}
@@ -30,7 +34,7 @@ $$
 
 **世界空间 (World Space)**：世界坐标系
 
-**观察空间 (View Space)**：摄像机空间，即相机坐标系
+**观察空间 (View Space)**：也称为摄像机空间(Camera Space)或视觉空间(Eye Space)，即相机坐标系
 
 **裁剪空间 (Clip Space)**：裁剪后的观察空间
 
