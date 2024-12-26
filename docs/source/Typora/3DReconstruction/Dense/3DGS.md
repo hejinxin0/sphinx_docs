@@ -14,6 +14,10 @@
 
 **Tiles (Patches)**：为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
+
+
+
+
 ```{figure} assets/forward_process_of_3DGS.png
 ---
 width: 60%
