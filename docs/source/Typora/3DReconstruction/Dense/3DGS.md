@@ -1,5 +1,7 @@
 # 3D Gaussian Splatting (3DGS)
 
+<img src="assets/3DGS_pipeline.png" alt="image-20241226220708058" style="zoom:80%;" />
+
 ## 正向渲染
 
 **3DGS的属性：**${(\mu,\Sigma,c,\alpha)}$ , 位置中心$\mu$，不透明度$\alpha$，3D协方差矩阵$\Sigma$、颜色$c$ (可由球谐函数表示)
@@ -8,7 +10,13 @@
 
 
 
+
+
 <img src="assets/NeRF_and_3DGS.png" alt="image-20241226211629702" style="zoom:80%;" />
+
+<center><p>NeRF和3DGS对比</p></center>
+
+**Tiles (Patches)**：为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
 
 
