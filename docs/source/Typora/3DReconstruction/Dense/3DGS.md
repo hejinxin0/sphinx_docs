@@ -1,6 +1,16 @@
 # 3D Gaussian Splatting (3DGS)
 
+## 正向渲染
 
+
+
+<img src="assets/NeRF_and_3DGS.png" alt="image-20241226211629702" style="zoom:80%;" />
+
+
+
+<img src="assets/forward_process_of_3DGS.png" alt="image-20241226212736737" style="zoom:80%;" />
+
+## 反向优化
 
 >**Web Pages：**
 >
