@@ -8,7 +8,7 @@
 
 CG坐标系和CV坐标系
 
-三个重要的变换矩阵：模型(Model)、观察(View)、投影(Projection)三个矩阵
+三个重要的变换矩阵：模型(Model)矩阵、观察(View)矩阵、投影(Projection)矩阵
 
 ![coordinate_systems](https://learnopengl-cn.github.io/img/01/08/coordinate_systems.png)
 
