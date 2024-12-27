@@ -17,11 +17,6 @@ width: 80%
 NeRF和3DGS的对比
 ```
 
-<figure style="text-align: center;">
-  <img src="assets/NeRF_and_3DGS.png" style="zoom: 80%;">
-  <figcaption>NeRF和3DGS的对比</figcaption>
-</figure>
-
 <img src="assets/NeRF_and_3DGS.png" style="zoom:80%;" />
 
 ><center>NeRF和3DGS对比</center>
