@@ -8,6 +8,11 @@
 
 **Splatting泼溅：**三维空间中的3D高斯椭球投影到2D图像空间(椭圆)进行渲染
 
+<div style="text-align: center;">
+  <img src="assets/NeRF_and_3DGS.png" style="zoom: 80%;">
+  <p>NeRF和3DGS的对比</p>
+</div>
+
 ```{figure} assets/NeRF_and_3DGS.png
 ---
 width: 80%
