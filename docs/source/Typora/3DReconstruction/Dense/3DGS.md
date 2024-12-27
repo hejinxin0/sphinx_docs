@@ -4,28 +4,27 @@
 
 ## 正向渲染
 
-**3DGS的属性：**${(\mu,\Sigma,c,\alpha)}$，包括中心位置$\mu$，不透明度$\alpha$，3D协方差矩阵$\Sigma$、颜色$c$ (可由球谐函数表示)
+**3DGS的属性：** ${(\mu,\Sigma,c,\alpha)}$，包括中心位置$\mu$，不透明度$\alpha$，3D协方差矩阵$\Sigma$、颜色$c$ (可由球谐函数表示)
 
-**Splatting泼溅：**三维空间中的3D高斯椭球投影到2D图像空间(椭圆)进行渲染
-
-
+**Splatting泼溅：** 三维空间中的3D高斯椭球投影到2D图像空间(椭圆)进行渲染
 
 ```{figure} assets/NeRF_and_3DGS.png
 ---
-width: 80%
+width: 70%
+align: center
 ---
 NeRF和3DGS的对比
 ```
 
-<img src="assets/NeRF_and_3DGS.png" style="zoom:80%;" />
-
-><center>NeRF和3DGS对比</center>
-
 **Tiles (Patches)**：为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像分割为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
-<img src="assets/forward_process_of_3DGS.png" style="zoom:80%;" />
-
-><center>3DGS的前向过程</center>
+```{figure} assets/forward_process_of_3DGS.png
+---
+width: 80%
+align: center
+---
+3DGS的前向过程
+```
 
 ## 反向优化
 
