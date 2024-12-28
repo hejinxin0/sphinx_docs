@@ -69,10 +69,11 @@ language = 'zh_CN'
 
 '''
 html_static_path = ['_static']
-html_css_files = [
-    'css/custom.css',
-]
 '''
+html_css_files = [
+    'css/base.user.css',
+]
+
 #master_doc = "toctree"
 #html_theme = 'sphinx_rtd_theme'
 #html_theme = 'pydata_sphinx_theme'
