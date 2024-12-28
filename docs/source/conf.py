@@ -71,7 +71,7 @@ language = 'zh_CN'
 html_static_path = ['_static']
 '''
 html_css_files = [
-    'css/base.user.css',
+    'css/base.user.css'
 ]
 
 #master_doc = "toctree"
