@@ -86,8 +86,8 @@ rosrun rqt_image_view
 
 （1）`rosrun rqt_image_view rqt_image_view`报错
 
-![](assets/rqt_image_view_error.png)
+<img src="assets/rqt_image_view_error.png" alt="rqt_image_view_error" style="zoom: 100%; display: block; margin-left: auto; margin-right: auto;"  />
 
-解决方法：参考https://blog.csdn.net/qq_34213260/article/details/109193363
+解决方法：参考 https://blog.csdn.net/qq_34213260/article/details/109193363
 
 `cd /opt/ros/melodic/share/rqt_virtual_joy`或直接roscd到该位置，`sudo vim plugin.xml`复制 [plugin.xml](assets/plugin.xml) 文件中的内容

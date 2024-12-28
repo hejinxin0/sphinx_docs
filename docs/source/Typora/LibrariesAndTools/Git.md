@@ -33,7 +33,7 @@ ssh -T git@github.com
 
 ## 工作区、暂存区和版本库
 
-![git-command](assets/git_command.jpg)
+<img src="assets/git_command.jpg" alt="git-command" style="zoom: 100%; display: block; margin-left: auto; margin-right: auto;"/>
 
 [**菜鸟教程：Git 工作区、暂存区和版本库**](https://www.runoob.com/git/git-workspace-index-repo.html)
 
@@ -101,12 +101,6 @@ git pull origin master
 git push <远程主机名> <本地分支名>:<远程分支名>
 git push origin master #将本地的 master 分支推送到 origin 主机的 master 分支
 ```
-
-**关于`git push`报错的问题**
-
-![](assets/git_push_error.png)
-
-
 
 ### 总体流程举例
 

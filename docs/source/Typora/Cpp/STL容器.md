@@ -2,7 +2,9 @@
 
 # STL容器
 
-![img](assets/container1.png)
+
+
+<img src="assets/container.png" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 [OI Wiki: STL 容器简介](https://oi-wiki.org/lang/csl/container/)
 

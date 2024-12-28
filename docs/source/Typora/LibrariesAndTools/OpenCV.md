@@ -27,7 +27,7 @@ windows下如何安装？？
 
 ````{error}
 构建`libopencv_imgcodecs.so`报错：没有规则可制作目标“`/usr/lib/libjpeg.so`”
-```{figure} assets/Install-OpenCV-Error.png
+```{figure} assets/install_opencv_error.png
 ```
 **错误原因：**
 缺少或者未在指定的路径找到 `libjpeg.so` <br>

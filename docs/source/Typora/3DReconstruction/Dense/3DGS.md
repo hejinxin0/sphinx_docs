@@ -1,6 +1,6 @@
 # 3D Gaussian Splatting (3DGS)
 
-<img src="assets/3DGS_pipeline.png" style="zoom:80%;" />
+<img src="assets/3DGS_pipeline.png" alt="3DGS_pipeline" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 ## 正向渲染
 
@@ -8,20 +8,16 @@
 
 **Splatting泼溅：** 三维空间中的3D高斯椭球投影到2D图像空间(椭圆)进行渲染
 
-<img src="assets/NeRF_and_3DGS.png" style="zoom: 80%;">
+<img src="assets/NeRF_and_3DGS.png" alt="NeRF_and_3DGS" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 <figure style="text-align: center;">
   <figcaption>NeRF与3DGS</figcaption>
 </figure>
 
 
-<figure style="text-align: center;">
-    <img src="assets/NeRF_and_3DGS.png" style="zoom: 80%;">
-    <figcaption>NeRF和3DGS的对比</figcaption>
-</figure>
 **Tiles (Patches)**：为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像分割为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
-<img src="assets/forward_process_of_3DGS.png" style="zoom: 80%;">
+<img src="assets/forward_process_of_3DGS.png" alt="forward_process_of_3DGS" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 <figure style="text-align: center;">
   <figcaption>3DGS的前向过程</figcaption>
@@ -31,7 +27,7 @@
 
 ## 反向优化
 
-<img src="assets/Algorithm1.png" style="zoom:80%;" />
+<img src="assets/algorithm1.png" alt="algorithm1" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 
 
