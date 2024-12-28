@@ -29,6 +29,7 @@ align: center
 ---
 3DGS的前向过程
 ```
+
 <p class="custom-caption">3DGS的前向过程</p>
 
 ## 反向优化
