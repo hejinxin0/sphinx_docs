@@ -1,10 +1,59 @@
 # 3D Gaussian Splatting (3DGS)
 
+
+
+## 贡献
+
+- 引入各向异性3D高斯作为高质量、非结构化的辐射场表示方法
+
+- 一种3D高斯属性的优化方法，与自适应密度控制相结合，为捕获的场景创建高质量的表示
+
+- 一种快速、可微分的GPU渲染方法，具有可见性感知能力，允许各向异性splatting和快速反向传播，以实现高质量的新视角合成
+
 <img src="assets/3DGS_pipeline.png" alt="3DGS_pipeline" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
+
+## 预备知识
+
+### 辐射场
+
+辐射场是实际上是对三维空间中光分布的表示，它捕捉了光与环境中的表面和材质相互作用的方式。从数学上来说，辐射场可被描述为一个函数
+$$
+L : {\mathbb{R}^5} \to {\mathbb{R}^+}
+$$
+
+
+其中$L(x,y,z,\theta ,\phi )$将空间点$(x,y,z)$和球坐标$(\theta ,\phi)$指定的方向映射到非负的辐射值。辐射场包含显示表达和隐式表达，可用于场景表达和渲染。
+
+**隐式辐射场**
+
+隐式辐射场在表示场景中的光分布时，不显式定义场景的几何形状。在NeRF中，使用MLP网络将一组空间坐标$(x,y,z)$和观察方向$(\theta ,\phi)$映射到颜色和密度值，任何点的辐射值都不显式存储，而是通过查询MLP实时计算得到
+$$
+L(x,y,z,\theta ,\phi ) = {\rm{MLP}}(x,y,z,\theta ,\phi )
+$$
+
+这种方式的好处是构建了一个可微且紧凑的复杂场景，但由于需要对光线进行采样和体渲染的计算，导致计算负荷比较高。
+
+**显式辐射场**
+
+显式辐射场直接表示光在离散空间结构中的分布，例如体素网格或点云。该结构中的每个元素存储其在空间中各自位置的辐射信息，可以更直接、快速地访问辐射数据，但代价是更高的内存使用和潜在的低分辨率。显式辐射场的一般形式可写成
+$$
+L(x,y,z,\theta ,\phi ) = {\rm{DataStructure}}[(x,y,z)]f(\theta ,\phi )
+$$
+
+其中$\rm{DataStructure}$可以是体素网格或点云$f(\theta ,\phi )$是一个基于观察方向修改辐射的函数。
+
+**3DGS**
+
+3DGS是一种显式辐射场，具有隐式辐射场的优点。将可学习的3D高斯用于场景表达，这些高斯函数在多视图图像的监督下进行优化，以准确表示场景，结合了基于神经网络的优化和显式结构化数据存储的优点。这种混合方法旨在实现实时、高质量的渲染，并且训练时间更短，特别是对于复杂场景和高分辨率输出的情况。3D高斯表达可表示为
+$$
+L(x,y,z,\theta ,\phi ) = \sum\limits_{i \in N} {{G_i}(x,y,z,{\boldsymbol{\mu}_i},{\boldsymbol{\Sigma}_i}){c_i}(\theta ,\phi )}
+$$
+
+其中$G$是均值为${\boldsymbol{\mu}_i}$、协方差为${\boldsymbol{\Sigma}_i}$的高斯函数， $c$表示与视图相关的颜色
 
 ## 正向渲染
 
-基于点的渲染
+基于点的渲染：基于点的方法有效地渲染不连续和非结构化的几何样本（点云）
 
 新视角合成
 
@@ -26,7 +75,7 @@
 
 ### Splatting泼溅
 
-NeRF和3DGS的渲染可看作是彼此的逆过程
+NeRF和3DGS的渲染可视作互逆的关系。
 
 **NeRF:** 后向映射 (backward mapping)，沿射线采样，然后查询MLP以获得相应的颜色和不透明度
 
@@ -64,12 +113,10 @@ $$
 给定像素点$\boldsymbol{x}'$，通过观察变换 $\boldsymbol W$ 可以计算出像素点到所有重叠高斯点的距离，即这些高斯点的深度，形成高斯点的排序列表$\cal N$，通过𝛼-blending计算该像素的最终颜色
 
 $$
-\boldsymbol{C} = \sum\limits_{i \in {\cal N}} {{\boldsymbol{c}_i}{\alpha _i}G(\boldsymbol{x}')\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}G(\boldsymbol{x}'))} }
+\boldsymbol{C} = \sum\limits_{i \in {\cal N}} {{\boldsymbol{c}_i}{\alpha _i}{G_i}(\boldsymbol{x}')\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{G_j}(\boldsymbol{x}'))} }
 $$
 
-
-
-### 多线程栅格化
+### 快速可微光栅化
 
 **Tiles (Patches)**：为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像分割为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
@@ -78,13 +125,13 @@ $$
 <figure style="text-align: center;">
   <figcaption>3DGS的前向过程</figcaption>
 </figure>
-多线程渲染
+**多线程渲染**
 
 ## 反向传播优化
 
 ### 优化
 
-3DGS的所有参数 ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$ 均通过反向传播来学习和优化。
+3DGS的所有参数 ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$ 均通过反向传播来学习和优化，使用随机梯度下降 (Stochastic Gradient Descent, SGD) 进行优化。
 
 3DGS的大多数属性可以直接通过反向传播进行优化，但直接优化协方差矩阵会导致非半正定矩阵，这不符合通常与协方差矩阵相关的物理解释。
 
@@ -106,6 +153,10 @@ $$
 
 
 ### 自适应密度控制
+
+- **初始化**
+
+3DGS从SfM生成的稀疏点云初始化或随机初始化高斯，然后采用点密集化和剪枝来控制3D高斯的密度。良好的初始化对于收敛和重建质量至关重要。
 
 - **点密集化 (Densification)**
 
