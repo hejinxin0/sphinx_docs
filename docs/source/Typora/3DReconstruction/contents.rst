@@ -7,6 +7,5 @@
    :glob:
 
    Sparse/contents
-   Dense/contents
-   *
+   3DGS/contents
 
