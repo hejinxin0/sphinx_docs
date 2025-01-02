@@ -1,0 +1,1 @@
+[Gaussian Opacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes](https://github.com/autonomousvision/gaussian-opacity-fields)

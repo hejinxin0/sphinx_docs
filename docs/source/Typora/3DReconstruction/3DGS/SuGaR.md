@@ -1,1 +1,0 @@
-[SuGaR](https://anttwo.github.io/sugar/)
