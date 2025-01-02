@@ -1,4 +1,4 @@
-# 3D Gaussian Splatting (3DGS)
+# [3D Gaussian Splatting](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
 
 ## 贡献
 
@@ -198,6 +198,8 @@ $$
 法线正则化：如何估计法线，如何进行3D高斯椭球的扁平化处理
 
 ### 渲染质量
+
+
 
 >**Web Pages：**
 >
