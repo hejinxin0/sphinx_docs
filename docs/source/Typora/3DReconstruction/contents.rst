@@ -7,5 +7,5 @@
    :glob:
 
    Sparse/contents
-   3DGS/contents
+   GaussianSplatting/contents
 
