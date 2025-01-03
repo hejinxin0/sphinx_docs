@@ -1,16 +1,16 @@
 # [3D Gaussian Splatting](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
 
-## 贡献
+## 主要贡献
 
 - 引入各向异性3D高斯作为高质量、非结构化的辐射场表示方法
 
-- 一种3D高斯属性的优化方法，与自适应密度控制相结合，为捕获的场景创建高质量的表示
+- 提出一种与自适应密度控制相结合的3D高斯属性优化方法，为捕获的场景创建高质量的表示
 
-- 一种快速、可微分的GPU渲染方法，具有可见性感知能力，允许各向异性splatting和快速反向传播，以实现高质量的新视角合成
+- 提出一种快速、可微分的GPU渲染方法，具有可见性感知能力，允许各向异性splatting和快速反向传播，以实现高质量的新视角合成
 
 <img src="assets/3DGS_pipeline.png" alt="3DGS_pipeline" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
-## 预备知识
+## 背景知识
 
 ### 辐射场
 
@@ -53,14 +53,16 @@ $$
 
 其中${\mathcal G}$是均值为${\boldsymbol{\mu}_i}$、协方差为${\boldsymbol{\Sigma}_i}$的高斯函数， $c$表示与视图相关的颜色
 
-## 正向渲染
+## 方法解析
+
+### 正向渲染
 
 基于点的渲染：基于点的方法有效地渲染不连续和非结构化的几何样本（点云）
 
 新视角合成
 
 
-### 3DGS的属性
+#### 3DGS的属性
 
  ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
 
@@ -71,11 +73,11 @@ $$
 - 颜色$\boldsymbol{c}$ (可由球谐函数表示)
 - 不透明度$\alpha$
 
-### **视域剔除**
+#### **视域剔除**
 
 给定特定的相机姿态，该步骤会判断哪些高斯位于相机的视锥外，并在后续步骤中剔除之，以节省计算
 
-### Splatting泼溅
+#### Splatting泼溅
 
 NeRF和3DGS的渲染可视作互逆的关系。
 
@@ -111,7 +113,7 @@ $$
 $$
 其中$\boldsymbol{x}'$和$\boldsymbol{\mu}'$是图像空间中的坐标。
 
-### 像素渲染
+#### 像素渲染
 
 给定像素点$\boldsymbol{x}'$，通过观察变换 $\boldsymbol W$ 可以计算出像素点到所有重叠高斯点的距离，即这些高斯点的深度，形成高斯点的排序列表$\mathcal N$，通过𝛼-blending计算该像素的最终颜色
 
@@ -119,7 +121,7 @@ $$
 \boldsymbol{C} = \sum\limits_{i \in {\mathcal N}} {{\boldsymbol{c}_i}{\alpha _i}{\mathcal G}_i^{2D}(\boldsymbol{x}')\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{\mathcal G}_j^{2D}(\boldsymbol{x}'))} }
 $$
 
-### 快速可微光栅化
+#### 快速可微光栅化
 
 **Tiles (Patches)**：为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像分割为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
@@ -130,9 +132,9 @@ $$
 </figure>
 **多线程渲染**
 
-## 反向传播优化
+### 反向传播优化
 
-### 优化
+#### 优化
 
 3DGS的所有参数 ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$ 均通过反向传播来学习和优化，使用随机梯度下降 (Stochastic Gradient Descent, SGD) 进行优化。
 
@@ -155,7 +157,7 @@ $$
 
 
 
-### 自适应密度控制
+#### 自适应密度控制
 
 - **初始化**
 
