@@ -61,10 +61,9 @@ $$
 
 新视角合成
 
+#### 建模
 
-#### 3DGS的属性
-
- ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
+**3DGS的属性:**  ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
 
 - 中心位置$\boldsymbol{\mu}$
 
@@ -73,11 +72,15 @@ $$
 - 颜色$\boldsymbol{c}$ (可由球谐函数表示)
 - 不透明度$\alpha$
 
-#### **视域剔除**
+三维空间中的3D高斯分布由中心位置$\boldsymbol{\mu}$、3D协方差矩阵$\boldsymbol{\Sigma}$定义
 
-给定特定的相机姿态，该步骤会判断哪些高斯位于相机的视锥外，并在后续步骤中剔除之，以节省计算
+$$
+\mathcal{G}(\boldsymbol{x}) = \exp \left( { - \frac{1}{2}{{(\boldsymbol{x} - \boldsymbol{\mu} )}^{\rm{T}}}{\boldsymbol{\Sigma}^{-1}}(\boldsymbol{x} - \boldsymbol{\mu} )} \right)
+$$
 
 #### Splatting泼溅
+
+**视域剔除**：给定特定的相机姿态，该步骤会判断哪些高斯位于相机的视锥外，并在后续步骤中剔除之，以节省计算
 
 NeRF和3DGS的渲染可视作互逆的关系。
 
@@ -92,13 +95,6 @@ NeRF和3DGS的渲染可视作互逆的关系。
 </figure>
 
 Splatting可以理解为三维空间中的3D高斯椭球投影到2D图像空间 (椭圆) 进行渲染的过程。
-
-三维空间中的3D高斯分布由中心位置$\boldsymbol{\mu}$、3D协方差矩阵$\boldsymbol{\Sigma}$定义
-
-
-$$
-\mathcal{G}(\boldsymbol{x}) = \exp \left( { - \frac{1}{2}{{(\boldsymbol{x} - \boldsymbol{\mu} )}^{\rm{T}}}{\boldsymbol{\Sigma}^{-1}}(\boldsymbol{x} - \boldsymbol{\mu} )} \right)
-$$
 
 给定观察变换矩阵 $\boldsymbol W$ 和3D协方差矩阵$\boldsymbol{\Sigma}$，以及投影变换中仿射近似的雅可比矩阵$\boldsymbol{J}$，图像空间的2D协方差矩阵为
 
@@ -187,7 +183,7 @@ $$
 
 （2）缺乏多视角几何一致性
 
-（3）膨胀的3D高斯椭球与2D的实际场景表面不一致
+（3）膨胀的3D高斯椭球与实际场景表面的薄特性相冲突
 
 ## 演进方向
 
