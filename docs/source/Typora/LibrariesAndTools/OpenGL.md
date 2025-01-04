@@ -30,14 +30,13 @@ $$
 {\boldsymbol{M}_{view}} = {\boldsymbol{M}_{reverseYZ}}{\boldsymbol{T}_{cw}}
 $$
 
-**局部空间 (Local Space)**：物体空间(Object Space)
+**局部空间 (Local Space)，或称物体空间(Object Space)：** 局部坐标系
 
-**世界空间 (World Space)**：世界坐标系
+**世界空间 (World Space): ** 世界坐标系
 
-**观察空间 (View Space)**：也称为摄像机空间(Camera Space)或视觉空间(Eye Space)，即相机坐标系
+**观察空间 (View Space)：** 也称为摄像机空间(Camera Space)或视觉空间(Eye Space)，相机坐标系
 
-**裁剪空间 (Clip Space)**：裁剪后的观察空间
-
+**裁剪空间 (Clip Space)：** 裁剪后的观察空间，相机坐标系
 $$
 {\left[ {\begin{array}{*{20}{c}}
 x\\
@@ -65,7 +64,7 @@ $$
 
 **标准设备空间 (Normalized Device Coordinate, NDC)**：
 
-**窗口空间 (Screen Space)**：
+**屏幕空间 (Screen Space)**：
 
 ## 深度测试
 
