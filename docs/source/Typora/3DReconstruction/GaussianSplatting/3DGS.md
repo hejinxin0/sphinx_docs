@@ -63,7 +63,7 @@ $$
 
 #### 建模
 
-**3DGS的属性:**  ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
+**3D高斯的属性:**  ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
 
 - 中心位置$\boldsymbol{\mu}$
 
@@ -109,9 +109,9 @@ $$
 $$
 其中$\boldsymbol{x}'$和$\boldsymbol{\mu}'$是图像空间中的坐标。
 
-#### 像素渲染
+#### 体渲染
 
-给定像素点$\boldsymbol{x}'$，通过观察变换$\boldsymbol W$可以计算出像素点到所有沿射线方向重叠高斯点的距离，即这些高斯点的深度，形成高斯点的排序列表$\mathcal N$，通过𝛼-blending计算该像素的最终颜色
+给定像素点$\boldsymbol{x}'$，通过观察变换$\boldsymbol W$可以计算出像素点到所有沿射线方向重叠高斯的距离，即这些高斯的深度，形成高斯的排序列表$\mathcal N$，通过𝛼-blending计算该像素的最终颜色
 
 $$
 \boldsymbol{C} = \sum\limits_{i \in {\mathcal N}} {{\boldsymbol{c}_i}{\alpha _i}{\mathcal G}_i^{2D}(\boldsymbol{x}')\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{\mathcal G}_j^{2D}(\boldsymbol{x}'))} }
@@ -132,9 +132,9 @@ $$
 
 #### 优化
 
-3DGS的所有参数 ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$ 均通过反向传播来学习和优化，使用随机梯度下降 (Stochastic Gradient Descent, SGD) 进行优化。
+3D高斯的所有参数 ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$ 均通过反向传播来学习和优化，使用随机梯度下降 (Stochastic Gradient Descent, SGD) 进行优化。
 
-3DGS的大多数属性可以直接通过反向传播进行优化，但直接优化协方差矩阵会导致非半正定矩阵，这不符合通常与协方差矩阵相关的物理解释。
+3D高斯的大多数属性可以直接通过反向传播进行优化，但直接优化协方差矩阵会导致非半正定矩阵，这不符合通常与协方差矩阵相关的物理解释。
 
 为保证协方差矩阵的半正定性，使用缩放矩阵$\boldsymbol{S}$和旋转矩阵$\boldsymbol{R}$来表达协方差矩阵，优化用于缩放的3D向量$\boldsymbol s$和归一化的单位四元数$\boldsymbol q$，初始协方差矩阵估计为各向同性高斯矩阵，其轴等于到最近的三个点的距离的平均值
 
@@ -148,8 +148,7 @@ $$
 {\mathcal L} = {\rm{ }}\left( {1{\rm{ }} - {\rm{ }}\lambda } \right){{\mathcal L}_1}{\rm{ }} + {\rm{ }}\lambda {{\mathcal L}_{{\rm{D - SSIM}}}}
 $$
 
-
-<img src="assets/algorithm1.png" alt="algorithm1" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
+<img src="assets/3DGS_algorithm1.png" alt="3DGS_algorithm1" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 
 
@@ -199,9 +198,9 @@ $$
 
 
 
+### 常用框架
 
-
-
+<img src="assets/3DGS_general_pipeline.png" alt="3DGS_general_pipeline" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 >**Web Pages：**
 >
@@ -222,4 +221,5 @@ $$
 >[4] [Gaussian Opacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes (2024)](https://arxiv.org/abs/2404.10772) ([pdf](./papers/GOF_arxiv_v2.pdf))
 >
 >[5] [DN-Splatter: Depth and Normal Priors for Gaussian Splatting and Meshing (2024)](https://arxiv.org/abs/2403.17822) ([pdf](./papers/DN_Splatter.pdf))
-
+>
+>[6] [3D Gaussian Splatting: Survey, Technologies, Challenges, and Opportunities (2024)](https://arxiv.org/abs/2407.17418) ([pdf](./papers/3D_Gaussian_Splatting_Survey_Technologies_Challenges_and_Opportunities.pdf))

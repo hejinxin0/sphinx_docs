@@ -87,6 +87,7 @@ u(\boldsymbol{x}) = \frac{{\boldsymbol{h}_u^2{\boldsymbol{h}}_v^4 - \boldsymbol{
 v(\boldsymbol{x}) = \frac{{\boldsymbol{h}_u^4{\boldsymbol{h}}_v^1 - \boldsymbol{h}_u^1{\boldsymbol{h}}_v^4}}{{\boldsymbol{h}_u^1{\boldsymbol{h}}_v^2 - \boldsymbol{h}_u^2{\boldsymbol{h}}_v^1}}
 $$
 
+其中${\boldsymbol{h}_u^i}、\boldsymbol{h}_v^i$表示四维齐次平面参数的第i个参数
 
 #### 2D高斯退化问题
 
@@ -100,7 +101,8 @@ $$
 #### 光栅化
 
 $$
-\boldsymbol{c}(\boldsymbol{x}) = \sum\limits_{i \in {\cal N}} {{{\boldsymbol{c}}_i}{\alpha _i}{{\hat {\mathcal G}}_i}({\boldsymbol{u}}({\bf{x}}))\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{{\hat {\mathcal G}}_j}({\boldsymbol{u}}({\boldsymbol{x}})))} }
+{\boldsymbol{c}}({\boldsymbol{x}}) = 
+\sum\limits_{k = 1}^K {{{\boldsymbol{c}}_k}{\alpha _k}{{\widehat {\mathcal G}}_k}({\boldsymbol{u}}({\boldsymbol{x}}))\prod\limits_{j = 1}^{k - 1} {(1 - {\alpha _j}{{\widehat {\mathcal G}}_j}({\boldsymbol{u}}({\boldsymbol{x}})))} }
 $$
 
 

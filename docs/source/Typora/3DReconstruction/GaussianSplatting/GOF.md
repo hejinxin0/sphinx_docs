@@ -10,52 +10,54 @@
 
 ### 建模
 
-通过在3D空间中嵌入“平面”高斯函数来简化三维建模，在二维高斯模型中，基元将密度分布在平面圆盘内，并将法线定义为密度变化最大的方向，这种方法可以更好地将高斯与薄表面对齐。
+#### Ray Gaussian Intersection
 
-<img src="assets/2DGS_Modeling.png" alt="2DGS_Modeling" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
+不采用将3D高斯投影到2D屏幕空间并在2D空间中评估高斯的方法，因为3D到2D投影过程中会丢失3D信息，而是通过显式的ray-Gaussian intersection来评估高斯对射线的贡献，这能够评估任意3D点的不透明度值。
 
-2D高斯的特征: 中心点${\boldsymbol{p}_k}$，两个主切向量${\boldsymbol{t}_u}、{\boldsymbol{t}_v}$，控制2D高斯方差的缩放向量$({s_u},{s_v})$，都是可学习的参数
+将ray-Gaussian intersection定义为高斯函数沿射线达到最大值的点。
 
-法线: ${\boldsymbol{t}_w} = {\boldsymbol{t}_u} \times {\boldsymbol{t}_v}$
-
-旋转矩阵: $\boldsymbol{R} = ({\boldsymbol{t}_u},{\boldsymbol{t}_v},{\boldsymbol{t}_w})$
-
-缩放矩阵: $\boldsymbol{S} = {\rm{diag}}({s_u},{s_v},0)$
-
-在世界空间的局部切平面上定义二维高斯函数，其参数化为：
+给定相机中心${\boldsymbol{o} \in \mathbb{R}^3}$、射线方向${\boldsymbol{r} \in \mathbb{R}^3}$，3D点可表示为$\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$，其中t为射线深度，将点$\boldsymbol{x}$转换到由位置${\boldsymbol{p}_k}$、尺度${\boldsymbol{S}_k}$和旋转${\boldsymbol{R}_k}$定义的3D高斯${{\mathcal G}_k}$的局部坐标系下
 $$
 \begin{array}{l}
-P(u,v) = {\boldsymbol{p}_k} + {s_u}{\boldsymbol{t}_u}u + {s_v}{\boldsymbol{t}_v}v = \boldsymbol{H}{(u,v,1,1)^{\rm{T}}}\\
-\boldsymbol{H} = \left[ {\begin{array}{*{20}{c}}
-{{s_u}{\boldsymbol{t}_u}}&{{s_v}{\boldsymbol{t}_v}}&0&{{\boldsymbol{p}_k}}\\
-0&0&0&1
-\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
-{\boldsymbol{RS}}&{{\boldsymbol{p}_k}}\\
-0&1
-\end{array}} \right]
+{\boldsymbol{o}_g} = \boldsymbol{S}_k^{-1}{\boldsymbol{R}_k}(\boldsymbol{o} - {\boldsymbol{p}_k})\\
+{\boldsymbol{r}_g} = \boldsymbol{S}_k^{-1}{\boldsymbol{R}_k}{\boldsymbol{r}}\\
+{\boldsymbol{x}_g} = {\boldsymbol{o}_g} + t{\boldsymbol{r}_g}
 \end{array}
 $$
-其中${\boldsymbol{H} \in 4 \times 4}$是表示二维高斯几何的齐次变换矩阵。对于𝑢𝑣空间中的点(𝑢, 𝑣)，则可以用标准高斯函数求其二维高斯值
+
+在该局部坐标系下，沿射线任意点处的高斯值变为一维高斯值
 $$
-{\mathcal G}(\boldsymbol{u}) = \exp \left( { - \frac{{{u^2} + {v^2}}}{2}} \right)
+{\mathcal G}_k^{1D}(t) 
+= \exp \left( { - \frac{1}{2}{\boldsymbol{x}}_g^{\rm{T}}{\boldsymbol{x}_g}} \right) 
+= \exp \left( { - \frac{1}{2}\left( {\boldsymbol{r}_g^{\rm{T}}{\boldsymbol{r}_g}{t^2} + 2{\boldsymbol{o}}_g^{\rm{T}}{\boldsymbol{r}_g}t + {\boldsymbol{o}}_g^{\rm{T}}{\boldsymbol{o}_g}} \right)} \right)
 $$
+该函数在${t^*}$处得到最大值
+$$
+{t^*} =  - \frac{A}{B}, {\ }
+A = {\boldsymbol{r}}_g^{\rm{T}}{\boldsymbol{r}_g}, {\ }
+B = {\boldsymbol{o}}_g^{\rm{T}}{\boldsymbol{r}_g}
+$$
+定义高斯函数${{\mathcal G}_k}$对给定相机中心${\boldsymbol o}$和射线方向${\boldsymbol r}$的贡献为
+$$
+{\mathcal E}({{\mathcal G}_k},{\boldsymbol{o}},{\boldsymbol{r}}) = {\mathcal G}_k^{1D}({t^*})
+$$
+
+#### 体渲染
+
+$$
+{\boldsymbol{c}}({\boldsymbol{o}},{\boldsymbol{r}}) = 
+\sum\limits_{k = 1}^K {{{\boldsymbol{c}}_k}{\alpha _k}{\mathcal E}({{\mathcal G}_k},{\boldsymbol{o}},{\boldsymbol{r}})\prod\limits_{j = 1}^{k - 1} {(1 - {\alpha _j}{\mathcal E}({{\mathcal G}_j},{\boldsymbol{o}},{\boldsymbol{r}}))} }
+$$
+
+
 
 ### Splatting泼溅
 
-渲染2D高斯的常用策略是使用透视投影的仿射近似将2D高斯基元投影到图像空间上，这种投影仅在高斯中心准确，并且随着到中心距离的增加，近似误差也会增加。为解决该问题，使用齐次坐标下的2D-to-2D映射来描述将2D高斯投影到图像平面的过程，令${\boldsymbol{W} \in 4 \times 4}$为世界空间到屏幕空间的变换矩阵，从相机发出的均匀射线穿过像素(x,y)并在深度z处与2D高斯相交的屏幕空间点可表示为
-$$
-\boldsymbol{x} = {(xz,yz,z,1)^{\rm{T}}} = {\boldsymbol{W}P}(u,v) = \boldsymbol{WH}{(u,v,1,1)^{\rm{T}}}
-$$
+
 
 #### Ray-splat Intersection
 
-为了栅格化2D高斯，逆变换${\boldsymbol{M} = \boldsymbol{W} \boldsymbol{H} ^ {-1}}$这种隐式方法将2D高斯投影到屏幕空间中，但逆变换引入了数值不稳定性，为解决该问题，2DGS提出了显式的Ray-splat Intersection方法。
 
-将像素 (x,y) 的射线参数化为两个正交平面的交集：
-
-x平面：四维齐次平面 ${\boldsymbol{h}_x} = {(-1,0,0,x)^{\rm{T}}}$，由一个法向量 (-1,0,0) 和一个偏移量x定义
-
-y平面：四维齐次平面 ${\boldsymbol{h}_y} = {(0,-1,0,y)^{\rm{T}}}$，由一个法向量 (0,-1,0) 和一个偏移量y 定义
 
 
 
