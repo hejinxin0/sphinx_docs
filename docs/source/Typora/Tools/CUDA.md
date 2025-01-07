@@ -6,8 +6,9 @@
 
 ### 通过Ubuntu官方包管理器安装
 
+（1）禁用Nouveau驱动
+
 ```bash
-#1.禁用Nouveau驱动
 #Nouveau是开源的nvidia驱动，会与官方的nvidia驱动发生冲突
 sudo vim /etc/modprobe.d/blacklist-nouveau.conf
 #添加以下内容
@@ -16,15 +17,24 @@ options nouveau modeset=0
 #更新initramfs并重启
 sudo update-initramfs -u
 sudo reboot
+```
 
-#2.安装nvidia驱动并重启系统
+（2）装nvidia驱动并重启系统
+
+```bash
 sudo apt install nvidia-driver-550
 #若指定版本不可用，可尝试使用ubuntu-drivers工具自动选择适合的版本
 sudo ubuntu-drivers autoinstall
 sudo reboot
-#3.检查是否安装成功
-nvidia-smi
+```
 
+（3）检查是否安装成功
+
+```bash
+nvidia-smi
+```
+
+```bash
 #卸载nvidia驱动
 nvidia-uninstall
 ```
