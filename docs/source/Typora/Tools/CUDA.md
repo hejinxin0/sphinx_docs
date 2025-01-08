@@ -6,6 +6,8 @@
 
 ### 从NVIDIA官方网站安装
 
+参考：[Ubuntu安装Nvidia英伟达显卡驱动，安装Cuda和Cudnn配置机器学习环境](https://qii404.me/2021/07/03/ubuntu-install-nvidia-driver.html)
+
 NVIDIA Driver下载地址：https://www.nvidia.com/en-us/drivers/
 
 ① 检查gcc版本是否与要安装的驱动匹配，删除可能存在的旧Nvidia驱动
