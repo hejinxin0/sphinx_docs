@@ -4,9 +4,17 @@
 
 ## NVIDIA驱动
 
-### 通过Ubuntu官方包管理器安装
+### 从NVIDIA官方网站安装
 
-（1）禁用Nouveau驱动
+NVIDIA Driver下载地址：https://www.nvidia.com/en-us/drivers/
+
+① 检查gcc版本是否与要安装的驱动匹配，删除可能存在的旧Nvidia驱动
+
+```bash
+sudo apt-get remove --purge nvidia*
+```
+
+② 禁用开源Nouveau驱动
 
 ```bash
 #Nouveau是开源的nvidia驱动，会与官方的nvidia驱动发生冲突
@@ -17,27 +25,55 @@ options nouveau modeset=0
 #更新initramfs并重启
 sudo update-initramfs -u
 sudo reboot
+#检查是否已禁用Nouveau驱动，执行以下命令应没有输出才对
+lsmod | grep nouveau
 ```
 
-（2）装nvidia驱动并重启系统
+③ 切换至tty控制台
+
+按下 `Ctrl+Alt+F1~F6`任一切换到tty控制台
+
+④ 关闭`X Server`
 
 ```bash
-sudo apt install nvidia-driver-550
-#若指定版本不可用，可尝试使用ubuntu-drivers工具自动选择适合的版本
-sudo ubuntu-drivers autoinstall
+sudo service lightdm stop
+sudo service gdm stop
+```
+
+⑤ 安装Nvidia驱动并重启系统
+
+```bash
+sudo sh NVIDIA-Linux-x86_64-550.127.05.run
 sudo reboot
 ```
 
-（3）检查是否安装成功
+⑥ 检查是否安装成功
 
 ```bash
+#查看版本
 nvidia-smi
-```
-
-```bash
 #卸载nvidia驱动
 nvidia-uninstall
 ```
+
+
+
+### 通过Ubuntu官方包管理器安装
+
+① 禁用开源Nouveau驱动，参考上一节
+
+② 安装Nvidia驱动并重启系统
+
+```bash
+sudo apt install nvidia-driver-550
+sudo reboot
+#若指定版本不可用，可尝试使用ubuntu-drivers工具自动选择适合的版本
+#sudo ubuntu-drivers autoinstall 
+```
+
+③ 检查是否安装成功，参考上一节
+
+### 
 
 ubuntu22.04更新Nvidia驱动导致掉网卡驱动的解决办法：更改内核版本
 
@@ -61,7 +97,7 @@ sudo update-grub
 
 什么是Ubuntu内核？grub是什么？
 
-### 从NVIDIA官方网站安装
+### 
 
 ## CUDA安装与卸载
 
