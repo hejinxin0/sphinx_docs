@@ -42,6 +42,8 @@ extensions = [
 ]
 #mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
+myst_dmath_double_inline = True  # 允许 $$...$$ 用作块或内联公式
+
 myst_enable_extensions = [
     "amsmath",
     "attrs_inline",
@@ -63,6 +65,7 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 language = 'zh_CN'
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
