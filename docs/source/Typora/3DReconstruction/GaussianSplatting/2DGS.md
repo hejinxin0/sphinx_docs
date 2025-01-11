@@ -35,8 +35,10 @@
 
 在世界空间的局部切平面上定义二维高斯函数，其参数化为：
 $$
-\begin{array}{l}
-P(u,v) = {\boldsymbol{p}_k} + {s_u}{\boldsymbol{t}_u}u + {s_v}{\boldsymbol{t}_v}v = \boldsymbol{H}{(u,v,1,1)^{\rm{T}}}\\
+P(u,v) = {\boldsymbol{p}_k} + {s_u}{\boldsymbol{t}_u}u + {s_v}{\boldsymbol{t}_v}v = \boldsymbol{H}{(u,v,1,1)^{\rm{T}}}
+$$
+
+$$
 \boldsymbol{H} = \left[ {\begin{array}{*{20}{c}}
 {{s_u}{\boldsymbol{t}_u}}&{{s_v}{\boldsymbol{t}_v}}&0&{{\boldsymbol{p}_k}}\\
 0&0&0&1
@@ -44,8 +46,8 @@ P(u,v) = {\boldsymbol{p}_k} + {s_u}{\boldsymbol{t}_u}u + {s_v}{\boldsymbol{t}_v}
 {\boldsymbol{RS}}&{{\boldsymbol{p}_k}}\\
 0&1
 \end{array}} \right]
-\end{array}
 $$
+
 其中${\boldsymbol{H} \in 4 \times 4}$是表示二维高斯几何的齐次变换矩阵。对于𝑢𝑣空间中的点(𝑢, 𝑣)，可以用标准高斯函数求其二维高斯值
 $$
 {\mathcal G}(\boldsymbol{u}) = \exp \left( { - \frac{{{u^2} + {v^2}}}{2}} \right)
