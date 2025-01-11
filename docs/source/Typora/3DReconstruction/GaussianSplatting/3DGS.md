@@ -118,6 +118,7 @@ $$
 <figure style="text-align: center;">
   <figcaption>3DGS的前向过程</figcaption>
 </figure>
+
 **多线程渲染**
 
 ### 反向传播优化
