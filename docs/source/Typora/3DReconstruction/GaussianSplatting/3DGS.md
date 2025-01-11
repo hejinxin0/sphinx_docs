@@ -15,7 +15,6 @@
 ### 辐射场
 
 辐射场是实际上是对三维空间中光分布的表示，它捕捉了光与环境中的表面和材质相互作用的方式。从数学上来说，辐射场可被描述为一个函数
-
 $$
 L : {\mathbb{R}^5} \to {\mathbb{R}^+}
 $$
@@ -26,7 +25,6 @@ $$
 **隐式辐射场**
 
 隐式辐射场在表示场景中的光分布时，不显式定义场景的几何形状。在NeRF中，使用MLP网络将一组空间坐标$(x,y,z)$和观察方向$(\theta ,\phi)$映射到颜色和密度值，任何点的辐射值都不显式存储，而是通过查询MLP实时计算得到
-
 $$
 L(x,y,z,\theta ,\phi ) = {\rm{MLP}}(x,y,z,\theta ,\phi )
 $$
@@ -36,7 +34,6 @@ $$
 **显式辐射场**
 
 显式辐射场直接表示光在离散空间结构中的分布，例如体素网格或点云。该结构中的每个元素存储其在空间中各自位置的辐射信息，可以更直接、快速地访问辐射数据，但代价是更高的内存使用和潜在的低分辨率。显式辐射场的一般形式可写成
-
 $$
 L(x,y,z,\theta ,\phi ) = {\rm{DataStructure}}[(x,y,z)]f(\theta ,\phi )
 $$
@@ -46,7 +43,6 @@ $$
 **3DGS**
 
 3DGS是一种显式辐射场，具有隐式辐射场的优点。将可学习的3D高斯用于场景表达，这些高斯函数在多视图图像的监督下进行优化，以准确表示场景，结合了基于神经网络的优化和显式结构化数据存储的优点。这种混合方法旨在实现实时、高质量的渲染，并且训练时间更短，特别是对于复杂场景和高分辨率输出的情况。3D高斯辐射场可表示为
-
 $$
 L(x,y,z,\theta ,\phi ) = \sum\limits_{i \in {\mathcal N}} {{\mathcal{G}_i}(x,y,z,{\boldsymbol{\mu}_i},{\boldsymbol{\Sigma}_i}){c_i}(\theta ,\phi )}
 $$
@@ -73,7 +69,6 @@ $$
 - 不透明度$\alpha$
 
 三维空间中的3D高斯分布由中心位置$\boldsymbol{\mu}$、3D协方差矩阵$\boldsymbol{\Sigma}$定义
-
 $$
 \mathcal{G}(\boldsymbol{x}) = \exp \left( { - \frac{1}{2}{{(\boldsymbol{x} - \boldsymbol{\mu} )}^{\rm{T}}}{\boldsymbol{\Sigma}^{-1}}(\boldsymbol{x} - \boldsymbol{\mu} )} \right)
 $$
@@ -97,13 +92,11 @@ NeRF和3DGS的渲染可视作互逆的关系。
 Splatting可以理解为三维空间中的3D高斯椭球投影到2D图像空间 (椭圆) 进行渲染的过程。
 
 给定观察变换矩阵 $\boldsymbol W$ 和3D协方差矩阵$\boldsymbol{\Sigma}$，以及投影变换中仿射近似的雅可比矩阵$\boldsymbol{J}$，图像空间的2D协方差矩阵为
-
 $$
 \boldsymbol{\Sigma}' = \boldsymbol{JW\Sigma} {\boldsymbol{W}^{\rm{T}}}{\boldsymbol{J}^{\rm{T}}}
 $$
 
 投影到图像空间的2D高斯椭圆为
-
 $$
 \mathcal{G}^{2D}(\boldsymbol{x}') = \exp \left( { - \frac{1}{2}{{({\boldsymbol{x}'} - \boldsymbol{\mu}')}^{\rm{T}}}{{{\boldsymbol{\Sigma '}}}^{-1}}({\boldsymbol{x}'} - {\boldsymbol{\mu}'})} \right)
 $$
@@ -112,7 +105,6 @@ $$
 #### 体渲染
 
 给定像素点$\boldsymbol{x}'$，通过观察变换$\boldsymbol W$可以计算出像素点到所有沿射线方向重叠高斯的距离，即这些高斯的深度，形成高斯的排序列表$\mathcal N$，通过𝛼-blending计算该像素的最终颜色
-
 $$
 \boldsymbol{C} = \sum\limits_{i \in {\mathcal N}} {{\boldsymbol{c}_i}{\alpha _i}{\mathcal G}_i^{2D}(\boldsymbol{x}')\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{\mathcal G}_j^{2D}(\boldsymbol{x}'))} }
 $$
@@ -137,13 +129,11 @@ $$
 3D高斯的大多数属性可以直接通过反向传播进行优化，但直接优化协方差矩阵会导致非半正定矩阵，这不符合通常与协方差矩阵相关的物理解释。
 
 为保证协方差矩阵的半正定性，使用缩放矩阵$\boldsymbol{S}$和旋转矩阵$\boldsymbol{R}$来表达协方差矩阵，优化用于缩放的3D向量$\boldsymbol s$和归一化的单位四元数$\boldsymbol q$，初始协方差矩阵估计为各向同性高斯矩阵，其轴等于到最近的三个点的距离的平均值
-
 $$
 \boldsymbol{\Sigma}  = \boldsymbol{RS}{\boldsymbol{S}^{\rm{T}}}{\boldsymbol{R}^{\rm{T}}}
 $$
 
 计算渲染图像和真实图像的差异，损失函数
-
 $$
 {\mathcal L} = {\rm{ }}\left( {1{\rm{ }} - {\rm{ }}\lambda } \right){{\mathcal L}_1}{\rm{ }} + {\rm{ }}\lambda {{\mathcal L}_{{\rm{D - SSIM}}}}
 $$
