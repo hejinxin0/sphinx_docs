@@ -16,7 +16,7 @@
 
 将ray-Gaussian intersection定义为高斯函数沿射线达到最大值的点。
 
-给定相机中心 ${\boldsymbol{o} \in \mathbb{R}^3}$、射线方向 ${\boldsymbol{r} \in \mathbb{R}^3}$，3D点可表示为 $\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$，其中 𝑡 为射线深度，将点 $\boldsymbol{x}$ 转换到由位置 ${\boldsymbol{p}_k}$ 、尺度 ${\boldsymbol{S}_k}$ 和旋转 ${\boldsymbol{R}_k}$ 定义的3D高斯 ${{\mathcal G}_k}$ 的局部坐标系下
+给定相机中心 ${\boldsymbol{o} \in \mathbb{R}^3}$、射线方向 ${\boldsymbol{r} \in \mathbb{R}^3}$，3D点可表示为 $\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$，其中 $𝑡$ 为射线深度，将点 $\boldsymbol{x}$ 转换到由位置 ${\boldsymbol{p}_k}$ 、尺度 ${\boldsymbol{S}_k}$ 和旋转 ${\boldsymbol{R}_k}$ 定义的3D高斯 ${{\mathcal G}_k}$ 的局部坐标系下
 $$
 \begin{array}{l}
 {\boldsymbol{o}_g} = \boldsymbol{S}_k^{-1}{\boldsymbol{R}_k}(\boldsymbol{o} - {\boldsymbol{p}_k})\\
