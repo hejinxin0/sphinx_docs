@@ -57,9 +57,9 @@ $$
 
 新视角合成
 
-#### 建模
+#### 3D高斯的属性
 
-**3D高斯的属性** :  ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
+${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
 
 - 中心位置$\boldsymbol{\mu}$
 
