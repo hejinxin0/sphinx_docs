@@ -47,7 +47,7 @@ $$
 L(x,y,z,\theta ,\phi ) = \sum\limits_{i \in {\mathcal N}} {{\mathcal{G}_i}(x,y,z,{\boldsymbol{\mu}_i},{\boldsymbol{\Sigma}_i}){c_i}(\theta ,\phi )}
 $$
 
-其中 ${\mathcal G}$ 是均值为 ${\boldsymbol{\mu}_i}$、协方差为 ${\boldsymbol{\Sigma}_i}$ 的高斯函数，$c$ 表示与视图相关的颜色
+其中 ${\mathcal G}$ 是均值为 ${\boldsymbol{\mu}_i}$ 、协方差为 ${\boldsymbol{\Sigma}_i}$ 的高斯函数，$c$ 表示与视图相关的颜色
 
 ## 方法解析
 
