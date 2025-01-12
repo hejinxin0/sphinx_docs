@@ -47,7 +47,7 @@ $$
 L(x,y,z,\theta ,\phi ) = \sum\limits_{i \in {\mathcal N}} {{\mathcal{G}_i}(x,y,z,{\boldsymbol{\mu}_i},{\boldsymbol{\Sigma}_i}){c_i}(\theta ,\phi )}
 $$
 
-其中 ${\mathcal G}$ 是均值为 ${\boldsymbol{\mu}_i}$、协方差为 ${\boldsymbol{\Sigma}_i}$ 的高斯函数， $c$ 表示与视图相关的颜色
+其中 ${\mathcal G}$ 是均值为 ${\boldsymbol{\mu}_i}$、协方差为 ${\boldsymbol{\Sigma}_i}$ 的高斯函数，$c$ 表示与视图相关的颜色
 
 ## 方法解析
 
@@ -68,7 +68,7 @@ ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数�
 - 颜色 $\boldsymbol{c}$ (可由球谐函数表示)
 - 不透明度 $\alpha$
 
-三维空间中的3D高斯分布由中心位置 $\boldsymbol{\mu}$、3D协方差矩阵 $\boldsymbol{\Sigma}$ 定义
+三维空间中的3D高斯分布由中心位置 $\boldsymbol{\mu}$ 、3D协方差矩阵 $\boldsymbol{\Sigma}$ 定义
 $$
 \mathcal{G}(\boldsymbol{x}) = \exp \left( { - \frac{1}{2}{{(\boldsymbol{x} - \boldsymbol{\mu} )}^{\rm{T}}}{\boldsymbol{\Sigma}^{-1}}(\boldsymbol{x} - \boldsymbol{\mu} )} \right)
 $$
