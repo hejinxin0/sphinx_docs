@@ -16,6 +16,10 @@
 
 将ray-Gaussian intersection定义为高斯函数沿射线达到最大值的点。
 
+<img src="assets/GOF_ray_tracing_volume_rendering.png" alt="GOF_ray_tracing_volume_rendering" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
+
+
+
 给定相机中心${\boldsymbol{o} \in \mathbb{R}^3}$、射线方向${\boldsymbol{r} \in \mathbb{R}^3}$，3D点可表示为$\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$，其中t为射线深度，将点$\boldsymbol{x}$转换到由位置${\boldsymbol{p}_k}$、尺度${\boldsymbol{S}_k}$和旋转${\boldsymbol{R}_k}$定义的3D高斯${{\mathcal G}_k}$的局部坐标系下
 $$
 \begin{array}{l}
@@ -51,7 +55,9 @@ $$
 
 
 
-### Splatting泼溅
+<img src="assets/GOF_Definition_of Gaussian’s_normal.png" alt="GOF_Definition_of Gaussian’s_normal" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
+
+### 高斯不透明场
 
 
 
@@ -70,7 +76,7 @@ $$
 $$
 
 
-#### 光栅化
+#### 体渲染
 
 $$
 \boldsymbol{c}(\boldsymbol{x}) = \sum\limits_{i \in {\cal N}} {{{\boldsymbol{c}}_i}{\alpha _i}{{\hat {\mathcal G}}_i}({\boldsymbol{u}}({\bf{x}}))\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{{\hat {\mathcal G}}_j}({\boldsymbol{u}}({\boldsymbol{x}})))} }

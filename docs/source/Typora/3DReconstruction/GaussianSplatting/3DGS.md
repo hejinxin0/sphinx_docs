@@ -113,7 +113,7 @@ $$
 
 **Tiles (Patches)** : 为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像分割为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
-<img src="assets/forward_process_of_3DGS.png" alt="forward_process_of_3DGS" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
+<img src="assets/3DGS_forward_process.png" alt="3DGS_forward_process" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
 <figure style="text-align: center;">
   <figcaption>3DGS的前向过程</figcaption>
@@ -174,6 +174,8 @@ $$
 （2）缺乏多视角几何一致性
 
 （3）3D高斯的体积辐射与实际场景表面的薄特性相冲突
+
+（4）透视投影的仿射近似将3D高斯变换到图像空间只能在高斯中心附近产生准确的投影，随着到中心距离的增加，近似误差也会增加
 
 ## 演进方向
 
