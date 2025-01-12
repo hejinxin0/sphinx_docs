@@ -20,11 +20,11 @@ L : {\mathbb{R}^5} \to {\mathbb{R}^+}
 $$
 
 
-其中$L(x,y,z,\theta ,\phi )$将空间点$(x,y,z)$和球坐标$(\theta ,\phi)$指定的方向映射到非负的辐射值。辐射场包含显示表达和隐式表达，可用于场景表达和渲染。
+其中 $L(x,y,z,\theta ,\phi )$ 将空间点 $(x,y,z)$ 和球坐标 $(\theta ,\phi)$ 指定的方向映射到非负的辐射值。辐射场包含显示表达和隐式表达，可用于场景表达和渲染。
 
 **隐式辐射场**
 
-隐式辐射场在表示场景中的光分布时，不显式定义场景的几何形状。在NeRF中，使用MLP网络将一组空间坐标$(x,y,z)$和观察方向$(\theta ,\phi)$映射到颜色和密度值，任何点的辐射值都不显式存储，而是通过查询MLP实时计算得到
+隐式辐射场在表示场景中的光分布时，不显式定义场景的几何形状。在NeRF中，使用MLP网络将一组空间坐标 $(x,y,z)$ 和观察方向 $(\theta ,\phi)$ 映射到颜色和密度值，任何点的辐射值都不显式存储，而是通过查询MLP实时计算得到
 $$
 L(x,y,z,\theta ,\phi ) = {\rm{MLP}}(x,y,z,\theta ,\phi )
 $$
@@ -38,7 +38,7 @@ $$
 L(x,y,z,\theta ,\phi ) = {\rm{DataStructure}}[(x,y,z)]f(\theta ,\phi )
 $$
 
-其中$\rm{DataStructure}$可以是体素网格或点云$f(\theta ,\phi )$是一个基于观察方向修改辐射的函数。
+其中$\rm{DataStructure}$可以是体素网格或点云 $f(\theta ,\phi )$ 是一个基于观察方向修改辐射的函数。
 
 **3DGS**
 
@@ -47,7 +47,7 @@ $$
 L(x,y,z,\theta ,\phi ) = \sum\limits_{i \in {\mathcal N}} {{\mathcal{G}_i}(x,y,z,{\boldsymbol{\mu}_i},{\boldsymbol{\Sigma}_i}){c_i}(\theta ,\phi )}
 $$
 
-其中${\mathcal G}$是均值为${\boldsymbol{\mu}_i}$、协方差为${\boldsymbol{\Sigma}_i}$的高斯函数， $c$表示与视图相关的颜色
+其中 ${\mathcal G}$ 是均值为 ${\boldsymbol{\mu}_i}$、协方差为 ${\boldsymbol{\Sigma}_i}$ 的高斯函数， $c$ 表示与视图相关的颜色
 
 ## 方法解析
 
@@ -61,14 +61,14 @@ $$
 
 ${(\boldsymbol{\mu},\boldsymbol{\Sigma},\boldsymbol{c},\alpha)}$, 所有参数均可通过反向传播来学习和优化
 
-- 中心位置$\boldsymbol{\mu}$
+- 中心位置 $\boldsymbol{\mu}$
 
-- 3D协方差矩阵$\boldsymbol{\Sigma}$
+- 3D协方差矩阵 $\boldsymbol{\Sigma}$
 
-- 颜色$\boldsymbol{c}$ (可由球谐函数表示)
-- 不透明度$\alpha$
+- 颜色 $\boldsymbol{c}$ (可由球谐函数表示)
+- 不透明度 $\alpha$
 
-三维空间中的3D高斯分布由中心位置$\boldsymbol{\mu}$、3D协方差矩阵$\boldsymbol{\Sigma}$定义
+三维空间中的3D高斯分布由中心位置 $\boldsymbol{\mu}$、3D协方差矩阵 $\boldsymbol{\Sigma}$ 定义
 $$
 \mathcal{G}(\boldsymbol{x}) = \exp \left( { - \frac{1}{2}{{(\boldsymbol{x} - \boldsymbol{\mu} )}^{\rm{T}}}{\boldsymbol{\Sigma}^{-1}}(\boldsymbol{x} - \boldsymbol{\mu} )} \right)
 $$
@@ -91,7 +91,7 @@ NeRF和3DGS的渲染可视作互逆的关系。
 
 Splatting可以理解为三维空间中的3D高斯椭球投影到2D图像空间 (椭圆) 进行渲染的过程。
 
-给定观察变换矩阵 $\boldsymbol W$ 和3D协方差矩阵$\boldsymbol{\Sigma}$，以及投影变换中仿射近似的雅可比矩阵$\boldsymbol{J}$，图像空间的2D协方差矩阵为
+给定观察变换矩阵 $\boldsymbol W$ 和3D协方差矩阵 $\boldsymbol{\Sigma}$，以及投影变换中仿射近似的雅可比矩阵 $\boldsymbol{J}$，图像空间的2D协方差矩阵为
 $$
 \boldsymbol{\Sigma}' = \boldsymbol{JW\Sigma} {\boldsymbol{W}^{\rm{T}}}{\boldsymbol{J}^{\rm{T}}}
 $$
@@ -100,18 +100,18 @@ $$
 $$
 \mathcal{G}^{2D}(\boldsymbol{x}') = \exp \left( { - \frac{1}{2}{{({\boldsymbol{x}'} - \boldsymbol{\mu}')}^{\rm{T}}}{{{\boldsymbol{\Sigma '}}}^{-1}}({\boldsymbol{x}'} - {\boldsymbol{\mu}'})} \right)
 $$
-其中$\boldsymbol{x}'$和$\boldsymbol{\mu}'$是图像空间中的坐标。
+其中 $\boldsymbol{x}'$ 和 $\boldsymbol{\mu}'$ 是图像空间中的坐标。
 
 #### 体渲染
 
-给定像素点$\boldsymbol{x}'$，通过观察变换$\boldsymbol W$可以计算出像素点到所有沿射线方向重叠高斯的距离，即这些高斯的深度，形成高斯的排序列表$\mathcal N$，通过𝛼-blending计算该像素的最终颜色
+给定像素点 $\boldsymbol{x}'$，通过观察变换 $\boldsymbol W$ 可以计算出像素点到所有沿射线方向重叠高斯的距离，即这些高斯的深度，形成高斯的排序列表 $\mathcal N$，通过𝛼-blending计算该像素的最终颜色
 $$
 \boldsymbol{C} = \sum\limits_{i \in {\mathcal N}} {{\boldsymbol{c}_i}{\alpha _i}{\mathcal G}_i^{2D}(\boldsymbol{x}')\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{\mathcal G}_j^{2D}(\boldsymbol{x}'))} }
 $$
 
 #### 快速可微光栅化
 
-**Tiles (Patches)** : 为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像分割为多个不重叠的`patch`，称为`tile`，每个图块包含 16×16 像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
+**Tiles (Patches)** : 为避免逐像素计算的成本，3DGS改为patch级别的渲染。首先将图像分割为多个不重叠的`patch`，称为`tile`，每个图块包含16×16像素，然后确定`tile`与投影高斯的相交情况，由于投影高斯可能会与多个`tile`相交，需要进行复制，并为每个复制体分配相关`tile`的标识符。
 
 <img src="assets/3DGS_forward_process.png" alt="3DGS_forward_process" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
@@ -129,7 +129,7 @@ $$
 
 3D高斯的大多数属性可以直接通过反向传播进行优化，但直接优化协方差矩阵会导致非半正定矩阵，这不符合通常与协方差矩阵相关的物理解释。
 
-为保证协方差矩阵的半正定性，使用缩放矩阵$\boldsymbol{S}$和旋转矩阵$\boldsymbol{R}$来表达协方差矩阵，优化用于缩放的3D向量$\boldsymbol s$和归一化的单位四元数$\boldsymbol q$，初始协方差矩阵估计为各向同性高斯矩阵，其轴等于到最近的三个点的距离的平均值
+为保证协方差矩阵的半正定性，使用缩放矩阵 $\boldsymbol{S}$ 和旋转矩阵 $\boldsymbol{R}$ 来表达协方差矩阵，优化用于缩放的3D向量 $\boldsymbol s$ 和归一化的单位四元数 $\boldsymbol q$，初始协方差矩阵估计为各向同性高斯矩阵，其轴等于到最近的三个点的距离的平均值
 $$
 \boldsymbol{\Sigma}  = \boldsymbol{RS}{\boldsymbol{S}^{\rm{T}}}{\boldsymbol{R}^{\rm{T}}}
 $$
@@ -163,9 +163,9 @@ $$
 
 - **点的剪枝 (Pruning)**
 
-点的剪枝阶段移除冗余或影响较小的高斯，可以看作是一种正则化过程。通过剪枝消除几乎透明的高斯和在世界空间或观察空间中非常大的高斯。此外，为防止相机附近的高斯密度不合理地增加，这些高斯会在固定次数的迭代后将$\alpha$设置为接近0的值。该过程在保证高斯的精度和有效性的情况下，节约计算资源。
+点的剪枝阶段移除冗余或影响较小的高斯，可以看作是一种正则化过程。通过剪枝消除几乎透明的高斯和在世界空间或观察空间中非常大的高斯。此外，为防止相机附近的高斯密度不合理地增加，这些高斯会在固定次数的迭代后将 $\alpha$ 设置为接近 0 的值。该过程在保证高斯的精度和有效性的情况下，节约计算资源。
 
-**关注对象：**几乎透明的高斯（α低于指定阈值）和在世界空间或观察空间中非常大的高斯
+**关注对象：**几乎透明的高斯（$\alpha$ 低于指定阈值）和在世界空间或观察空间中非常大的高斯
 
 ## 存在的问题
 

@@ -16,7 +16,7 @@
 
 将ray-Gaussian intersection定义为高斯函数沿射线达到最大值的点。
 
-给定相机中心${\boldsymbol{o} \in \mathbb{R}^3}$、射线方向${\boldsymbol{r} \in \mathbb{R}^3}$，3D点可表示为$\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$，其中𝑡为射线深度，将点$\boldsymbol{x}$转换到由位置${\boldsymbol{p}_k}$、尺度${\boldsymbol{S}_k}$和旋转${\boldsymbol{R}_k}$定义的3D高斯${{\mathcal G}_k}$的局部坐标系下
+给定相机中心 ${\boldsymbol{o} \in \mathbb{R}^3}$、射线方向 ${\boldsymbol{r} \in \mathbb{R}^3}$，3D点可表示为 $\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$，其中 𝑡 为射线深度，将点 $\boldsymbol{x}$ 转换到由位置 ${\boldsymbol{p}_k}$ 、尺度 ${\boldsymbol{S}_k}$ 和旋转 ${\boldsymbol{R}_k}$ 定义的3D高斯 ${{\mathcal G}_k}$ 的局部坐标系下
 $$
 \begin{array}{l}
 {\boldsymbol{o}_g} = \boldsymbol{S}_k^{-1}{\boldsymbol{R}_k}(\boldsymbol{o} - {\boldsymbol{p}_k})\\
@@ -31,13 +31,13 @@ $$
 = \exp \left( { - \frac{1}{2}{\boldsymbol{x}}_g^{\rm{T}}{\boldsymbol{x}_g}} \right) 
 = \exp \left( { - \frac{1}{2}\left( {\boldsymbol{r}_g^{\rm{T}}{\boldsymbol{r}_g}{t^2} + 2{\boldsymbol{o}}_g^{\rm{T}}{\boldsymbol{r}_g}t + {\boldsymbol{o}}_g^{\rm{T}}{\boldsymbol{o}_g}} \right)} \right)
 $$
-该函数在${t^*}$处得到最大值
+该函数在 ${t^*}$ 处得到最大值
 $$
 {t^*} =  - \frac{A}{B}, {\ }
 A = {\boldsymbol{r}}_g^{\rm{T}}{\boldsymbol{r}_g}, {\ }
 B = {\boldsymbol{o}}_g^{\rm{T}}{\boldsymbol{r}_g}
 $$
-定义高斯函数${{\mathcal G}_k}$对给定相机中心${\boldsymbol o}$和射线方向${\boldsymbol r}$的贡献为
+定义高斯函数 ${{\mathcal G}_k}$ 对给定相机中心 ${\boldsymbol o}$ 和射线方向 ${\boldsymbol r}$ 的贡献为
 $$
 {\mathcal E}({{\mathcal G}_k},{\boldsymbol{o}},{\boldsymbol{r}}) = {\mathcal G}_k^{1D}({t^*})
 $$
@@ -48,7 +48,7 @@ $$
 
 使用显式ray-Gaussian intersection而不是投影的一个显著好处是它允许评估沿射线的任意3D点的不透明度值或透射率。
 
-在沿射线只有一个高斯的情况下，将沿射线的任意3D点$\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$的不透明度定义如下式，不透明度沿射线增加到最大值后将保持不变
+在沿射线只有一个高斯的情况下，将沿射线的任意3D点 $\boldsymbol{x} = \boldsymbol{o} + {t}{\boldsymbol{r}}$ 的不透明度定义如下式，不透明度沿射线增加到最大值后将保持不变
 $$
 {\boldsymbol{O}_k}({{\mathcal G}_k},{\boldsymbol{o}},{\boldsymbol{r}},t) = \left\{ {\begin{array}{*{20}{c}}
 {{\mathcal G}_k^{1D}(t)}&{if(t \le {t^*})}\\
@@ -62,7 +62,7 @@ $$
 \sum\limits_{k = 1}^K {{{\boldsymbol{c}}_k}{\alpha _k}{\boldsymbol{O}_k}({{\mathcal G}_k},{\boldsymbol{o}},{\boldsymbol{r}},t)\prod\limits_{j = 1}^{k - 1} {(1 - {\alpha _j}{\boldsymbol{O}_j}({{\mathcal G}_j},{\boldsymbol{o}},{\boldsymbol{r}},t))} }
 $$
 
-将3D点$\boldsymbol{x}$的不透明度定义为所有训练视角或观察方向中的最小不透明度值，即高斯不透明场
+将3D点 $\boldsymbol{x}$ 的不透明度定义为所有训练视角或观察方向中的最小不透明度值，即高斯不透明场
 $$
 {\boldsymbol{O}}(x) = 
 \mathop {\rm{min}}\limits_{({\boldsymbol{O}},\boldsymbol{r})} {\boldsymbol{O}}({\boldsymbol{o}},{\boldsymbol{r}},t)
@@ -109,7 +109,7 @@ $$
 {w_i} = {\alpha _i}{\widehat {\mathcal G}_i}({\boldsymbol{u}}({\boldsymbol{x}}))\prod\limits_{j = 1}^{i - 1} {(1 - {\alpha _j}{{\widehat {\mathcal G}}_j}({\boldsymbol{u}}({\boldsymbol{x}})))} 
 \end{array}
 $$
-其中${w_i}$是第𝑖个intersection的blending权值。
+其中 ${w_i}$ 是第 𝑖 个intersection的blending权值。
 
 #### 法线一致性正则化
 
