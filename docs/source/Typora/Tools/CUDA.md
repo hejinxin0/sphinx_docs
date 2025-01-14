@@ -70,8 +70,6 @@ nvidia-smi
 nvidia-uninstall
 ```
 
-
-
 ### 通过Ubuntu官方包管理器安装
 
 ① 禁用开源Nouveau驱动，参考上一节
@@ -87,7 +85,7 @@ sudo reboot
 
 ③ 检查是否安装成功，参考上一节
 
-### 
+### 相关问题
 
 ubuntu22.04更新Nvidia驱动导致掉网卡驱动的解决办法：更改内核版本
 
