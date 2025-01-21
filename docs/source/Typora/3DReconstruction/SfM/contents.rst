@@ -6,6 +6,6 @@ SfM
    :maxdepth: 1
    :glob:
 
-   COLMAP/contents
+   colmap/contents
    
 
