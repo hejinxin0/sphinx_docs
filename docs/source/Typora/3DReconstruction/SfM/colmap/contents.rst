@@ -1,12 +1,11 @@
-.. 3D Reconstruction 
+.. colmap
 
-3D Reconstruction
+colmap
 ================================================================================================================================
 .. toctree::
    :maxdepth: 1
    :glob:
-   
-   GaussianSplatting/contents
-   MVS/contents
-   SfM/contents
+
+   *
+
 

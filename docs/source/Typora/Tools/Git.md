@@ -77,12 +77,12 @@ git commit -a ?????????????????
 ### git remote
 
 ```bash
-git remote [-v | --verbose]                    # [-v | --verbose] 显示远程仓库的详细信息
-git remote add <name> <URL>         #  为 <URL> 地址的远程仓库添加一个名为 <name> 的本地仓库，建立链接
-git remote rename <old> <new>      # 将名为 <old> 的远程仓库重命名为 <new>
-git remote remove <name>                # 删除名为 <name> 的远程仓库
-git remote [-v | --verbose] show        # 显示所有远程仓库的信息
-git remote [-v | --verbose] show [-n] <name>        # 显示名为 <name> 的远程仓库的信息
+git remote [-v | --verbose]         # [-v | --verbose] 显示远程仓库的详细信息
+git remote add <name> <URL>         # 为 <URL> 地址的远程仓库添加一个名为 <name> 的本地仓库，建立链接
+git remote rename <old> <new>       # 将名为 <old> 的远程仓库重命名为 <new>
+git remote remove <name>            # 删除名为 <name> 的远程仓库
+git remote [-v | --verbose] show    # 显示所有远程仓库的信息
+git remote [-v | --verbose] show [-n] <name>  # 显示名为 <name> 的远程仓库的信息
 ```
 
 ### git pull
@@ -99,7 +99,7 @@ git pull origin master
 
 ```bash
 git push <远程主机名> <本地分支名>:<远程分支名>
-git push origin master #将本地的 master 分支推送到 origin 主机的 master 分支
+git push origin master # 将本地的 master 分支推送到 origin 主机的 master 分支
 ```
 
 ### 总体流程举例

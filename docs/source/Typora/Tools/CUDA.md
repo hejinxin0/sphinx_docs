@@ -22,13 +22,13 @@
 
 NVIDIA Driver下载地址：https://www.nvidia.com/en-us/drivers/
 
-① 检查gcc版本是否与要安装的驱动匹配，删除可能存在的旧Nvidia驱动
+(1) 检查gcc版本是否与要安装的驱动匹配，删除可能存在的旧Nvidia驱动
 
 ```bash
 sudo apt-get remove --purge nvidia*
 ```
 
-② 禁用开源Nouveau驱动
+(2) 禁用开源Nouveau驱动
 
 ```bash
 # Nouveau是开源的nvidia驱动，会与官方的nvidia驱动发生冲突
@@ -43,38 +43,37 @@ sudo reboot
 lsmod | grep nouveau
 ```
 
-③ 切换至tty控制台
+(3) 切换至`tty`控制台
 
-按下 `Ctrl+Alt+F1~F6`任一切换到tty控制台
+按下 `Ctrl+Alt+F1~F6`任一切换到`tty`控制台
 
-④ 关闭`X Server`
+(4) 关闭`X Server`
 
 ```bash
 sudo service lightdm stop
 sudo service gdm stop
 ```
 
-⑤ 安装Nvidia驱动并重启系统
+(5) 安装Nvidia驱动并重启系统
 
 ```bash
 sudo sh NVIDIA-Linux-x86_64-550.127.05.run
 sudo reboot
 ```
 
-⑥ 检查是否安装成功
+(6) 检查是否安装成功
 
 ```bash
-# 查看版本
+# 查看版本和卸载nvidia驱动
 nvidia-smi
-# 卸载nvidia驱动
 nvidia-uninstall
 ```
 
 ### 通过Ubuntu官方包管理器安装
 
-① 禁用开源Nouveau驱动，参考上一节
+(1) 禁用开源Nouveau驱动，参考上一节
 
-② 安装Nvidia驱动并重启系统
+(2) 安装Nvidia驱动并重启系统
 
 ```bash
 sudo apt install nvidia-driver-550
@@ -83,7 +82,7 @@ sudo reboot
 # sudo ubuntu-drivers autoinstall 
 ```
 
-③ 检查是否安装成功，参考上一节
+(3) 检查是否安装成功，参考上一节
 
 ### 相关问题
 

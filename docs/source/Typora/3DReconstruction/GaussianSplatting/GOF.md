@@ -1,4 +1,4 @@
-# [Gaussian Opacity Fields (GOF)](https://github.com/autonomousvision/gaussian-opacity-fields)
+# [Gaussian Opacity Fields (GOF)](https://niujinshuchong.github.io/gaussian-opacity-fields/)
 
 ## 主要贡献
 
@@ -102,7 +102,7 @@ $$
 
 #### 深度正则化
 
-3DGS的体渲染不考虑intersected高斯基元之间的距离，分散的高斯可能会产生相似的颜色和深度渲染，即体渲染过程中没有准确地对表面部分进行渲染，通过最小化沿射线分布的ray-splat intersection之间的距离，来集中射线的权重分布到实际表面，深度损失如下
+3DGS的体渲染不考虑intersected高斯基元之间的距离，分散的高斯可能会产生相似的颜色和深度渲染，即体渲染过程中没有准确地对表面部分进行渲染，2DGS通过最小化沿射线分布的ray-splat intersection之间的距离，来集中射线的权重分布到实际表面，深度损失如下
 $$
 \begin{array}{l}
 {{\cal L}_d} = \sum\limits_{i,j} {{w_i}{w_j}\left| {{z_i} - {z_j}} \right|} \\
