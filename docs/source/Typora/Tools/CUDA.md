@@ -16,7 +16,9 @@
 
 ## NVIDIA驱动
 
-### 从NVIDIA官方网站安装
+### 安装驱动
+
+#### 从NVIDIA官方网站安装
 
 参考：[Ubuntu安装Nvidia英伟达显卡驱动，安装Cuda和Cudnn配置机器学习环境](https://qii404.me/2021/07/03/ubuntu-install-nvidia-driver.html)
 
@@ -69,7 +71,7 @@ nvidia-smi
 nvidia-uninstall
 ```
 
-### 通过Ubuntu官方包管理器安装
+#### 通过Ubuntu官方包管理器安装
 
 (1) 禁用开源Nouveau驱动，参考上一节
 
@@ -83,6 +85,38 @@ sudo reboot
 ```
 
 (3) 检查是否安装成功，参考上一节
+
+### 显卡切换
+
+`prime-select` 基于**NVIDIA Optimus**技术，它可以让系统在集成显卡和独立显卡之间切换，以提高电池续航和图形性能
+
+查看当前显卡状态
+
+```bash
+prime-select query
+```
+
+切换intel集成显卡
+
+```bash
+sudo prime-select intel
+```
+
+切换到nvidia独立显卡
+
+```bash
+sudo prime-select nvidia
+```
+
+切换到on-demand模式
+
+```bash
+sudo prime-select on-demand
+```
+
+**注意**：
+
+切换显卡后，需要重启计算机才能生效
 
 ### 相关问题
 
@@ -122,6 +156,8 @@ cuDNN是什么？
 
 [CUDA Toolkit 11.8 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=18.04&target_type=runfile_local)
 
+详细安装和卸载教程可参考NVIDIA官方网站提供的相应版本cuda的Versioned Online Documentation文档：[CUDA Toolkit Documentation](https://docs.nvidia.com/cuda/archive/11.8.0/)
+
 ```bash
 # 1.安装前检查cuda对应的gcc版本是否符合要求
 
@@ -146,4 +182,14 @@ sudo ln -s /usr/local/cuda-11.8 /usr/local/cuda
 ```
 
 ### 卸载cuda
+
+```bash
+# 卸载cuda，不同版本cuda可能有出入，具体参考相应版本cuda的官方Versioned Online Documentation文档
+sudo apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" \
+ "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*"
+# 卸载nvidia驱动
+sudo apt-get --purge remove "*nvidia*" "libxnvctrl*"
+# 清理卸载
+sudo apt-get autoremove
+```
 

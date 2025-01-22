@@ -17,8 +17,12 @@ https://docs.opencv.org/4.5.2/d0/d2e/classcv_1_1CommandLineParser.html
 [CSDN：Ubuntu18.04安装Opencv4.5.2](https://blog.csdn.net/qq_17769915/article/details/124087687)
 
 ```bash
-pkg-config  --libs opencv  # 查看libs库
-pkg-config  --modversion  opencv   # 查看版本号
+# 查看libs库
+pkg-config --libs opencv
+
+# 查看opencv或者opencv4版本号
+pkg-config --modversion opencv
+pkg-config --modversion opencv4
 ```
 
 windows下如何安装？？
