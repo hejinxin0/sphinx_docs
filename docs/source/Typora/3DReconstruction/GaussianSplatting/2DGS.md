@@ -2,7 +2,7 @@
 
 ## 主要贡献
 
-- 提出一种高效的可微分2D高斯渲染器，通过2D表面建模、ray-splat intersection、体积积分实现透视正确的splatting
+- 提出一种高效的可微2D高斯渲染器，通过2D表面建模、ray-splat intersection、体积积分实现透视正确的splatting
 - 引入深度正则化和法线一致性正则化，用于改进表面重建质量
 
 ## 3DGS的问题
