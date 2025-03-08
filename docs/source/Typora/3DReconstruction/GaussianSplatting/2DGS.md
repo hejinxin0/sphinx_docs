@@ -154,7 +154,7 @@ $$
 >
 >**Project Pages:**
 >
->[**2DGS**: 2D Gaussian Splatting for Geometrically Accurate Radiance Fields](https://surfsplatting.github.io/)
+>[2DGS: 2D Gaussian Splatting for Geometrically Accurate Radiance Fields](https://surfsplatting.github.io/)
 >
 >**Papers:**
 >
