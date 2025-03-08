@@ -195,6 +195,8 @@ $$
 
 <img src="assets/3DGS_general_pipeline.png" alt="3DGS_general_pipeline" style="zoom: 80%; display: block; margin-left: auto; margin-right: auto;" />
 
+
+
 >**Web Pages：**
 >
 >[3DGS综述以及对3DGS的理解：A Survey on 3D Gaussian Splatting - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/679809915)
