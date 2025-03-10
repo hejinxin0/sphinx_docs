@@ -12,7 +12,7 @@ Learning Summary Document
    Typora/SLAM/contents
    Typora/ObjectTracking/contents
    Typora/3DReconstruction/contents
-   Typora/3DHuman
+   Typora/3DHuman/contents
    Typora/Tools/contents
    Typora/CPP/contents
    Typora/Linux/contents
