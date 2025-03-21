@@ -138,6 +138,8 @@ sudo update-grub
 
 如何进入tty命令行，ctrl+f3?
 
+tmux命令行使用鼠标？？？
+
 开机如何切换内核版本，开机时按住shift?
 
 什么是Ubuntu内核？grub是什么？
