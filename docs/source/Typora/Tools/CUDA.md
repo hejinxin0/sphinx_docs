@@ -1,24 +1,40 @@
 
 
-# CUDA和NVIDIA驱动
+# CUDA 和 NVIDIA 驱动
 
-## Linux桌面环境
+## Linux 桌面环境
 
-**X Server** : X Server 是一个 **图形服务器**，提供了图形界面的底层支持，管理所有与图形显示相关的内容，包括绘制图形界面、处理输入事件（如键盘和鼠标），以及与显示硬件的交互。它是所有图形应用程序和桌面环境的基础。
+`X Server` : 一个**图形服务器**，提供了图形界面的底层支持，管理所有与图形显示相关的内容，包括绘制图形界面、处理输入事件（如键盘和鼠标），以及与显示硬件的交互。它是所有图形应用程序和桌面环境的基础。
 
-**GNOME** : 是一个完整的**桌面环境**，它构建在 X Server（或 Wayland）之上，提供了窗口管理、文件管理器、应用程序、系统设置等功能，为用户提供图形化的操作界面。
+`GNOME` : 一个完整的**桌面环境**，它构建在 `X Server`（或 `Wayland`）之上，提供了窗口管理、文件管理器、应用程序、系统设置等功能，为用户提供图形化的操作界面。
 
-**GDM** 是 GNOME 的显示管理器，它在系统启动时提供登录界面，并启动 X Server 和 GNOME 会话。GDM 是 GNOME 桌面环境的一部分，负责管理登录过程和会话启动。
+`GDM` : `GNOME`的显示管理器，它在系统启动时提供登录界面，并启动 `X Server` 和 `GNOME` 会话。`GDM` 是 `GNOME` 桌面环境的一部分，负责管理登录过程和会话启动。
 
-`GDM` 是GNOME桌面环境的默认显示管理器。它是一个全功能的显示管理器，旨在与GNOME桌面环境紧密集成，提供图形化的登录界面
+```bash
+操作系统（Linux）
+   ├── X Server（图形核心，处理显示和输入）
+   │     ├── Xorg（X Server 的实现）
+   │
+   ├── GDM（显示管理器，管理登录）
+   │     ├── 启动 Xorg
+   │     ├── 启动 GNOME 桌面
+   │
+   ├── GNOME（桌面环境，提供完整 GUI 体验）
+         ├── GNOME Shell（窗口管理器）
+         ├── Nautilus（文件管理器）
+         ├── GNOME Terminal（终端）
 
-`LightDM` 是一个轻量级的显示管理器，它的目标是快速和节省资源，适用于多种桌面环境。`LightDM` 不仅可以与GNOME使用，还能与其他桌面环境（如Unity、Cinnamon、MATE、XFCE 等）兼容
+```
 
-## NVIDIA驱动
+`GDM`：`GNOME`桌面环境的默认显示管理器。它是一个全功能的显示管理器，旨在与`GNOME`桌面环境紧密集成，提供图形化的登录界面。
+
+`LightDM`：轻量级的显示管理器，它的目标是快速和节省资源，适用于多种桌面环境。
+
+## NVIDIA 驱动
 
 ### 安装驱动
 
-#### 从NVIDIA官方网站安装
+#### 从 NVIDIA 官方网站安装
 
 参考：[Ubuntu安装Nvidia英伟达显卡驱动，安装Cuda和Cudnn配置机器学习环境](https://qii404.me/2021/07/03/ubuntu-install-nvidia-driver.html)
 
@@ -71,7 +87,7 @@ nvidia-smi
 nvidia-uninstall
 ```
 
-#### 通过Ubuntu官方包管理器安装
+#### 通过 Ubuntu 官方包管理器安装
 
 (1) 禁用开源Nouveau驱动，参考上一节
 
@@ -88,29 +104,19 @@ sudo reboot
 
 ### 显卡切换
 
-`prime-select` 基于**NVIDIA Optimus**技术，它可以让系统在集成显卡和独立显卡之间切换，以提高电池续航和图形性能
-
-查看当前显卡状态
+`prime-select` 基于 **NVIDIA Optimus** 技术，它可以让系统在集成显卡和独立显卡之间切换，以提高电池续航和图形性能
 
 ```bash
+# 查看当前显卡状态
 prime-select query
-```
 
-切换intel集成显卡
-
-```bash
+# 切换到intel集成显卡
 sudo prime-select intel
-```
 
-切换到nvidia独立显卡
-
-```bash
+# 切换到nvidia独立显卡
 sudo prime-select nvidia
-```
 
-切换到on-demand模式
-
-```bash
+#切换到on-demand模式
 sudo prime-select on-demand
 ```
 
@@ -118,21 +124,50 @@ sudo prime-select on-demand
 
 切换显卡后，需要重启计算机才能生效
 
-### 相关问题
+### Xorg 配置
+
+ `Xorg` 配置文件通常位于 `/etc/X11/xorg.conf` 或 `/etc/X11/xorg.conf.d/` 目录中
+
+使用 `intel` 集成显卡显示，编辑 `/etc/X11/xorg.conf` 文件如下：
+
+```bash
+Section "Device"
+    Identifier "Intel"
+    Driver "modesetting"
+    BusID "PCI:0:2:0"  # 集成显卡的总线地址，具体可以通过 lspci 命令查找
+EndSection
+
+Section "Screen"
+    Identifier "IntelScreen"
+    Device "Intel"
+EndSection
+
+Section "ServerLayout"
+    Identifier "Layout0"
+    Screen 0 "IntelScreen"
+EndSection
+```
+
+### Linux 内核
 
 ubuntu22.04更新Nvidia驱动导致掉网卡驱动的解决办法：更改内核版本
 
 ```bash
 # 1.查看已安装内核版本
 dpkg --list | grep linux-image
+
 # 2.查看当前内核版本
 uname -r
+
 # 3.删除不需要的内核版本
 sudo apt-get purge linux-image-5.4.0-74-generic
+
 # 4.清理不再需要的内核包
 sudo apt-get autoremove --purge
+
 # 5.更新GRUB配置
 sudo update-grub
+
 # 6.重启后dpkg --list重新查看内核版本
 ```
 
@@ -189,8 +224,10 @@ sudo ln -s /usr/local/cuda-11.8 /usr/local/cuda
 # 卸载cuda，不同版本cuda可能有出入，具体参考相应版本cuda的官方Versioned Online Documentation文档
 sudo apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" \
  "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*"
+
 # 卸载nvidia驱动
 sudo apt-get --purge remove "*nvidia*" "libxnvctrl*"
+
 # 清理卸载
 sudo apt-get autoremove
 ```
