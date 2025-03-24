@@ -12,18 +12,23 @@
 
 ```bash
 操作系统（Linux）
-   ├── X Server（图形核心，处理显示和输入）
-   │     ├── Xorg（X Server 的实现）
+   ├── 显示服务器（Display Server，处理显示和输入）
+   │     ├── X Server（X11 协议）
+   │     │     ├── Xorg（X Server 的实现）
+   │     │
+   │     ├── Wayland（现代显示协议，不需要 X Server）
+   │           ├── XWayland（Xorg 兼容层，支持旧的 X11 应用）
    │
-   ├── GDM（显示管理器，管理登录）
-   │     ├── 启动 Xorg
-   │     ├── 启动 GNOME 桌面
+   ├── 显示管理器（Display Manager，管理登录）
+   │     ├── GDM（GNOME Display Manager）
+   │           ├── 选择并启动 Xorg 或 Wayland
+   │           ├── 启动 GNOME 桌面
    │
-   ├── GNOME（桌面环境，提供完整 GUI 体验）
-         ├── GNOME Shell（窗口管理器）
-         ├── Nautilus（文件管理器）
-         ├── GNOME Terminal（终端）
-
+   ├── 桌面环境（Desktop Environment，提供完整 GUI 体验）
+         ├── GNOME（默认支持 Xorg 和 Wayland）
+         │     ├── GNOME Shell（窗口管理器）
+         │     ├── Nautilus（文件管理器）
+         │     ├── GNOME Terminal（终端）
 ```
 
 `GDM`：`GNOME`桌面环境的默认显示管理器。它是一个全功能的显示管理器，旨在与`GNOME`桌面环境紧密集成，提供图形化的登录界面。
