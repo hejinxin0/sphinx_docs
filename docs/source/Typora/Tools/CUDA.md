@@ -39,6 +39,27 @@
 
 ### 安装驱动
 
+#### 通过 Ubuntu 官方包管理器安装
+
+(1) 禁用开源Nouveau驱动，参考上一节
+
+(2) 安装Nvidia驱动并重启系统
+
+```bash
+sudo apt install nvidia-driver-550
+sudo reboot
+# 若指定版本不可用，可尝试使用ubuntu-drivers工具自动选择适合的版本
+# sudo ubuntu-drivers autoinstall 
+```
+
+(3) 检查是否安装成功
+
+```bash
+# 查看版本和卸载nvidia驱动
+nvidia-smi
+nvidia-uninstall
+```
+
 #### 从 NVIDIA 官方网站安装
 
 参考：[Ubuntu安装Nvidia英伟达显卡驱动，安装Cuda和Cudnn配置机器学习环境](https://qii404.me/2021/07/03/ubuntu-install-nvidia-driver.html)
@@ -66,9 +87,7 @@ sudo reboot
 lsmod | grep nouveau
 ```
 
-(3) 切换至`tty`控制台
-
-按下 `Ctrl+Alt+F1~F6`任一切换到`tty`控制台
+(3) 切换至`tty`控制台：按下 `Ctrl+Alt+F1~F6` 任一切换到`tty`控制台
 
 (4) 关闭`X Server`
 
@@ -84,28 +103,7 @@ sudo sh NVIDIA-Linux-x86_64-550.127.05.run
 sudo reboot
 ```
 
-(6) 检查是否安装成功
-
-```bash
-# 查看版本和卸载nvidia驱动
-nvidia-smi
-nvidia-uninstall
-```
-
-#### 通过 Ubuntu 官方包管理器安装
-
-(1) 禁用开源Nouveau驱动，参考上一节
-
-(2) 安装Nvidia驱动并重启系统
-
-```bash
-sudo apt install nvidia-driver-550
-sudo reboot
-# 若指定版本不可用，可尝试使用ubuntu-drivers工具自动选择适合的版本
-# sudo ubuntu-drivers autoinstall 
-```
-
-(3) 检查是否安装成功，参考上一节
+(6) 检查是否安装成功：`nvidia-smi`
 
 ### 显卡切换
 
@@ -125,11 +123,15 @@ sudo prime-select nvidia
 sudo prime-select on-demand
 ```
 
-**注意**：
-
-切换显卡后，需要重启计算机才能生效
+**注意**：切换显卡后，需要重启计算机才能生效
 
 ### Xorg 配置
+
+查看显卡信息
+
+```bash
+lspci | grep -i vga
+```
 
  `Xorg` 配置文件通常位于 `/etc/X11/xorg.conf` 或 `/etc/X11/xorg.conf.d/` 目录中
 
