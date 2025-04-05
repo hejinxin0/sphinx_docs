@@ -8,28 +8,34 @@
 
 ## git配置
 
-### 用户名和密码
+### 设置用户信息
 
 ```bash
-git config --global user.name "hejixin"
-git config --global user.email hejinxin_@outlook.com
+git config --global user.name "username"
+git config --global user.email xxx@example.com
 ```
 
-### 公私钥
+### 设置密钥
 
 ```bash
-ssh-keygen -t rsa  # 然后一直Enter默认选项
-# 或者采用如下方式
-ssh-keygen -t rsa -C "hejinxin_@outlook.com"
+# 1.生成SSH密钥, 一直Enter默认选项
+ssh-keygen -t rsa -C "xxx@example.com" # 或者 ssh-keygen -t rsa
 
+# 2.添加公钥到GitHub
+cat ~/.ssh/id_rsa.pub
+# 复制输出的内容, 然后去GitHub网页：
+# 点右上角头像 --> Settings --> SSH and GPG keys --> 点「New SSH key」,Title随便填, Key粘贴进去, 保存
+
+# 3.测试SSH是否连通
 ssh -T git@github.com
 ```
 
-`id_rsa` 私钥
+SSH 连接时，**服务器** 会使用存储在它上的公钥（`id_rsa.pub`）来生成一个 **加密挑战**，然后你使用 **私钥**（`id_rsa`）来解密挑战并回应
 
-`id_rsa.pub` 公钥
-
-是什么？？？
+| **文件名**   | **类型** | **用途**                                         | **是否公开** | **默认路径**        | **通常存储位置**       |
+| ------------ | -------- | ------------------------------------------------ | ------------ | ------------------- | ---------------------- |
+| `id_rsa`     | 私钥     | 用于本地身份验证，配合公钥解密服务器验证挑战     | ❌ 不可公开   | `~/.ssh/id_rsa`     | 本地（客户端）         |
+| `id_rsa.pub` | 公钥     | 提供给服务器进行身份验证，授权连接或操作远程资源 | ✅ 可以公开   | `~/.ssh/id_rsa.pub` | 远程服务器、GitHub 等` |
 
 ## 工作区、暂存区和版本库
 
