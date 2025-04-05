@@ -37,7 +37,7 @@
 
 ## NVIDIA 驱动
 
-### 安装驱动
+### 驱动安装
 
 #### 通过 Ubuntu 官方包管理器安装
 
@@ -194,13 +194,13 @@ cuda历史版本下载地址：[CUDA Toolkit Archive | NVIDIA Developer](https:/
 
 CMake项目中设置GPU架构：NVIDIA CUDA架构的问题，[CUDA_ARCHITECTURES — CMake 3.26.3 文档](https://cmake.org/cmake/help/latest/prop_tgt/CUDA_ARCHITECTURES.html)
 
-cuDNN是什么？
+
 
 ### 安装cuda
 
-[CUDA Toolkit 11.8 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=18.04&target_type=runfile_local)
+[CUDA Toolkit 11.8 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local)
 
-详细安装和卸载教程可参考NVIDIA官方网站提供的相应版本cuda的Versioned Online Documentation文档：[CUDA Toolkit Documentation](https://docs.nvidia.com/cuda/archive/11.8.0/)
+详细安装和卸载教程可参考NVIDIA官方网站[CUDA Toolkit Archive | NVIDIA Developer](https://developer.nvidia.com/cuda-toolkit-archive)提供的相应版本cuda的Versioned Online Documentation文档
 
 ```bash
 # 1.安装前检查cuda对应的gcc版本是否符合要求
@@ -239,3 +239,32 @@ sudo apt-get --purge remove "*nvidia*" "libxnvctrl*"
 sudo apt-get autoremove
 ```
 
+
+
+## cuDNN
+
+https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
+
+## TensorRT
+
+参考：[CADN: Tensorrt安装及使用（python版本）](https://blog.csdn.net/stivory/article/details/135847529)
+
+```bash
+tar -xzvf TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-11.8.tar.gz # 解压文件 
+# 将lib添加到环境变量里面 
+vim ~/.bashrc 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./TensorRT-8.6.1.6/lib 
+source ~/.bashrc 
+ 
+# 或 直接将 TensorRT-8.6.1.6/lib 以及 /include 添加到 cuda/lib64 cuda/include 里面 
+cp -r ./lib/* /usr/local/cuda/lib64/ 
+cp -r ./include/* /usr/local/cuda/include/ 
+ 
+# 安装对应python包 
+cd TensorRT-8.6.1.6/python 
+pip install tensorrt-xxx-none-linux_x86_64.whl
+```
+
+## PyTorch
+
+https://pytorch.org/get-started/previous-versions/
