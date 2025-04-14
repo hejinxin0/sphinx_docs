@@ -35,15 +35,15 @@ https://zhuanlan.zhihu.com/p/679809915
 
 ## 评价指标
 
->**Web Pages:**
->
->[NeRF：3D 视觉中的神经辐射场，综述（NeRF: Neural Radiance Field in 3D Vision, A Comprehensive Review） - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/627356466)
->
 >**Project Pages:**
 >
 >[NeRF - nerfstudio](https://docs.nerf.studio/nerfology/methods/nerf.html)
 >
 >[NeRF: Neural Radiance Fields (matthewtancik.com)](https://www.matthewtancik.com/nerf)
+>
+>**Web Pages:**
+>
+>[NeRF：3D 视觉中的神经辐射场，综述（NeRF: Neural Radiance Field in 3D Vision, A Comprehensive Review） - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/627356466)
 >
 >**Papers:**
 >
