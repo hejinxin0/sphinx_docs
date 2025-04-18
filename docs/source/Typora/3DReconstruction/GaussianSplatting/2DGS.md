@@ -148,11 +148,11 @@ $$
 
 
 
->**Project Pages:**
+>**项目页面:**
 >
->[2DGS: 2D Gaussian Splatting for Geometrically Accurate Radiance Fields](https://surfsplatting.github.io/)
+>https://surfsplatting.github.io/
 >
->**Web Pages：**
+>**参考网页：**
 >
 >[学习笔记之——2D Gaussian Splatting（2DGS）-CSDN博客](https://blog.csdn.net/gwplovekimi/article/details/139115674)
 >

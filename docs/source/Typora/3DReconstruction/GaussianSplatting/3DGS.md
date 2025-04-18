@@ -197,11 +197,11 @@ $$
 
 
 
->**Project Pages:**
+>**项目页面:**
 >
->[3D Gaussian Splatting for Real-Time Radiance Field Rendering (inria.fr)](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
+>https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 >
->**Web Pages：**
+>**参考网页：**
 >
 >[3DGS综述以及对3DGS的理解：A Survey on 3D Gaussian Splatting - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/679809915)
 >
