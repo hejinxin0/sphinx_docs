@@ -162,19 +162,14 @@ ubuntu22.04更新Nvidia驱动导致掉网卡驱动的解决办法：更改内核
 ```bash
 # 1.查看已安装内核版本
 dpkg --list | grep linux-image
-
 # 2.查看当前内核版本
 uname -r
-
 # 3.删除不需要的内核版本
 sudo apt-get purge linux-image-5.4.0-74-generic
-
 # 4.清理不再需要的内核包
 sudo apt-get autoremove --purge
-
 # 5.更新GRUB配置
 sudo update-grub
-
 # 6.重启后dpkg --list重新查看内核版本
 ```
 
@@ -238,8 +233,6 @@ sudo apt-get --purge remove "*nvidia*" "libxnvctrl*"
 # 清理卸载
 sudo apt-get autoremove
 ```
-
-
 
 ## cuDNN
 
